@@ -1,0 +1,130 @@
+.question-form{
+    background-color: #F3F3F3;
+    width: 100%;
+    height: auto;
+    background-color: #F3F3F3;
+    padding: 40px 22px;
+    
+    @include breakpoint("sm"){
+        padding: 40px 40px;
+        margin: 50px 0 0;
+    }
+
+    .container{
+        max-width: 660px;
+        margin: 0 auto
+    }
+
+    .form-holder{
+        color: #333333;
+        max-width: 580px;
+        margin: 0 auto;
+        width: 100%;
+
+        &__title{
+            font-family: $font-cheltenham;
+            font-size: 20px;
+            line-height: 1.5;
+        }
+
+        &__text{
+            font-family: $font-franklin;
+            font-size: 14px;
+            line-height: 1.2;
+            margin: 20px 0 0;
+
+            a{
+                text-decoration-line: underline;
+                color: #23855B;
+            }
+
+        }
+
+        &__form{
+            width: 100%;
+            margin: 20px auto 0;
+            height: auto;
+
+            &__field{
+                width: 100%;
+                height: auto;
+                margin: 20px 0 0;
+                clear: both;
+                overflow: hidden;
+
+                &:first-child{
+                    margin: 0;
+                }
+
+
+                label{
+                    width: 100%;
+                    font-family: $font-franklin;
+                    font-size: 14px;
+                    line-height: 1.3;
+                    color: #333333;
+                    font-weight:700;
+                }
+
+                input{
+                    width: 100%;
+                    margin: 5px 0 0;
+                    font-family: $font-franklin;
+                    font-size: 14px;
+                    line-height: 1.3;
+                    color: #333333;
+                    padding: 9px 7px;
+                    box-shadow: inset 3px 3px 4px rgba(0, 0, 0, 0.1);
+                    border: 1px solid #DBDBDB;
+
+                    &.cta{
+                        font-family: $font-franklin;
+                        font-size: 12px;
+                        line-height: 1;
+                        display: block;
+                        text-align: center;
+                        letter-spacing: -0.05px;
+                        border: none;
+                        color: #FFFFFF;
+                        width: 127px;
+                        height: 34px;
+                        background-color: #507868;
+                        box-shadow: none;
+                        float: left;
+                        margin: 0;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                    }
+
+                }
+
+                textarea{
+                    width: 100%;
+                    font-family: $font-franklin;
+                    font-size: 14px;
+                    line-height: 1.3;
+                    color: #333333;
+                    box-shadow: inset 3px 3px 4px rgba(0, 0, 0, 0.1);
+                    border: 1px solid #DBDBDB;
+                    min-height: 100px;
+                    
+                }
+
+                .messages{
+                    font-family: $font-franklin;
+                    font-size: 14px;
+                    line-height: 1.3;
+                    color: #374791;
+                    font-weight: 700;
+                    padding: 12px 10px;
+                    float: left;
+                }
+
+            }
+
+        }
+
+
+    }
+
+}

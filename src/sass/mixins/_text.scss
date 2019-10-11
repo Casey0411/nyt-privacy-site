@@ -1,0 +1,52 @@
+// Section title
+@mixin section-title() {
+	@include center-block;
+	display: inline-block;
+	font-family: $ff-sans;
+	font-size: 1.2rem;
+	font-weight: bold;
+	letter-spacing: 0.1em;
+	margin-bottom: 0;
+	margin-top: 0;
+	text-align: center;
+	text-transform: uppercase;
+	@include breakpoint('xl') {
+		font-size: 2rem;
+	}
+}
+// Page Subtitle
+@mixin section-subtitle() {
+	font-family: $ff-serif;
+	font-size: 3.3rem;
+	font-weight: 200;
+	line-height: (36/33);
+	margin-bottom: 0;
+	margin-top: 0;
+	text-align: center;
+	@include breakpoint('xl') {
+		font-size: 4.4rem;
+		line-height: 1;
+	}
+}
+
+// Page Body Copy
+@mixin paragraph() {
+	font-family: $ff-sans;
+	font-size: 1.5rem;
+	line-height: (16/15);
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+@mixin button($bg-color) {
+	background-color: $bg-color;
+	color: #fff;
+	font-family: $ff-sans;
+	font-size: 1.4rem;
+	line-height: 1;
+	padding-bottom: 15px;
+	padding-top: 15px;
+	text-align: center;
+	text-transform: uppercase;
+	width: 250px;
+}

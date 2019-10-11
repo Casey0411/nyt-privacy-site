@@ -1,0 +1,443 @@
+.form-section {
+    width:100%;
+    padding: 40px 20px 51px; 
+    background: #ffffff;
+
+    @include breakpoint("sm"){
+        padding: 69px 40px 68px; 
+    }
+
+    .container{
+        max-width: 920px;
+    }
+
+    a{
+        color:#2e84ed;
+        &:hover{
+            color:#2e84ed;  
+        }
+    }
+
+    .content{
+        max-width: 490px;
+        width: 100%;
+        height: auto;
+        margin: 0 auto; 
+
+
+        &__paragraph{
+            font-family: $font-franklin;
+            font-size: 18px;
+            line-height: 1.25;
+            font-weight: 500;
+            margin: 0 0 20px;
+            color:#333333;
+
+            a{
+                color:#2e84ed;
+                &:hover{
+                    color:#2e84ed;
+                }
+            }
+        }
+        
+        &.thankyou-message{
+            max-width: 332px;
+            display: none;
+
+            p{
+                font-family: $font-cheltenham;
+                font-size: 27px;
+                line-height: 1.25;
+                font-weight: 500;
+                margin: 0;
+                color:#333333;
+                text-align: center;
+
+
+                &.content__sub-paragraph{
+                    font-family: $font-franklin;
+                    font-size: 18px;
+                    line-height: 1.25;
+                    font-weight: 700;
+                    margin: 0 0 20px;
+                    color:#333333;
+                    margin: 28px auto 0;
+                }
+
+
+            }
+
+        }
+
+    }
+
+    .form-holder{
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        padding-top: 10px;
+
+        .grid-container.fluid{
+            padding: 0;
+        }
+
+        .grid-margin-x{
+            width: 100%;
+        }
+
+        .search-form{
+            max-width: 490px;
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+            
+            label{
+                font-family: $font-franklin;
+                font-size: 15px;
+                line-height: 1.25;
+                font-weight: 500;
+                color: #333333;   
+            }
+
+            input{
+                background-color: #EFEFEF;  
+                border-radius: 3px;
+                font-family: $font-franklin;
+                font-size: 18px;
+                line-height: 1.25;
+                font-weight: 500;
+                color:#000000;  
+                text-align: left;
+                margin:0 auto ;
+                width: 100%;
+                box-shadow: none;
+                border: none;
+                padding: 6px 11px;
+            }
+
+            .cell{
+                width: 100%;
+                max-width:380px;
+                .small-10{
+                    width: 100%;
+                }
+
+                .small-10{
+                    width: 100%;
+                }
+
+            }
+
+        }
+
+        .results{
+            margin-top: 40px;
+            margin-left: 0;
+            margin-right: 0;   
+            display: none;
+
+            &.show{ 
+                display: block !important;
+                @include breakpoint("xs"){
+                    display: flex !important;
+                    justify-content:left;
+                    align-items: top;
+                    flex-direction: row;  
+                }
+
+            }
+
+            &__title{
+                font-size: 18px;
+                font-weight: bold;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: 1.28;
+                letter-spacing: normal;
+                color: #333333;
+                font-family: $font-franklin;
+                margin: 40px auto 0;
+                max-width: 490px;
+                display: none;
+
+            }
+
+        }
+
+        .result{    
+            
+            margin-bottom: 20px;
+            margin-left: 0;
+            margin-right: 0;
+
+            @include breakpoint("xs"){
+                flex-basis: 50%;
+                padding-right: 3%;
+                display: flex;  
+                align-items: top;
+                flex-direction: column;
+            }
+
+            @include breakpoint("sm"){
+                flex-basis: 33.33%;
+                
+                margin-bottom: 68px;
+            }
+
+        }
+        
+        .no-result{
+            margin: 0 auto;
+            text-align: left;
+            max-width: 490px;
+            flex-basis: 100%;
+
+            h2{
+                font-family: $font-franklin;
+                font-size: 18px;
+                line-height: 1.25;
+                font-weight: 700;
+                color:#333333; 
+                margin:0; 
+            }
+
+            p{
+                font-family: $font-franklin;
+                font-size: 18px;
+                line-height: 1.25;
+                font-weight: 500;
+                color:#333333;  
+                margin:0;
+            }
+
+        }
+
+        .notListed{
+            display: none;
+            font-family: $font-franklin;
+            font-size: 18px;
+            line-height: 1.25;
+            font-weight: 500;
+            color:#333333;
+            max-width: 490px;   
+            margin: 0 auto; 
+            text-align: left;
+            p{
+                font-family: $font-franklin;
+                font-size: 18px;
+                line-height: 1.25;
+                font-weight: 500;
+                color:#333333;
+                text-align: left;
+                margin: 0;
+            }   
+        }
+
+        .resultTitle{   
+            font-family: $font-franklin;
+            font-size: 18px;
+            line-height: 1.25;
+            font-weight: 500;
+            color: #333333;
+            margin: 0;
+            text-transform: capitalize;
+        }
+
+        .resultAddress{
+            font-family: $font-franklin;
+            font-size: 18px;
+            line-height: 1.25;
+            font-weight: 500;
+            color: #333333;
+            text-transform: capitalize;
+        }
+
+        .resultPhone{
+            font-family: $font-franklin;
+            font-size: 18px;
+            line-height: 1.25;
+            font-weight: 500;
+            color: #333333;
+        }
+
+        .button{
+            width: 111px;
+            color: #fff;
+            background-color: #2C2C2C;
+            font-family: $font-franklin;
+            font-size: 18px;
+            line-height: 1.25;
+            font-weight: 700;
+            border-radius: 3px;
+            padding: 10px 18px;
+            border: none;
+            outline: none;
+            margin-bottom: 0;
+
+
+            &.formTrigger{
+                width: 124px;
+                margin-top: 20px;
+                vertical-align: bottom;
+            }
+
+        }
+
+        .registrationForm{      
+            max-width: 490px;
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+            padding-top:25px;
+
+            @include breakpoint("sm"){
+                padding-top:52px;
+            }
+
+            fieldset{
+                max-width: 380px;
+            }
+
+            strong{
+                font-size: 18px;
+                color: #333333;
+            }
+
+            legend{
+                font-family: $font-franklin;
+                line-height: 1.25;
+                font-weight: 500;
+                color: #595959;
+                margin: 0 0 18px;
+
+                small{
+                    font-size: 15px;
+                }
+            } 
+
+            .cell{
+                padding: 0;
+                width: 100%;
+                max-width: 380px;
+
+                .medium-6{
+                    padding: 0;
+                    width: 100%;
+                }
+
+                &__ip{
+                    margin: 0 0 23px;
+
+                    p{
+                        font-family: $font-franklin;
+                        font-size: 15px;
+                        line-height: 1.25;
+                        font-weight: 500;
+                        color: #595959;
+                        margin: 0;
+                    }
+
+                    a{
+                        font-family: $font-franklin;
+                        font-size: 15px;
+                        line-height: 1.25;
+                        font-weight: 500;
+                        color: #595959;
+                        text-decoration: underline;
+                    }
+                }
+
+                &__city{    
+                    width: 66%; 
+                    max-width: 251px;
+                    margin-right: 3%;   
+                }
+
+                &__state{
+                    width: 31%;
+                    max-width: 118px;
+                }
+
+            }
+
+            label{
+                font-family: $font-franklin;
+                font-size: 15px;
+                line-height: 1.25;
+                font-weight: 500;
+                color: #333333; 
+
+                &.textarea-label{
+                    display: block;
+                }
+
+                &.terms-condition{
+                    display: block;
+                    color: #595959;
+                    font-size:15px;
+                    float: left;
+                    max-width: 240px;   
+
+                    a{
+                        color: #595959;
+                        text-decoration: underline; 
+                    }
+
+                }   
+            }
+
+            input[type="text"], input[type="email"], input[type="tel"]{
+                background-color: #EFEFEF;
+                border-radius: 3px;
+                font-family: $font-franklin;
+                font-size: 18px;
+                line-height: 1.25;
+                font-weight: 500;
+                color:#000000;  
+                text-align: left;
+                margin:0 auto 11px; 
+                width: 100%;
+                box-shadow: none;
+                border: none;
+                padding: 6px 11px;
+            }
+
+            .cell__ip{
+                input[type="text"]{
+                    margin:0 auto 3px; 
+                }
+            }
+
+            input[type=checkbox]{
+                float: left;    
+            }
+
+            .school-feilds{
+                padding-bottom: 20px;
+
+                label{
+                    display: none;
+                }
+
+                legend{
+                    color: #333333;
+                    margin: 0 0 3px;
+                }
+
+                input[type="text"], input[type="email"], input[type="tel"]{
+                    color: #959595;
+                }
+
+
+            }   
+
+            // textarea{
+            //     min-height: 120px;
+            // }
+
+        }
+
+    }      
+
+}

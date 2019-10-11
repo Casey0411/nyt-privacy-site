@@ -1,0 +1,83 @@
+// Variables
+// Type
+$ff-franklin: franklin,'nyt-franklin', 'Helvetica Neue', Arial, sans-serif;
+$font-franklin: $ff-franklin;
+$ff-cheltenham: cheltenham,'nyt-cheltenham', georgia, 'times new roman', times, serif;
+$font-cheltenham: $ff-cheltenham;
+$ff-base: 'Helvetica Neue', Helvetica, Arial, 'Open Sans', sans-serif;
+$ff-sans: $ff-franklin;
+$ff-serif: $ff-cheltenham;
+$font-size-base: 140%;
+$line-height-base: 1.4;
+$font-family-base: $ff-franklin;
+$font-weight-base: normal;
+$font-size-base: 1rem;
+// Colors
+$body-color: #000;
+$text-color: #444;
+$body-bg: #fff;
+$body-bg: white;
+$link-color: #000;
+$link-decoration: none;
+$link-hover-color: #333;
+$link-hover-decoration: none;
+
+// Z-index tracking
+$z-layer: ();
+
+// Breakpoints
+$breakpoints: (
+	xxs: 0,
+	xs: 480px,
+	sm: 768px,
+	md: 992px,
+	lg: 1200px,
+);
+$breakpoint-xs-max: (map-get($breakpoints, 'xs') - 1px);
+$breakpoint-sm-max: (map-get($breakpoints, 'sm') - 1px);
+$breakpoint-md-max: (map-get($breakpoints, 'md') - 1px);
+$breakpoint-lg-max: (map-get($breakpoints, 'lg') - 1px);
+
+// Grid
+$wrapper-width: 1300px;
+$padding-horizontal-base: 5px;
+$padding-vertical-base: 5px;
+$margin-horizontal-base: 5px;
+$margin-vertical-base: 5px;
+$margin-horizontal-large: 15px;
+$margin-vertical-large: 15px;
+// Other
+$container-width: (
+	xxs: auto,
+	xs: 290px,
+	sm: 500px,
+	md: 718px,
+	lg: 1000px,
+	xl: 1180px,
+	xxl: 1280px
+);
+// At the smallest size, containers are flexible up to a maximum
+$container-xxs-max-w: 480px;
+
+// Site colors
+$basic-colors: (
+	'grey': #333, //button color
+	'red': #f00,
+);
+
+// Background colors for sections
+$background-colors: (
+	'dark-grey': #252527, //section background color
+);
+
+// Section name colors
+$section-name-colors: (
+	'stage': map-get($basic-colors, 'red'), //section name color
+	'hall': #ee4d00, //section name color
+	'screening-room': #f58220, //section name color
+	'gallery': #ffa200, //section name color
+);
+$colors: map-extend($basic-colors, $background-colors, $section-name-colors);
+
+$transition-duration-default: 150ms;
+$grid-gutter-width: 30px;

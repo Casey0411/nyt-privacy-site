@@ -1,0 +1,118 @@
+.hero{
+    width:100%;
+    background-image: url(https://mwcm.nyt.com/dam/LP/privacy-page/img/hero_miain.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: top center;
+    background-color: #000000;
+    padding: 241px 22px 18px;
+
+    @include breakpoint("sm"){
+        padding: 248px 60px 40px;
+    }
+
+    .Privacy &{
+        background-image: url(https://mwcm.nyt.com/dam/LP/privacy-page/img/hero_privatepolicy.jpg);
+    }
+
+    .Cookie &{
+        background-image: url(https://mwcm.nyt.com/dam/LP/privacy-page/img/hero_cookiepolicy.jpg);
+    }
+
+
+    &__content{   
+        width: 100%;
+        max-width: 550px;
+        margin: 0;
+        display: none;
+
+        .Home &{
+            display: block;
+        }
+
+        &__title{
+            font-family: $font-cheltenham;
+            font-size: 42px;
+            font-weight: 500;
+            line-height: 1;
+            color:#ffffff;  
+            text-align: left;
+            max-width: 220px;
+            margin-top: 8px;
+
+            @include breakpoint("sm"){
+                font-size: 60px;
+                max-width: 330px;
+            }
+        }
+
+        &__paragraph{
+            font-family: $font-franklin;
+            font-size: 14px;
+            line-height: 1.2;
+            text-transform: uppercase;
+            color: #ffffff;
+            font-weight: 700;
+            text-align: left;
+
+            @include breakpoint("xs"){
+                max-width: 340px;  
+            }
+
+            @include breakpoint("sm"){
+                font-size: 20px;
+                display: none;
+            }
+        }
+
+    }
+
+}
+
+.hero-top-text{
+
+    padding: 40px 30px 30px;    
+
+    @include breakpoint("sm"){
+        padding: 50px 30px 30px;
+    }
+
+    .Home &{
+        display: none;
+    }
+
+    .hero__content{
+        display: block;
+
+        &__paragraph{
+            font-family: $font-franklin;
+            font-size: 14px;
+            line-height: 1.2;
+            text-transform: uppercase;
+            color: #333333;
+            font-weight: 700;
+            text-align: left;
+
+            @include breakpoint("sm"){
+                display: none;
+            }
+
+        }
+
+        &__title{
+            font-family: $font-cheltenham;
+            font-size: 42px;
+            line-height: 1.2;
+            color: #333333;
+            text-align: left;
+            max-width: 375px;
+            font-weight: 500;
+
+            @include breakpoint("sm"){
+                font-size: 58px;
+            }
+        }
+
+    }
+
+}

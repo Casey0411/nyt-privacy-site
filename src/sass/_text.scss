@@ -1,0 +1,201 @@
+.nav_links {
+	color: #fff;
+	font-family: $ff-sans;
+	font-size: 15px;
+	font-weight: 700;
+	letter-spacing: auto;
+	line-height: auto;
+
+	&:hover {
+		color: map-get($colors, 'red');
+	}
+}
+
+.menu_links {
+	color: #fff;
+	font-family: $ff-sans;
+	font-size: 15px;
+	font-weight: 700;
+	letter-spacing: auto;
+	line-height: auto;
+}
+
+.heading_title {
+	color: #000;
+	font-family: $ff-sans;
+	font-size: 30px;
+	font-weight: 700;
+	letter-spacing: auto;
+	line-height: 32px;
+}
+
+.white {
+	color: #fff;
+}
+
+.left_heading,
+h5 {
+	color: #000;
+	font-family: $ff-sans;
+	font-size: 15px;
+	font-weight: 700;
+	letter-spacing: auto;
+	line-height: 28px;
+	margin-bottom: 2px;
+	margin-top: 0;
+}
+
+.left_heading.white {
+	color: #fff;
+}
+
+.left_copy {
+	color: #000;
+	font-family: $ff-sans;
+	font-size: 15px;
+	font-weight: 500;
+	letter-spacing: auto;
+	line-height: auto;
+}
+
+.left_copy.white,
+.right_copy.white {
+	color: #fff;
+}
+
+.left_copy_link,
+.left_copy a {
+	color: #000;
+	display: inline-block;
+	margin-bottom: 2px;
+	text-decoration: underline;
+	text-decoration-color: #d4d4d4;
+}
+
+.catererInfo {
+	a {
+		font-weight: bold;
+		margin-bottom: 2px;
+	}
+
+	.catererEmail {
+		display: inline;
+		font-weight: 500;
+	}
+}
+
+.contactInfo a {
+	margin-bottom: 2px;
+}
+
+.quote,
+.quote_by {
+	@include breakpoint('md') {
+		// padding-left: 20px;
+		// padding-right: 40px;
+	}
+}
+
+.quote {
+	color: #000;
+	font-family: $ff-serif;
+	font-size: 26px;
+	font-weight: 500;
+	letter-spacing: auto;
+	line-height: 30px;
+	opacity: 0.45;
+}
+
+.quote_by {
+	color: #000;
+	font-family: $ff-sans;
+	font-size: 15px;
+	font-weight: 700;
+	letter-spacing: auto;
+	line-height: auto;
+	opacity: 0.65;
+}
+
+.right_copy,
+.main-content p {
+	color: #000;
+	font-family: $ff-serif;
+	font-size: 18px;
+	font-weight: 500;
+	letter-spacing: auto;
+	line-height: 24px;
+}
+
+.right_copy.larger {
+	font-size: 26px;
+	font-weight: 200;
+	line-height: 1.2;
+}
+
+.right_copy.larger a:not([href^='tel:']) {
+	color: #000;
+	text-decoration: underline;
+}
+
+.right_small_heading {
+	font-family: $ff-serif;
+	font-size: 17px;
+}
+
+.main-content ul li {
+	color: #000;
+	font-family: $ff-serif;
+	font-size: 16px;
+	font-weight: 500;
+	letter-spacing: auto;
+	line-height: 24px;
+}
+/* section Testimony*/
+.white_text {
+	color: #fff;
+}
+
+.left_heading_clients {
+	font-family: $ff-sans;
+	font-size: 15px;
+	font-weight: 700;
+	letter-spacing: auto;
+	line-height: 28px;
+}
+
+.left_copy_clients {
+	font-family: $ff-sans;
+	font-size: 15px;
+	font-weight: 500;
+	letter-spacing: auto;
+	line-height: 21px;
+}
+
+.right_copy_cols_heading {
+	font-family: $ff-sans;
+	font-size: 15px;
+	font-weight: 700;
+	letter-spacing: auto;
+	line-height: auto;
+}
+
+.right_copy.quoter {
+	font-family: $ff-sans;
+	font-size: 15px;
+	font-weight: 500;
+	letter-spacing: auto;
+	line-height: 1.2;
+	width: 80%;
+}
+
+a[href^='tel:'] {
+	text-decoration: none;
+}
+
+.hanging-quote {
+	margin: 0 0 0 -13px;
+}
+
+.right_copy.quoter .hanging-quote {
+	margin: 0 0 0 -6px;
+}

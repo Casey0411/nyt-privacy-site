@@ -1,0 +1,9 @@
+.page {
+	&--general-info {
+		$page: &;
+
+		.body-copy {
+			padding-left: 25px;
+		}
+	}
+}

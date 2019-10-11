@@ -1,0 +1,125 @@
+/* Repsonsive */
+@media (max-width: $breakpoint-md-max) {
+	.logo-holder p#head-address {
+		font-size: 13px;
+		margin: 0 20px;
+	}
+	/* event spaces Panels .. heading row with the Click Expand , X closer */
+	h4.panel-title {
+		margin: 0 0 30px;
+	}
+
+	#accordion .panel .panel-heading .container > div.right_copy {
+		margin: 0 0 30px;
+		padding: 0 15px;
+	}
+
+	.panel-heading {
+		.container {
+			position: relative;
+		}
+
+		.col-md-2 {
+			position: static;
+		}
+	}
+}
+@media (max-width: $breakpoint-sm-max) {
+	/* Main menu , navigation via Hamburger top right menu
+  does not show black sticky nav or the homepage version 'homecoming'
+  nav holds the TC logo and the menu
+  */
+	nav {
+		background: rgba(0, 0, 0, 0.6);
+		width: 100%;
+	}
+
+	ul#topnav {
+		/* top level UL of menu */
+		margin: 0 auto;
+		z-index: 1040;
+	}
+
+	.site-nav {
+		.navbar-collapse,
+		.navbar-form {
+			background: rgba(0, 0, 0, 0.8);
+			border: none;
+			padding: 0;
+			z-index: 1050;
+		}
+
+		.navbar-nav > li > a {
+			padding: 10px 0;
+			text-align: center;
+			width: 100%;
+		}
+	}
+
+	#siteNav .navbar-nav > li:first-of-type > a {
+		padding: 10px 0;
+		text-align: center;
+		width: 100%;
+	}
+
+	.navbar-nav .open .dropdown-menu > li > a {
+		color: #fff;
+		text-align: center;
+
+		&:hover {
+			background: #f00;
+			color: #fff;
+		}
+	}
+
+	#head-address {
+		/* the street address of TC */
+		display: none;
+	}
+
+	.site-nav .navbar-toggle {
+		background: rgba(0, 0, 0, 0.6);
+		border-style: none;
+		float: left;
+		margin: 10px;
+
+		&.collapsed .icon-bar {
+			background: #fff;
+		}
+
+		.icon-bar {
+			background: #f00;
+		}
+
+		&:hover {
+			background: rgba(0, 0, 0, 0.6);
+
+			.icon-bar {
+				background: #f00;
+			}
+		}
+	}
+	/* end of Nav menu */
+	.intro {
+		p {
+			font-size: 18px;
+			line-height: 1.5;
+		}
+
+		h3 {
+			font-size: 12px;
+		}
+
+		.jumbotron {
+			margin: 0;
+		}
+	}
+
+	#headingThree .right_copy.larger {
+		font-size: 18px;
+	}
+
+	footer {
+		padding: 20px 15px;
+	}
+}

@@ -1,0 +1,16 @@
+body{
+    margin; 0;
+    -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-smoothing: antialiased;
+	color:#333333;
+    font-family: $ff-sans;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.nowrap{
+    white-space: nowrap;
+}

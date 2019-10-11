@@ -1,0 +1,115 @@
+// Utilities
+// CSS image replacement
+@mixin text-hide {
+	background-color: transparent;
+	border: 0;
+	color: transparent;
+	font-size: 0;
+	line-height: 0;
+	text-shadow: none;
+}
+
+@mixin clearfix {
+	&::after {
+		clear: both;
+		content: '';
+		display: table;
+	}
+}
+
+// Sets hover and focus state on links
+@mixin hover-focus {
+	&:focus,
+	&:hover {
+		@content;
+	}
+}
+
+// Sets auto hover state based on link inactive color
+@mixin hover-focus-darken($color) {
+	@include hover-focus {
+		color: darken($color, 15%);
+	}
+}
+
+// Sets auto active state based on link inactive color
+@mixin active-darken($color) {
+	&:active {
+		color: darken($color, 25%);
+	}
+}
+
+// Using a pseudo element to contain an image
+@mixin pseudo-img($pos: absolute) {
+	background-repeat: no-repeat;
+	content: '';
+	display: block;
+	position: $pos;
+}
+
+// Responsive containers that maintain aspect ratio
+@mixin aspect-ratio($width, $height) {
+	padding-bottom: $height / $width * 100%;
+	position: relative;
+
+	img,
+	video,
+	iframe,
+	object,
+	embed {
+		bottom: 0;
+		left: 0;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+}
+
+// Proper border reset
+@mixin border-none {
+	border-style: none;
+	border-width: 0;
+}
+// Reset list styles
+@mixin reset-list {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+@mixin transition-default {
+	transition-duration: $transition-duration-default;
+	transition-property: all;
+	transition-timing-function: ease-out;
+}
+
+@mixin link-transition-base {
+	@include transition-default;
+	transition-property: color;
+}
+// IE10 & 11. Never use this
+@mixin ie-only {
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+		@content;
+	}
+}
+
+@mixin horizontal-padding($padding) {
+	padding-left: $padding;
+	padding-right: $padding;
+}
+
+// Scrollmagic.js bug
+@mixin scrollmagic-fix() {
+	width: 100% !important;
+}
+
+// Properties for child of Bootstrap 3's "Responsive embed"
+@mixin embed-responsive-item {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: 0;
+}

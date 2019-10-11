@@ -1,0 +1,157 @@
+.faq-section{
+    width:100%;
+    padding: 40px 20px 50px; 
+    background: #FFFFFF;
+
+    @include breakpoint("sm"){
+        padding: 40px 40px 50px; 
+    }
+
+    .container{
+        max-width: 580px;
+        margin: 0 auto;
+        float: none;
+    }  
+
+    .faq-title{
+        width: 100%;
+        position: relative;
+        margin: 0 auto;
+
+        &__text{
+            font-family: $font-franklin;
+            font-size: 14px;
+            line-height: 1.25;
+            font-weight: 600;   
+            margin: 0;
+            text-transform: uppercase;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        .all-faq-trigger{
+            width: 14px;
+            height: 20px;
+            right: 15px;
+            top: 0;
+            background-color: transparent;
+            position: absolute;
+            cursor: pointer;
+
+            &:hover{
+                fill-opacity: 0;
+            } 
+
+            svg{
+                width: 100%;
+            }
+
+        }
+
+    }
+
+    .faq-holder{
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        padding: 30px 0 0;
+        margin: 0 auto;
+    }
+
+    .faq-question{
+        width: 100%;
+        margin: 20px 0 0;
+        font-family: $font-franklin;
+        clear: both;
+        
+        border-top: 1px solid #C4C4C4;
+
+        &:first-child{
+            margin: 0;
+        }
+
+        &:last-child{
+            .answer{
+                margin: 0;
+            }
+        }
+
+        .question{
+            width: 100%;
+            position: relative; 
+            margin: 0;
+            font-family: $font-franklin;
+            font-size: 24px;
+            line-height: 1.17;
+            font-weight: 700;
+            padding: 20px 50px 20px 0;
+            cursor: pointer; 
+
+            &__icon{
+                width: 24px;
+                height: 24px;
+                position: absolute;
+                right: 8px;    
+                top: 20px;
+                background-color:#23855B;
+                border-radius: 50%;
+
+                svg{
+                    width: 100%;
+                }
+
+                .faq-question.active &{
+                    background-color:#23855B;
+                }
+
+            }
+
+        }
+
+        .answer{
+            width: 100%;
+            position: relative;
+            height: auto;
+            margin: 0 0 40px;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            -webkit-transition: max-height 0.3s ease-out;
+            -moz-transition: max-height 0.3s ease-out;
+            -ms-transition: max-height 0.3s ease-out;
+            -o-transition: max-height 0.3s ease-out;
+            max-height: 100000px;
+
+            &.close{
+                transition: max-height 0.3s ease-out;
+                -webkit-transition: max-height 0.3s ease-out;
+                -moz-transition: max-height 0.3s ease-out;
+                -ms-transition: max-height 0.3s ease-out;
+                -o-transition: max-height 0.3s ease-out;
+                max-height: 0;
+            }
+
+            &__text{
+                font-family: $font-franklin;
+                font-size: 16px;
+                line-height: 1.5;
+                margin: 15px 0 0;
+
+                &:first-child{
+                    margin: 0;
+                }
+
+                a{
+                    text-decoration-line: underline;
+                    color: #23855B;
+                    &:hover{
+                        color:#23855B;  
+                    }
+                }
+
+            }
+        }
+
+    }
+
+
+}

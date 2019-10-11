@@ -1,0 +1,26 @@
+/* TheTimesCenter */
+// Primary styles
+@import 'initialize';
+@import 'utilities';
+@import 'base';
+
+//bootstrap 
+//@import 'vendor/bootstrap-theme.scss';
+//@import 'vendor/bootstrap.scss';
+
+// Modules
+//@import 'site-nav';
+@import 'modules/top-bar';
+@import 'modules/hero';
+@import 'modules/blurb_section';
+
+@import 'modules/faq-section';
+@import 'modules/explore'; 
+@import 'modules/form-question';
+
+//policy page styles
+@import 'modules/policy-main';  
+@import 'modules/faq-policies'; 
+
+@import 'modules/footer'; 
+

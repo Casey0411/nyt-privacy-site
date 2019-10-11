@@ -1,0 +1,318 @@
+.faq{
+    width:100%;
+    padding: 0 20px; 
+    background: #FFFFFF;
+
+    .container{
+        max-width: 884px;
+        height: auto;
+        margin: 0 auto;
+        width: 100%;
+        padding: 40px 0;
+        border-top: 1px solid #C4C4C4;
+        overflow: hidden;
+        position: relative;
+    }
+
+    &__sidebar{
+        float: left;
+        left: 0;
+        top:0;
+        max-width: 225px;
+        width: 31%;
+        display: none;
+
+        @include breakpoint("sm"){
+            display: block;
+        }
+
+        &.fixed-nav{
+            top: 90px;
+            left: auto;
+            position: fixed;
+        }
+
+        &__ul{
+            list-style: none;
+            width: 100%;
+
+            &__list{
+                list-style: none;
+                padding-left: 25px;
+                position: relative;
+                padding-bottom: 11px;
+
+                &__number{
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    font-family: $font-franklin;
+                    font-size: 14px;
+                    line-height: 1.4;
+                    color: #333333;
+                    font-weight: 700;
+                }
+
+                &__link{
+                    font-family: $font-franklin;
+                    font-size: 14px;
+                    line-height: 1.4;
+                    text-decoration-line: underline;
+                    color: #23855B;
+                    font-weight: 700;
+
+                    &:hover{
+                        color: #23855B;
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+    &__main-content{
+        width: 100%;
+
+        @include breakpoint("sm"){
+            float: right;
+            width: 67%;
+        }
+
+        &__parapgraph{
+            font-family: $font-franklin;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #333333;
+            margin: 20px 0 0;
+
+            &:first-child{
+                margin: 0;
+            }
+        }
+
+        &__ul{
+            width: 100%;
+            padding-left: 15px;
+            margin: 18px 0 0;
+            list-style-type: none;
+
+            &__li{
+                font-family: $font-franklin;
+                font-size: 16px;
+                line-height: 1.5;
+                color: #333333;
+                padding-left: 5px;
+                margin: 20px 0 0;
+                position: relative;
+                list-style-type: none;
+
+                &:before{
+                    content: "•";
+                    position: absolute;
+                    left: -20px;
+                    top: 0;
+                    width: 50px;
+                    height: 20px;
+                    font-family: $font-franklin;
+                    font-size: 16px;
+                    line-height: 24px;
+                    color: #333333;
+                    font-weight: 700;
+                    text-align: left;
+                }
+
+                &:first-child{
+                    margin: 0;
+                }
+            }
+
+        }
+
+        .question-answers-holder{
+            clear: both;
+            margin: 40px 0 0;
+            width: 100%;
+
+            .faq-question{
+                width: 100%;
+                font-family: $font-franklin;
+                border-top: 1px solid #C4C4C4;
+
+                .question{
+                    width: 100%;
+                    font-family: $font-franklin;
+                    font-size: 24px;
+                    line-height: 1.1;
+                    color: #333333;
+                    padding-left: 40px;
+                    padding-right: 50px;
+                    position: relative;
+                    padding-bottom:20px;
+                    padding-top: 20px;
+                    cursor: pointer;
+
+                    @include breakpoint("sm"){
+                        cursor: text;
+                        padding-right: 0;
+                    }
+
+                    &__number{
+                        position: absolute;
+                        width: 40px;
+                        left: 0;
+                        top: 20px;
+                    }
+
+                    &__icon{
+                        width: 24px;
+                        height: 24px;
+                        position: absolute;
+                        right: 8px;    
+                        top: 20px;
+                        background-color:#23855B;
+                        border-radius: 50%;
+
+                        @include breakpoint("sm"){
+                            display: none;
+                        }
+
+                        svg{
+                            width: 100%;
+                        }
+
+                        .faq-question.active &{
+                            background-color:#23855B;
+                        }
+                    }
+
+                }
+
+                .answer{
+                    width: 100%;
+                    padding: 0 0 30px;
+                    display: none;
+
+                    @include breakpoint("sm"){
+                        display: block !important;
+                    }
+                    
+
+                    &__text{
+
+                        font-family: $font-franklin;
+                        font-size: 16px;
+                        line-height: 1.5;
+                        color: #333333;
+                        margin: 20px 0 0;
+                        font-weight: 500;
+
+                        &:first-child{
+                            margin: 0;
+                        }
+
+                        &__category{
+                            font-family: $font-franklin;
+                            font-size: 16px;
+                            line-height: 1.5;
+                            color: #333333;
+                            margin: 20px 0 0;
+                            font-weight: 700;
+
+                            &__ol{
+                                list-style-type: disc;
+                                padding-left: 20px;
+                                margin: 20px 0 0;
+                                counter-reset:item;
+                                list-style: none;
+
+                                &__li{
+                                    font-family: $font-franklin;
+                                    font-size: 16px;
+                                    line-height: 1.5;
+                                    color: #333333;
+                                    margin: 20px 0 0;
+                                    position: relative;
+
+                                    &:before{
+                                        content: counter(item, lower-roman)".";
+                                        counter-increment: item;
+                                        position: absolute;
+                                        left: -20px;
+                                        top: 0;
+                                        width: 50px;
+                                        height: 20px;
+                                        font-family: $font-franklin;
+                                        font-size: 16px;
+                                        line-height: 24px;
+                                        color: #333333;
+                                        font-weight: 600;
+                                        text-align: left;
+                                    }
+
+                                }
+
+                            }
+
+                            &__ul{
+                                list-style: none;
+
+                                &__li{
+                                    font-family: $font-franklin;
+                                    font-size: 16px;
+                                    line-height: 1.5;
+                                    color: #333333;
+                                    margin: 20px 0 0;
+                                    position: relative;
+
+                                    &:before{
+                                        content: "•";
+                                        position: absolute;
+                                        left: -20px;
+                                        top: 0;
+                                        width: 50px;
+                                        height: 20px;
+                                        font-family: $font-franklin;
+                                        font-size: 16px;
+                                        line-height: 24px;
+                                        color: #333333;
+                                        font-weight: 700;
+                                        text-align: left;
+                                    }
+
+                                }
+
+                            }
+
+
+
+                        }
+
+                    }
+
+                    .back-top{
+                        font-family: $font-franklin;
+                        font-size: 16px;
+                        line-height: 1.5;
+                        text-decoration-line: underline;
+                        color: #23855B;
+                        margin: 20px 0 0;
+                        display: inline-block;
+                        clear: both;
+                        cursor: pointer;
+                    }
+
+                }
+
+
+            }
+
+        }
+
+    }
+
+
+
+}

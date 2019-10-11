@@ -1,0 +1,44 @@
+// Positioning
+@mixin center-block($dis: block) {
+	// display: $dis;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@mixin horizontal-center($pos: absolute) {
+	position: $pos;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+@mixin vertical-center($pos: absolute) {
+	position: $pos;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+@mixin absolute-center($pos: absolute) {
+	position: $pos;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+// Containers: outer-most wrappers to enforce universal padding
+// Optional argument to disable at smallest size
+@mixin nyt-container($enabled-at-xxs: true) {
+	@include center-block;
+	@if $enabled-at-xxs == true {
+		@include horizontal-padding(map-get($container-padding-h, 'xxs'));
+		max-width: $container-xxs-max-w;
+	}
+	@include breakpoint('xs') {
+		max-width: none;
+		padding-left: 0;
+		padding-right: 0;
+	}
+	@each $breakpoint, $width in $container-width {
+		@include breakpoint($breakpoint) {
+			width: $width;
+		}
+	}
+}

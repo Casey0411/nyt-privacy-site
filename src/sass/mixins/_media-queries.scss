@@ -1,0 +1,83 @@
+// Media Queries
+// From Bootstrap 4: -up, -min, -max, -infix
+// Breakpoint viewport sizes and media queries.
+// --------------------------------------------
+// Breakpoints are defined as a map of (name: minimum width), order from small to large.
+// Example:	xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px
+// The map defined in the `$breakpoints` global variable is used as the `$breakpoints-list` argument by default.
+// --------------------------------------------
+// Media of at least the minimum breakpoint width. No query for the smallest breakpoint.
+// Makes the @content apply to the given breakpoint and wider.
+@mixin media-breakpoint-up($name, $breakpoints-list: $breakpoints) {
+	$min: breakpoint-min($name, $breakpoints-list);
+	@if $min {
+		@media (min-width: $min) {
+			@content;
+		}
+	}
+	@else {
+		@content;
+	}
+}
+
+// Media of at most the maximum breakpoint width. No query for the largest breakpoint.
+// Makes the @content apply to the given breakpoint and narrower.
+@mixin media-breakpoint-down($name, $breakpoints-list: $breakpoints) {
+	$max: breakpoint-max($name, $breakpoints-list);
+	@if $max {
+		@media (max-width: $max) {
+			@content;
+		}
+	}
+	@else {
+		@content;
+	}
+}
+
+// Media that spans multiple breakpoint widths.
+// Makes the @content apply between the min and max breakpoints
+@mixin media-breakpoint-between($lower, $upper, $breakpoints-list: $breakpoints) {
+	@include media-breakpoint-up($lower, $breakpoints-list) {
+		@include media-breakpoint-down($upper, $breakpoints-list) {
+			@content;
+		}
+	}
+}
+
+// Media between the breakpoint's minimum and maximum widths.
+// No minimum for the smallest breakpoint, and no maximum for the largest one.
+// Makes the @content apply only to the given breakpoint, not viewports any wider or narrower.
+@mixin media-breakpoint-only($name, $breakpoints-list: $breakpoints) {
+	@include media-breakpoint-between($name, $name, $breakpoints-list) {
+		@content;
+	}
+}
+
+// Aliases
+// Mobile-first query
+@mixin breakpoint($name, $breakpoints-list: $breakpoints) {
+	@include media-breakpoint-up($name, $breakpoints-list) {
+		@content;
+	}
+}
+
+// Mobile-last query
+@mixin breakpoint-down($name, $breakpoints-list: $breakpoints) {
+	@include media-breakpoint-down($name, $breakpoints-list) {
+		@content;
+	}
+}
+
+// One breakpoint only
+@mixin breakpoint-only($name, $breakpoints-list: $breakpoints) {
+	@include media-breakpoint-only($name, $breakpoints-list) {
+		@content;
+	}
+}
+
+// Between two breakpoints
+@mixin breakpoint-bt($lower, $upper, $breakpoints-list: $breakpoints) {
+	@include media-breakpoint-between($lower, $upper, $breakpoints-list) {
+		@content;
+	}
+}

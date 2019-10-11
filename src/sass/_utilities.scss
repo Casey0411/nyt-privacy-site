@@ -1,0 +1,102 @@
+.hidden,
+.js-hidden {
+	display: none !important;
+	visibility: hidden;
+}
+
+.visible,
+.js-visible {
+	visibility: visible;
+}
+
+.invisible,
+.js-invisible {
+	visibility: hidden;
+}
+
+.js-transparent {
+	opacity: 0;
+}
+
+.js-opaque {
+	opacity: 1;
+}
+
+.js-sticky {
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+}
+
+.joinWords {
+	display: inline-block;
+}
+
+// Responsive utilites
+// Hidden at a given breakpoint or larger
+.hidden-xs {
+	@include breakpoint('xs') {
+		display: none;
+	}
+}
+
+.hidden-sm,
+.hidden-sm-up {
+	@include breakpoint('sm') {
+		display: none;
+	}
+}
+
+.hidden-md {
+	@include breakpoint('md') {
+		display: none;
+	}
+}
+
+.hidden-lg {
+	@include breakpoint('lg') {
+		display: none;
+	}
+}
+.hidden-xl {
+	@include breakpoint('xl') {
+		display: none;
+	}
+}
+.hidden-xxl {
+	@include breakpoint('xxl') {
+		display: none;
+	}
+}
+
+.hidden-switch {
+	@include breakpoint('xl') {
+		display: none;
+	}
+}
+
+// Hidden below a certain breakpoint
+.hidden-xs-down {
+	@media (max-width: $breakpoint-xs-max) {
+		display: none;
+	}
+}
+
+.hidden-sm-down {
+	@media (max-width: $breakpoint-sm-max) {
+		display: none;
+	}
+}
+
+.hidden-md-down {
+	@media (max-width: $breakpoint-md-max) {
+		display: none;
+	}
+}
+
+.hidden-lg-down {
+	@media (max-width: $breakpoint-lg-max) {
+		display: none;
+	}
+}
