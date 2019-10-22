@@ -3,7 +3,7 @@ import { Link } from "react-scroll";
 import Fade from 'react-reveal/Fade';
 
 //components
-import Hero from '../components/Hero';
+import HeroSection from '../components/HeroSection';
 import FaqComponent from '../components/FaqComponent';
 import Explore from '../components/Explore';
 import PrivacyProject from '../components/PrivacyProject';
@@ -12,13 +12,12 @@ import QuestionForm from '../components/QuestionForm';
 //svg
 import { ReactComponent as DownArrow } from '../components/svg_components/down-arrow.svg';
 
-class Home extends Component{
+function Home (){
   
-  render(){ 
     return (
       <Fade>
         <div className="Home">
-              <Hero />
+              <HeroSection />
 
               <section className="blurb-section">
                   <div className="container">
@@ -45,7 +44,6 @@ class Home extends Component{
         </div>
       </Fade>
     );
-  }
 }
 
 export default Home;

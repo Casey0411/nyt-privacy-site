@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import SlideToggle from 'react-slide-toggle';
 
+
 //svg
 import { ReactComponent as NytLogo } from './svg_components/nytlogo.svg';
 import { ReactComponent as MenuIcon } from './svg_components/hamburger.svg';
@@ -19,6 +20,8 @@ class Nav extends Component {
         })
     }
 
+
+
     render() {
 
         return (
@@ -34,7 +37,7 @@ class Nav extends Component {
                             <p className='logo__text'>The Times and your Data</p>
                             {//this.state.on &&  <h1>Toggle Me</h1>
                             }
-                            <button className='mobile-menu-btn' onClick={this.toggle}>
+                            <button className={'mobile-menu-btn ' + (this.state.on ? 'active' : '')} onClick={this.toggle}>
                                 {this.state.on ? (
                                     <CloseIcon/>
                                 ) : (
@@ -45,9 +48,9 @@ class Nav extends Component {
 
                         <nav className={"nav " + (this.state.on ? 'open' : 'close')}>
                             <div className='nav__links'>
-                                <Link className='nav__link' to="/" onClick={this.toggle}>Privacy Hub</Link>
-                                <Link className='nav__link' to="/privacy" onClick={this.toggle}>Privacy Policy</Link>
-                                <Link className='nav__link' to="/cookie" onClick={this.toggle}>Cookie Policy</Link>
+                                <Link className='nav__link' to="/subscription/privacy-policy" onClick={this.toggle}>Privacy Hub</Link>
+                                <Link className='nav__link' to="/subscription/privacy-policy/privacy" onClick={this.toggle}>Privacy Policy</Link>
+                                <Link className='nav__link' to="/subscription/privacy-policy/cookie" onClick={this.toggle}>Cookie Policy</Link>
                             </div>
                         </nav>
 

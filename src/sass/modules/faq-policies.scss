@@ -3,6 +3,10 @@
     padding: 0 20px; 
     background: #FFFFFF;
 
+    @include breakpoint("sm"){
+        padding: 0 60px;
+    }
+
     .container{
         max-width: 884px;
         height: auto;
@@ -19,17 +23,28 @@
         left: 0;
         top:0;
         max-width: 225px;
-        width: 31%;
+        width: 26%;
         display: none;
 
         @include breakpoint("sm"){
             display: block;
+            width: 26%;
+        }
+
+        @include breakpoint("md"){
+            width: 31%;
         }
 
         &.fixed-nav{
             top: 90px;
             left: auto;
             position: fixed;
+            width: 23%;
+
+            @include breakpoint("md"){
+                width: 31%;
+            }
+
         }
 
         &__ul{
@@ -56,7 +71,7 @@
                 &__link{
                     font-family: $font-franklin;
                     font-size: 14px;
-                    line-height: 1.4;
+                    line-height: 1.7;
                     text-decoration-line: underline;
                     color: #23855B;
                     font-weight: 700;
@@ -144,7 +159,7 @@
                 .question{
                     width: 100%;
                     font-family: $font-franklin;
-                    font-size: 24px;
+                    font-size: 18px;
                     line-height: 1.1;
                     color: #333333;
                     padding-left: 40px;
@@ -152,11 +167,14 @@
                     position: relative;
                     padding-bottom:20px;
                     padding-top: 20px;
-                    cursor: pointer;
+                    cursor: text;
+                    text-align: left;
+                    font-weight: 700;
 
                     @include breakpoint("sm"){
-                        cursor: text;
+                        cursor: pointer;
                         padding-right: 0;
+                        font-size: 24px;
                     }
 
                     &__number{
@@ -164,6 +182,7 @@
                         width: 40px;
                         left: 0;
                         top: 20px;
+                        display:  block;
                     }
 
                     &__icon{
@@ -192,11 +211,18 @@
 
                 .answer{
                     width: 100%;
-                    padding: 0 0 30px;
-                    display: none;
+                    transition: max-height 0.5s ease-in-out;
+                    max-height: 2000px;
+                    overflow: hidden;
 
                     @include breakpoint("sm"){
                         display: block !important;
+                    }
+
+                    
+                    &.close{
+                        max-height: 0px;
+                        transition: max-height 0.4s ease-in-out;
                     }
                     
 
@@ -211,6 +237,10 @@
 
                         &:first-child{
                             margin: 0;
+                        }
+
+                        &:last-child{
+                            margin-bottom: 30px;
                         }
 
                         &__category{
@@ -298,7 +328,7 @@
                         line-height: 1.5;
                         text-decoration-line: underline;
                         color: #23855B;
-                        margin: 20px 0 0;
+                        margin: 20px 0 40px;
                         display: inline-block;
                         clear: both;
                         cursor: pointer;

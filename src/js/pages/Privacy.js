@@ -2,15 +2,14 @@ import React, { Component } from 'react';
 import Fade from 'react-reveal/Fade';
 
 //components
-import Hero from '../components/Hero';
+import HeroSection from '../components/HeroSection';
 import FaqTemplate from '../components/FaqTemplate';
 
-class Privacy extends Component{
-  render(){
+function Privacy() {
     return (
       <Fade>
         <div className="Privacy">
-          <Hero />
+          <HeroSection />
 
           <section className="main-section">
             <div className="container">
@@ -27,7 +26,6 @@ class Privacy extends Component{
       </Fade>
       
     );
-  }
 }
 
 export default Privacy;

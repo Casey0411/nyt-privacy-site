@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Route} from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch, Link} from "react-router-dom";
 // import Header from './components/layout/Header';
 // import Todos from './components/Todos';
 // import AddTodo from './components/AddTodo';
@@ -17,25 +17,49 @@ import './sass/style.scss';
 
 class App extends Component{
   
-  render(){
+  render(){ 
 
     return (
       <Router>
-        <div className="App">
-          <Nav mobileMenuToggle={this.mobileMenuToggle}/>
-
-          <main className="main-content">
-            
-            <Route path="/" exact render={() =>{return <Home/>}} />
-            <Route path="/privacy" exact render={() =>{return <Privacy/>}} />
-            <Route path="/cookie" exact render={() =>{return <Cookie/>}} />
-
-          </main>
-          
-          <Footer/>
         
-        </div>
-      </Router> 
+          <div className="App">
+            <Nav mobileMenuToggle={this.mobileMenuToggle}/>
+
+            <main className="main-content">
+              <Switch>
+                <Route exact="false" strict="false" path="/privacy-policy">
+                  <Home/>
+                </Route>
+
+                <Route exact="false" strict="false" path="/subscription/privacy-policy">
+                  <Home/>
+                </Route>
+
+                <Route path="/privacy-policy/privacy" exact>
+                  <Privacy/>
+                </Route>
+
+                <Route path="/subscription/privacy-policy/privacy" exact>
+                  <Privacy/>
+                </Route>
+
+                <Route path="/privacy-policy/cookie">
+                  <Cookie/>
+                </Route>
+
+                <Route path="/subscription/privacy-policy/cookie">
+                  <Cookie/>
+                </Route>
+
+              </Switch> 
+            </main>
+            
+            <Footer/>
+          
+          </div>
+        
+      </Router>
+      
     );
   }
   

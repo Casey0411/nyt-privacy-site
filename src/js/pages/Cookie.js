@@ -2,15 +2,14 @@ import React, { Component } from 'react';
 import Fade from 'react-reveal/Fade';
 
 //components
-import Hero from '../components/Hero';
+import HeroSection from '../components/HeroSection';
 import FaqTemplate from '../components/FaqTemplate';
 
-class Cookie extends Component{
-  render(){
+function Cookie (){
     return (
         <Fade>
             <div className="Cookie">
-            <Hero />
+            <HeroSection />
 
             <section className="main-section">
             <div className="container">
@@ -26,7 +25,6 @@ class Cookie extends Component{
             </div>
         </Fade>
     );
-  }
 }
 
 export default Cookie;

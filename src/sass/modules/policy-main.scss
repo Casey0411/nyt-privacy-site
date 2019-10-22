@@ -5,6 +5,10 @@
     padding: 30px 20px;
     clear: both;
 
+    @include breakpoint("sm"){
+        padding: 30px 60px;
+    }
+
     .container{
         width: 100%;
         height: auto;
@@ -37,6 +41,7 @@
             line-height: 1.6;
             color: #949494;
             margin: 11px 0 0;
+            font-weight: 700;
         }
 
     }
