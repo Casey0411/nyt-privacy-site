@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import SlideToggle from 'react-slide-toggle';
 
 
@@ -8,18 +8,22 @@ import { ReactComponent as NytLogo } from './svg_components/nytlogo.svg';
 import { ReactComponent as MenuIcon } from './svg_components/hamburger.svg';
 import { ReactComponent as CloseIcon } from './svg_components/close-icon.svg';
 
-class Nav extends Component {
+
+
+export class Nav extends Component {
 
     state = {
         on : false,
     }
 
+    
+
     toggle = () =>{
+        
         this.setState({
             on: !this.state.on
         })
     }
-
 
 
     render() {
@@ -37,7 +41,7 @@ class Nav extends Component {
                             <p className='logo__text'>The Times and your Data</p>
                             {//this.state.on &&  <h1>Toggle Me</h1>
                             }
-                            <button className={'mobile-menu-btn ' + (this.state.on ? 'active' : '')} onClick={this.toggle}>
+                            <button className={'mobile-menu-btn' + (this.state.on ? ' active' : '')} onClick={this.toggle}>
                                 {this.state.on ? (
                                     <CloseIcon/>
                                 ) : (
@@ -48,9 +52,9 @@ class Nav extends Component {
 
                         <nav className={"nav " + (this.state.on ? 'open' : 'close')}>
                             <div className='nav__links'>
-                                <Link className='nav__link' to="/subscription/privacy-policy" onClick={this.toggle}>Privacy Hub</Link>
-                                <Link className='nav__link' to="/subscription/privacy-policy/privacy" onClick={this.toggle}>Privacy Policy</Link>
-                                <Link className='nav__link' to="/subscription/privacy-policy/cookie" onClick={this.toggle}>Cookie Policy</Link>
+                                <NavLink className='nav__link' exact={true} activeClassName='active' to="/subscription/privacy-policy" onClick={this.toggle}>Privacy F.A.Q.</NavLink>
+                                <NavLink className='nav__link' activeClassName='active' to="/subscription/privacy-policy/privacy" onClick={this.toggle}>Privacy Policy</NavLink>
+                                <NavLink className='nav__link' activeClassName='active' to="/subscription/privacy-policy/cookie" onClick={this.toggle}>Cookie Policy</NavLink>
                             </div>
                         </nav>
 

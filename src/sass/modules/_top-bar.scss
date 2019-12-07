@@ -75,14 +75,15 @@
         float:left;
         font-family: $ff-sans;
         font-size: 14px;
-        line-height: 1.3;
+        line-height: 1.2;
         text-transform: uppercase;
         color: #ffffff;
         font-weight: 700;
+        padding-top: 1px;
         padding-left: 15px;
         margin-left: 15px;
         border-left: 1px solid #fff;
-        margin-top: 0;
+        margin-top: 1px;
         text-align: left;
         display: none;
 
@@ -125,7 +126,7 @@
 
     .nav{
         width: 100%;
-        padding: 50px 22px 0;
+        padding: 49px 22px 0;
         background-color: #2F9E73;
         height: 0 !important;
         position: fixed;
@@ -137,12 +138,12 @@
         transition-timing-function: ease-in-out;
         
         @include breakpoint("sm"){
-            padding: 15px 0;
+            padding: 17px 0;
             display: block !important;
             float: right;
             height: auto !important;
             background-color: transparent;
-            max-width: 275px;
+            max-width: 285px;
             position: relative;
             top: auto;
             left: auto;
@@ -185,16 +186,17 @@
                 //display: block;
                 font-size: 14px;
                 margin-left: 10px;
+
+
+                &.active{
+                    color: #87D9B4;
+                }
+
             }
 
             &:hover{
-                color: rgba(255,255,255, .75);
+                opacity: .75;
             }
-
-            &:focus{
-                color: #87D9B4;
-            }
-
 
         }
 

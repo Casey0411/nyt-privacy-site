@@ -19,9 +19,9 @@ class PrivacyProject extends Component{
                             </div>
 
                             <div className="privacy-project-box__content">
-                                <h4 className="privacy-project-box__content__title">The Privacy Project</h4>
+                                <h4 className="privacy-project-box__content__title"> <a href="https://www.nytimes.com/interactive/2019/opinion/internet-privacy-project.html">The Privacy Project</a></h4>
                                 <p className="privacy-project-box__content__text">As companies and governments gain new powers to follow people everywhere, they erode our current conception of privacy. Our Opinion series explores the benefits and costs of this world-changing trend.</p>
-                                <a className="privacy-project-box__content__cta">READ</a>
+                                <a className="privacy-project-box__content__cta" href="https://www.nytimes.com/interactive/2019/opinion/internet-privacy-project.html">READ</a>
                             </div>
                             
                         </div>

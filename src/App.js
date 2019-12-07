@@ -9,7 +9,8 @@ import {BrowserRouter as Router, Route, Switch, Link} from "react-router-dom";
 import Nav from './js/components/Nav';
 import Home from './js/pages/Home';
 import Privacy from './js/pages/Privacy';  
-import Cookie from './js/pages/Cookie';    
+import Cookie from './js/pages/Cookie';
+import ThirdParty from './js/pages/ThirdParty';     
 import Footer from './js/components/Footer';
 
 //Styles
@@ -49,6 +50,14 @@ class App extends Component{
 
                 <Route path="/subscription/privacy-policy/cookie">
                   <Cookie/>
+                </Route>
+
+                <Route path="/privacy-policy/thirdparty">
+                  <ThirdParty/>
+                </Route>
+
+                <Route path="/subscription/privacy-policy/thirdparty">
+                  <ThirdParty/>
                 </Route>
 
               </Switch> 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-scroll";
+import { NavLink } from "react-router-dom";
 import Fade from 'react-reveal/Fade';
 
 //components
@@ -22,8 +23,9 @@ function Home (){
               <section className="blurb-section">
                   <div className="container">
                       <div className="blurb-content">
-                          <p className="blurb-content__paragraph">When it comes to readers’ data, we value their privacy and security.</p>
-                          <p className="blurb-content__paragraph">We created this page to help answer our readers’ questions about how we use their data. This topic has become important to many readers; by explaining how it all works, we hope to empower readers to make better informed decisions about their data.</p>
+                          <p className="blurb-content__paragraph">Our readers should know how we handle their data.</p>
+                          <p className="blurb-content__paragraph">We created this page to answer our readers’ questions about how we use their personal data. This topic is important to many readers, and we value their right to understand how it works.</p>
+                          <p className="blurb-content__paragraph">This F.A.Q. applies to nytimes.com readers. If you want to dive deeper into the details, please see our <NavLink to="/subscription/privacy-policy/privacy">Privacy Policy</NavLink>.</p>
                       </div>
                       <Link className="arrow"
                         to="faq-section"

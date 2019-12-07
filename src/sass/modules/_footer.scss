@@ -35,7 +35,8 @@
       line-height: 1.43;
       text-align: center;
       color: #FFFFFF;
-      margin: 15px auto 0;
+      margin: 4px auto 0;
+      font-weight:500;
       @include breakpoint("sm"){  
           text-align: left;
           margin: 4px 0 0;
@@ -59,4 +60,10 @@
 
 }
 
+.ccpaOptOut{
+  display: none;
+}
 
+.ccpaSnackbarHidden{
+  display: none;
+}

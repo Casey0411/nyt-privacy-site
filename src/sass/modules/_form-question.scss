@@ -32,6 +32,7 @@
             font-size: 14px;
             line-height: 1.2;
             margin: 20px 0 0;
+            font-weight: 500;
 
             a{
                 text-decoration-line: underline;
@@ -66,6 +67,24 @@
                     font-weight:700;
                 }
 
+                select{
+                    width: 100%;
+                    margin: 5px 0 0;
+                    font-family: $font-franklin;
+                    font-size: 14px;
+                    line-height: 1.3;
+                    color: #333333;
+                    padding: 9px 7px;
+                    height: 30px;
+                    box-shadow: inset 3px 3px 4px rgba(0, 0, 0, 0.1);
+                    border-radius: none;
+
+                    option{
+                        background: rgba(255,255,255,.8);
+                        color: #333333;
+                    }
+                }
+
                 input{
                     width: 100%;
                     margin: 5px 0 0;
@@ -77,6 +96,9 @@
                     box-shadow: inset 3px 3px 4px rgba(0, 0, 0, 0.1);
                     border: 1px solid #DBDBDB;
 
+                }
+
+                button{
                     &.cta{
                         font-family: $font-franklin;
                         font-size: 12px;
@@ -94,8 +116,8 @@
                         margin: 0;
                         font-weight: 700;
                         text-transform: uppercase;
+                        cursor: pointer;
                     }
-
                 }
 
                 textarea{
@@ -107,7 +129,7 @@
                     box-shadow: inset 3px 3px 4px rgba(0, 0, 0, 0.1);
                     border: 1px solid #DBDBDB;
                     min-height: 100px;
-                    
+                    margin: 5px 0 0;
                 }
 
                 .messages{

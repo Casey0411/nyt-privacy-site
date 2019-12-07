@@ -96,16 +96,52 @@
             width: 67%;
         }
 
+        .mobile-collapse{
+            width: 100%;
+            height: auto;
+            text-align: right;
+            position: relative;
+            margin: 30px 0 0;
+            overflow: hidden;
+
+
+            .all-faq-trigger{
+                background-color: transparent;
+                cursor: pointer;
+                
+
+                @include breakpoint("sm"){
+                    display: none;
+                }
+    
+                &:hover{
+                    fill-opacity: 0;
+                } 
+    
+                svg{
+                    width: 100%;
+                }
+    
+            }
+
+        }
+
         &__parapgraph{
             font-family: $font-franklin;
             font-size: 16px;
             line-height: 1.5;
             color: #333333;
             margin: 20px 0 0;
+            font-weight: 500;
 
             &:first-child{
                 margin: 0;
             }
+
+            a{
+                color: #23855B;
+            }
+
         }
 
         &__ul{
@@ -123,11 +159,12 @@
                 margin: 20px 0 0;
                 position: relative;
                 list-style-type: none;
+                font-weight: 500;
 
                 &:before{
                     content: "•";
                     position: absolute;
-                    left: -20px;
+                    left: -14px;
                     top: 0;
                     width: 50px;
                     height: 20px;
@@ -142,13 +179,15 @@
                 &:first-child{
                     margin: 0;
                 }
+
+
             }
 
         }
 
         .question-answers-holder{
             clear: both;
-            margin: 40px 0 0;
+            margin: 15px 0 0;
             width: 100%;
 
             .faq-question{
@@ -172,7 +211,7 @@
                     font-weight: 700;
 
                     @include breakpoint("sm"){
-                        cursor: pointer;
+                        cursor: text;
                         padding-right: 0;
                         font-size: 24px;
                     }
@@ -217,6 +256,13 @@
 
                     @include breakpoint("sm"){
                         display: block !important;
+                        max-height: 10000px !important;
+                        height: auto;
+                        &.close{
+                            max-height: 10000px !important;
+                            height: auto;
+                        }
+
                     }
 
                     
@@ -265,6 +311,7 @@
                                     color: #333333;
                                     margin: 20px 0 0;
                                     position: relative;
+                                    font-weight: 500;
 
                                     &:before{
                                         content: counter(item, lower-roman)".";
@@ -282,12 +329,31 @@
                                         text-align: left;
                                     }
 
+                                    .answer__text{
+                                        &:first-child{
+                                            margin-top: 0;
+                                        }
+                                    }
+
                                 }
 
                             }
 
                             &__ul{
                                 list-style: none;
+
+                                &.root-list{
+                                    padding-left: 20px;
+                                }
+
+                                &.circle-list{
+                                    list-style: circle;
+
+                                    .answer__text__category__ul__li:before{
+                                        content: " ";
+                                    }
+
+                                }
 
                                 &__li{
                                     font-family: $font-franklin;
@@ -296,6 +362,7 @@
                                     color: #333333;
                                     margin: 20px 0 0;
                                     position: relative;
+                                    font-weight: 500;
 
                                     &:before{
                                         content: "•";
@@ -310,6 +377,13 @@
                                         color: #333333;
                                         font-weight: 700;
                                         text-align: left;
+
+                                    }
+
+                                    .answer__text{
+                                        &:first-child{
+                                            margin-top: 0;
+                                        }
                                     }
 
                                 }
@@ -322,16 +396,8 @@
 
                     }
 
-                    .back-top{
-                        font-family: $font-franklin;
-                        font-size: 16px;
-                        line-height: 1.5;
-                        text-decoration-line: underline;
+                    a{
                         color: #23855B;
-                        margin: 20px 0 40px;
-                        display: inline-block;
-                        clear: both;
-                        cursor: pointer;
                     }
 
                 }
@@ -343,6 +409,32 @@
 
     }
 
+}
 
+.ccpa-content{
+    display: none;  
 
+    .show-ccpa-content &{
+        display: block;
+    }
+
+}
+
+span.ccpa-content{
+    .show-ccpa-content &{
+        display: inline;
+    }
+}
+
+.back-top{
+    font-family: $font-franklin;
+    font-size: 16px;
+    line-height: 1.5;
+    text-decoration-line: underline;
+    color: #23855B;
+    margin: 20px 0 40px;
+    display: inline-block;
+    clear: both;
+    cursor: pointer;
+    font-weight: 700;
 }

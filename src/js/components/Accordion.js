@@ -11,7 +11,7 @@ const Accordion = props => {
 
   useEffect(() => {
     //${contentRef.current.scrollHeight}px
-    contentRef.current.style.maxHeight = active ? `4000px` : '0px'
+    contentRef.current.style.maxHeight = active ? `4500px` : '0px'
   }, [contentRef, active])
 
 

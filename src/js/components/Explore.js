@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 
 //SVG
 import { ReactComponent as RightArrow } from './svg_components/right-arrow.svg';
@@ -15,26 +16,26 @@ class Explore extends Component{
 
             <div className="Explore">
 
-                <section class="explore">
-                    <div class="container">
-                        <div class="round-corner-box explore-box">
-                            <h3 class="explore-box__title">EXPLORE MORE</h3>
+                <section className="explore">
+                    <div className="container">
+                        <div className="round-corner-box explore-box">
+                            <h3 className="explore-box__title">EXPLORE MORE</h3>
 
-                            <div class="explore-box__buttons">
-                                <a class="explore-box__button privacy-policy" href="">
-                                    <div class="explore-box__button__img-holder "></div>
-                                    <div class="explore-box__button__content">
-                                        <p class="explore-box__button__content__text">Our Privacy Policy</p>
-                                        <div class="explore-box__button__content__arrow"><RightArrow/></div>
+                            <div className="explore-box__buttons">
+                                <Link className="explore-box__button privacy-policy" to="/subscription/privacy-policy/privacy">
+                                    <div className="explore-box__button__img-holder "></div>
+                                    <div className="explore-box__button__content">
+                                        <p className="explore-box__button__content__text">Our Privacy Policy</p>
+                                        <div className="explore-box__button__content__arrow"><RightArrow/></div>
                                     </div>
-                                </a>
-                                <a class="explore-box__button cookie-policy" href="">
-                                    <div class="explore-box__button__img-holder"></div>
-                                    <div class="explore-box__button__content">
-                                        <p class="explore-box__button__content__text">Our Cookie Policy</p>
-                                        <div class="explore-box__button__content__arrow"><RightArrow/></div>
+                                </Link>
+                                <Link className="explore-box__button cookie-policy" to="/subscription/privacy-policy/cookie">
+                                    <div className="explore-box__button__img-holder"></div>
+                                    <div className="explore-box__button__content">
+                                        <p className="explore-box__button__content__text">Our Cookie Policy</p>
+                                        <div className="explore-box__button__content__arrow"><RightArrow/></div>
                                     </div>
-                                </a>
+                                </Link>
                             </div>
 
                         </div>
