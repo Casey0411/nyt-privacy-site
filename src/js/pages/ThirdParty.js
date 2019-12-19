@@ -171,7 +171,7 @@ function ThirdParty (){
 
                                 <div className="third-party__list__slot">
                                     <h4 className="third-party__list__slot__title">Reddit</h4>
-                                    <a className="third-party__list__slot__link" href="https://www.redditinc.com/policies/privacy-policy#text-content5">Privacy Policy<br/> Opt out</a>
+                                    <a className="third-party__list__slot__link" href="https://www.reddit.com/personalization/">Privacy Policy<br/> Opt out</a>
                                 </div>
 
                                 <div className="third-party__list__slot">

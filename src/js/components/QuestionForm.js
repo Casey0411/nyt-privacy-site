@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 
+import axios from 'axios';
+
 const initialState = {
-    list: "",
     email: "",
     text: "",
-    listError: "",
     emailError: "",
-    textError: "" ,
+    textError: "",
+    thanksMessage: ""
 }
 
 export class QuestionForm extends Component{
@@ -15,8 +16,11 @@ export class QuestionForm extends Component{
 
     handleChange = event => {
 
+        let thanksMessage = ""; 
+        this.setState({thanksMessage});
+
        // console.log({[fieldName]: event.target.value});
-       console.log(event.target.name);
+      // console.log(event.target.name);
 
         this.setState({[event.target.name]: event.target.value});
 
@@ -30,26 +34,20 @@ export class QuestionForm extends Component{
 
     };
 
-
     validate = () =>{
-        let listError = "";
         let emailError = "";
         let textError = "";
 
         if (!this.state.email.includes('@')){
-            emailError = '-Invalid email';
-        }
-
-        if (!this.state.list){
-            listError = '-Please choose a list';
+            emailError = 'Please enter a valid email address.';
         }
 
         if (!this.state.text){
-            textError = '-Please enter a question';
+            textError = 'Please enter your question.';
         }
 
-        if (emailError || listError || textError){
-            this.setState({emailError, listError, textError});
+        if (emailError || textError){
+            this.setState({emailError, textError});
             return false;
         }
         
@@ -57,15 +55,35 @@ export class QuestionForm extends Component{
 
     };
 
+    thankyouMessage = () =>{
+        let thanksMessage = "";
+        thanksMessage = "Thank you. Your message has been sent.";
+        console.log('thank you message is: ' + thanksMessage);
+
+        if (thanksMessage){
+            this.setState({thanksMessage});
+            return false;
+        }
+
+        return true;
+    };
+
     handleSubmit = event =>{
+
         event.preventDefault();
         const isValid = this.validate();
+        
+
         if (isValid){
-            console.log(this.state);
 
-
-
+            console.log('email: ' + this.state.email);
+            console.log('question: ' + this.state.text);
+            
             this.setState(initialState);
+            
+            
+
+            this.thankyouMessage();
         }
     };
     
@@ -81,23 +99,13 @@ export class QuestionForm extends Component{
                         
                         <div className="form-holder">
                             <h3 className="form-holder__title">Any other questions?</h3>
-                            <p className="form-holder__text">Our team is here to help with any questions or concerns you may have about our privacy policy.</p>
+                            <p className="form-holder__text">Our team is here to help with any questions or concerns you may have about our privacy policy. Please send an email to <a href="mailto:privacy@nytimes.com">privacy@nytimes.com</a>.</p>
 
-                            <form className="form-holder__form" onSubmit={this.handleSubmit}>
-                                {/*
-                                <div className="form-holder__form__field">
-                                    <label htmlFor="list" className="email">Select</label>
-                                    <select name="list" value={this.state.list} onChange={this.handleChange}>
-                                        <option value=""> --Please choose an option-- </option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                    </select>
+                            
 
-                                </div>
-                                */}
+                            {/*
+                            <form className="form-holder__form" onSubmit={this.handleSubmit} action="mailto:casey.ojeda@nytimes.com" method="post">
+                        
                                 <div className="form-holder__form__field">
                                     <label htmlFor="email" className="email">Your Email Address</label>
                                     <input name="email" onChange={this.handleChange} value={this.state.email} />
@@ -114,17 +122,20 @@ export class QuestionForm extends Component{
                                         {//Please complete both fields.
                                         }
                                         <span> 
-                                            {this.state.listError} 
-                                        </span>
-                                        <span> 
                                             {this.state.emailError}
                                         </span>
                                         <span> 
                                             {this.state.textError}
                                         </span>
+
+                                        <span> 
+                                            {this.state.thanksMessage}
+                                        </span>
                                     </p>
                                 </div>
                             </form>
+                            */
+                            }
 
                         </div>
 

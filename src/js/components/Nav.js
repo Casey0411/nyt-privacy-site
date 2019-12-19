@@ -23,6 +23,9 @@ export class Nav extends Component {
         this.setState({
             on: !this.state.on
         })
+
+        window.scrollTo(0, 0)
+
     }
 
 
@@ -52,9 +55,16 @@ export class Nav extends Component {
 
                         <nav className={"nav " + (this.state.on ? 'open' : 'close')}>
                             <div className='nav__links'>
+                                {
+                                    /*
                                 <NavLink className='nav__link' exact={true} activeClassName='active' to="/subscription/privacy-policy" onClick={this.toggle}>Privacy F.A.Q.</NavLink>
                                 <NavLink className='nav__link' activeClassName='active' to="/subscription/privacy-policy/privacy" onClick={this.toggle}>Privacy Policy</NavLink>
                                 <NavLink className='nav__link' activeClassName='active' to="/subscription/privacy-policy/cookie" onClick={this.toggle}>Cookie Policy</NavLink>
+                                    */
+                                }
+                                <NavLink className='nav__link' exact={true} activeClassName='active' to="/" onClick={this.toggle}>Privacy F.A.Q.</NavLink>
+                                <NavLink className='nav__link' activeClassName='active' to="/privacy" onClick={this.toggle}>Privacy Policy</NavLink>
+                                <NavLink className='nav__link' activeClassName='active' to="/cookie" onClick={this.toggle}>Cookie Policy</NavLink>
                             </div>
                         </nav>
 

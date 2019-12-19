@@ -83,7 +83,7 @@ function FaqComponent() {
         <div className="FaqComponent">
             <section className="faq-section" id="faq-section">
                 <div className="container">
-
+ 
                     <div className="faq-title">
                         <h4 className="faq-title__text">Frequently asked questions</h4>
                         <button className="all-faq-trigger" onClick={toggleAllQuestions}>
@@ -117,8 +117,9 @@ function FaqComponent() {
                         </Accordion>
 
                         <Accordion title="How can I learn more about how companies use personal data online?" number="7">
-                            <p className="answer__text">Our readers have voiced a desire for our log-in process to be even simpler.</p>
-                            <p className="answer__text">The Times regularly publishes pieces on the topic, including in Business, Technology and <a href="https://www.nytimes.com/2019/11/24/smarter-living/privacy-online-how-to-stop-advertiser-tracking-opt-out.html">Smarter Living</a>. Our Opinion series, <a href="https://www.nytimes.com/series/new-york-times-privacy-project">The Privacy Project</a>, explains how online privacy affects your daily life — and shows you how to take control of your data.</p>
+                            <p className="answer__text">The Times regularly publishes pieces on the topic, including in <a href="https://www.nytimes.com/2019/11/04/business/secret-consumer-score-access.html">Business</a>, <a href="https://www.nytimes.com/2019/11/19/technology/artificial-intelligence-dawn-song.html">Technology</a> and <a href="https://www.nytimes.com/2019/11/24/smarter-living/privacy-online-how-to-stop-advertiser-tracking-opt-out.html">Smarter Living</a>.</p>
+                            
+                            <p className="answer__text">Our Opinion series, <a href="https://www.nytimes.com/series/new-york-times-privacy-project">The Privacy Project</a>, explains how online privacy affects your daily life — and shows you how to take control of your data.</p>
                         </Accordion>
 
                     </div>

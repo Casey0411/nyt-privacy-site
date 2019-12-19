@@ -12,6 +12,15 @@ body {
 	margin: 0;
 	color:#333333;
 
+	&.gdpr-overlay{
+
+	}
+
+	#root{
+		position: relative;
+	}
+
+
 	a {	
 
 		&:hover{
@@ -37,6 +46,15 @@ body {
 
 	&.open-menu{
 		overflow: hidden;
+	}
+
+	.cc-window{
+		position: relative;
+			
+	}
+
+	.cc-banner.cc-top{
+		position: absolute;	
 	}
 
 }

@@ -25,7 +25,7 @@ const Accordion = props => {
   }
 
   return (
-    <div className={`accordion-section faq-question ${active? "active": "notActive"}`} id={`faq${props.number}`}>
+    <div className={`accordion-section faq-question ${active? "active": "notActive"}`} id={`${props.name}${props.number}`}>
       <button className="accordion-title question" onClick={toogleActive}>
         <div className="question__number">{props.number}.</div>
         <p>{props.title}</p>

@@ -17,9 +17,8 @@ export class Footer extends Component {
                             <NytLogo/> 
                         </a>
                         <p className="footer-section__text">&copy;<span className="current-year">2019</span> The New York Times Company</p>
+                        <a className="ccpaOptOut" role="button" tabIndex="0">Do not sell my personal information</a>
                     </div>
-
-                    <a className="ccpaOptOut" role="button" tabIndex="0">Do not sell my personal information</a>
 
                 </footer>
                 

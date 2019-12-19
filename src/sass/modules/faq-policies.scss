@@ -104,6 +104,10 @@
             margin: 30px 0 0;
             overflow: hidden;
 
+            .CookieFaq &{
+                margin-top: 0;
+            }
+
 
             .all-faq-trigger{
                 background-color: transparent;
@@ -190,10 +194,41 @@
             margin: 15px 0 0;
             width: 100%;
 
+            .CookieFaq &{
+                
+                @include breakpoint("sm"){
+                    margin: 0;
+                    border: none;
+                }
+            }
+
             .faq-question{
                 width: 100%;
                 font-family: $font-franklin;
                 border-top: 1px solid #C4C4C4;
+
+                .CookieFaq &{
+                
+                    @include breakpoint("sm"){
+                        border: none;
+
+
+                        &:first-child{
+
+                            .question{
+                                padding-top: 0;
+
+                                &__number{
+                                    top:0;
+                                }
+
+                            }
+                        }
+
+
+                    }
+
+                }
 
                 .question{
                     width: 100%;
@@ -214,6 +249,7 @@
                         cursor: text;
                         padding-right: 0;
                         font-size: 24px;
+
                     }
 
                     &__number{
@@ -426,6 +462,22 @@ span.ccpa-content{
     }
 }
 
+.gdpr-more-content{
+    display: none;  
+}
+
+.show-gdpr-content{
+    
+    .gdpr-more-content{
+        display: block;
+    }
+
+    span.gdpr-more-content{
+            display: inline;
+    }
+
+}
+
 .back-top{
     font-family: $font-franklin;
     font-size: 16px;
@@ -438,3 +490,46 @@ span.ccpa-content{
     cursor: pointer;
     font-weight: 700;
 }
+
+.cookie-table{
+    width: 100%;
+    height: auto;
+
+    //border: 1px solid #ccc;
+    margin-top: 20px;
+
+    th, td{
+        //border-left: 1px solid #ccc;
+        border-top: 1px solid #ccc;
+        padding: 10px;
+        text-align: left;
+        font-family: $font-franklin;
+        font-size: 12px;
+        line-height: 1.2;
+        font-weight: 500;
+        color: #333;
+        vertical-align: top;
+
+        &:first-child{
+            border-left: none;
+        }
+
+    }
+
+    tr{
+        &:first-child{
+            th{
+                //background-color: #EEEEEE;
+                border-top: none;
+                font-weight: 700;
+            }
+        }
+    }
+
+
+}
+
+
+
+
+
