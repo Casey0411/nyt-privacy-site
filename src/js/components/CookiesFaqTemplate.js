@@ -241,25 +241,12 @@ class CookieFaqTemplate extends Component{
                                             </tr>
 
                                             <tr>
-                                                <td> LPVID </td>
-                                                <td> Customer support </td>
-                                                <td> 1 year </td>
-                                                <td> LivePerson </td>
-                                            </tr>
-
-                                            <tr>
                                                 <td> nyt-a </td>
                                                 <td> User identification </td>
                                                 <td> 1 year </td>
                                                 <td> first party </td>
                                             </tr>
 
-                                            <tr>
-                                                <td> nyt-a </td>
-                                                <td> User identification </td>
-                                                <td> 1 year </td>
-                                                <td> first party </td>
-                                            </tr>
                                             <tr>
                                                 <td> NYT-S </td>
                                                 <td> User identification </td>
@@ -476,7 +463,7 @@ class CookieFaqTemplate extends Component{
                                             <tr>
                                                 <td> Localytics SDK </td>
                                                 <td> User analytics in apps </td>
-                                                <td>  </td>
+                                                <td> Not applicable </td>
                                                 <td> Localytics </td>
                                                 <td>  </td>
                                             </tr>
@@ -484,7 +471,7 @@ class CookieFaqTemplate extends Component{
                                             <tr>
                                                 <td> AppsFlyer SDK </td>
                                                 <td> User analytics in apps </td>
-                                                <td>  </td>
+                                                <td> Not applicable </td>
                                                 <td> AppsFlyer </td>
                                                 <td>  </td>
                                             </tr>

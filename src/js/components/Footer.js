@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
+import $ from 'jquery';
 //import {Link} from 'react-router-dom';
 import { ReactComponent as NytLogo } from './svg_components/nytlogo.svg';
 
 export class Footer extends Component {
 
-    
 
     render() {
+        {
+            /*
+        $('.ccpaOptOut').on('click', function(){
+            $('.ccpaOptOut').trigger('click');
+        });
+        */
+        }
         
         return (
             <div className='Footer'>
