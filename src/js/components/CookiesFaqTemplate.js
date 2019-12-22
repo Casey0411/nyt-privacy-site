@@ -369,7 +369,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> User analytics </td>
                                                 <td> 1 year </td>
                                                 <td> Google Analytics </td>
-                                                <td></td>
+                                                <td><a href="https://policies.google.com/privacy?hl=en-US">Privacy Policy Opt-out</a></td>
                                             </tr>
 
                                             <tr>
@@ -377,7 +377,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> User analytics </td>
                                                 <td> 3 months </td>
                                                 <td> Google Analytics </td>
-                                                <td>  </td>
+                                                <td><a href="https://policies.google.com/privacy?hl=en-US">Privacy Policy Opt-out</a></td>
                                             </tr>
 
                                             <tr>
@@ -385,7 +385,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> User analytics </td>
                                                 <td> 1 year </td>
                                                 <td> Google Analytics </td>
-                                                <td>  </td>
+                                                <td><a href="https://policies.google.com/privacy?hl=en-US">Privacy Policy Opt-out</a></td>
                                             </tr>
 
                                             <tr>
@@ -393,7 +393,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> User analytics </td>
                                                 <td> 1 day </td>
                                                 <td> Google Analytics </td>
-                                                <td>  </td>
+                                                <td><a href="https://policies.google.com/privacy?hl=en-US">Privacy Policy Opt-out</a></td>
                                             </tr>
 
                                             <tr>
@@ -401,7 +401,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> User analytics </td>
                                                 <td> 9 years </td>
                                                 <td> Google Analytics </td>
-                                                <td>  </td>
+                                                <td><a href="https://policies.google.com/privacy?hl=en-US">Privacy Policy Opt-out</a></td>
                                             </tr>
 
                                             <tr>
@@ -409,7 +409,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> User analytics </td>
                                                 <td> session </td>
                                                 <td> Google Analytics </td>
-                                                <td>  </td>
+                                                <td><a href="https://policies.google.com/privacy?hl=en-US">Privacy Policy Opt-out</a></td>
                                             </tr>
 
                                             <tr>
@@ -417,7 +417,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> User analytics </td>
                                                 <td> 1 year </td>
                                                 <td> Chartbeat </td>
-                                                <td>  </td>
+                                                <td><a href="https://chartbeat.com/privacy/">Privacy Policy Opt-out</a></td>
                                             </tr>
 
                                             <tr>
@@ -425,7 +425,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> User analytics </td>
                                                 <td> 1 year </td>
                                                 <td> Chartbeat </td>
-                                                <td>  </td>
+                                                <td><a href="https://chartbeat.com/privacy/">Privacy Policy Opt-out</a></td>
                                             </tr>
 
                                             <tr>
@@ -433,7 +433,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> User analytics </td>
                                                 <td> session </td>
                                                 <td> Chartbeat </td>
-                                                <td>  </td>
+                                                <td><a href="https://chartbeat.com/privacy/">Privacy Policy Opt-out</a></td>
                                             </tr>
 
                                             <tr>
@@ -441,7 +441,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> User analytics </td>
                                                 <td> 1 year </td>
                                                 <td> Chartbeat </td>
-                                                <td>  </td>
+                                                <td><a href="https://chartbeat.com/privacy/">Privacy Policy Opt-out</a></td>
                                             </tr>
 
                                             <tr>
@@ -449,7 +449,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> User analytics= </td>
                                                 <td> session </td>
                                                 <td> Chartbeat </td>
-                                                <td>  </td>
+                                                <td><a href="https://chartbeat.com/privacy/">Privacy Policy Opt-out</a></td>
                                             </tr>
 
                                             <tr>
@@ -457,7 +457,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> Application logging </td>
                                                  <td> session </td>
                                                 <td> SumoLogic </td>
-                                                <td>  </td>
+                                                <td><a href="https://www.sumologic.com/privacy-statement/">Privacy Policy Opt-out</a></td>
                                             </tr>
 
                                             <tr>
@@ -465,7 +465,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> User analytics in apps </td>
                                                 <td> Not applicable </td>
                                                 <td> Localytics </td>
-                                                <td>  </td>
+                                                <td><a href="https://www.localytics.com/privacy-policy/">Privacy Policy Opt-out</a></td>
                                             </tr>
 
                                             <tr>
@@ -473,7 +473,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> User analytics in apps </td>
                                                 <td> Not applicable </td>
                                                 <td> AppsFlyer </td>
-                                                <td>  </td>
+                                                <td><a href="https://www.appsflyer.com/services-privacy-policy">Privacy Policy Opt-out</a></td>
                                             </tr>
 
                                         </tbody>
@@ -503,7 +503,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> Retargeting users on Facebook, only exists on marketing pages. </td>
                                                 <td> 2 months </td>
                                                 <td> Facebook </td>
-                                                <td>  </td>
+                                                <td><a href="https://www.facebook.com/privacy/explanation">Privacy Policy Opt-out</a></td>
                                             </tr>
 
                                             <tr>
@@ -511,15 +511,15 @@ class CookieFaqTemplate extends Component{
                                                 <td> Retargeting users on Facebook, only exists on marketing pages </td>
                                                 <td> 2 months </td>
                                                 <td> Facebook </td>
-                                                <td>  </td>
+                                                <td><a href="https://www.facebook.com/privacy/explanation">Privacy Policy Opt-out</a></td>
                                             </tr>
 
                                             <tr>
                                                 <td> Facebook SDK </td>
                                                 <td> Retargeting users on Facebook, only exists on marketing pages. </td>
-                                                <td>  </td>
+                                                <td> Not applicable </td>
                                                 <td> Facebook </td>
-                                                <td>  </td>
+                                                <td><a href="https://www.facebook.com/privacy/explanation">Privacy Policy Opt-out</a></td>
                                             </tr>
 
                                             <tr>
@@ -527,7 +527,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> Retargeting users on SnapChat, only exists on marketing pages. </td>
                                                 <td> 1 year </td>
                                                 <td> Snap </td>
-                                                <td>  </td>
+                                                <td><a href="https://www.snap.com/en-US/privacy/privacy-policy">Privacy Policy Opt-out</a></td>
                                             </tr>
 
                                             <tr>
@@ -535,7 +535,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> Building audiences to target users off site and target on-site. </td>
                                                 <td> 6 months </td>
                                                 <td> Oracle BlueKai </td>
-                                                <td>  </td>
+                                                <td><a href="https://www.oracle.com/legal/privacy/marketing-cloud-data-cloud-privacy-policy.html">Privacy Policy Opt-out</a></td>
                                             </tr>
 
                                             <tr>
@@ -543,7 +543,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> Building audiences to target users off site and target on-site. </td>
                                                 <td> 6 months </td>
                                                 <td> Oracle BlueKai </td>
-                                                <td>  </td>
+                                                <td><a href="https://www.oracle.com/legal/privacy/marketing-cloud-data-cloud-privacy-policy.html">Privacy Policy Opt-out</a></td>
                                             </tr>
 
                                             <tr>
@@ -551,7 +551,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> Retargeting users on Twitter, only exists on marketing pages. </td>
                                                 <td> 1 year </td>
                                                 <td> Twitter </td>
-                                                <td>  </td>
+                                                <td><a href="https://twitter.com/en/privacy">Privacy Policy Opt-out</a></td>
                                             </tr>
 
                                             <tr>
@@ -559,7 +559,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> Retargeting users on Bing, only exists on marketing pages. </td>
                                                 <td> session </td>
                                                 <td> Microsoft Bing </td>
-                                                <td>  </td>
+                                                <td><a href="https://about.ads.microsoft.com/en-us/resources/policies/microsoft-advertising-privacy-policy">Privacy Policy Opt-out</a></td>
                                             </tr>
 
                                             <tr>
@@ -567,7 +567,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> Retargeting users on Bing, only exists on marketing pages. </td>
                                                 <td> 6 months </td>
                                                 <td> Microsoft Bing </td>
-                                                <td>  </td>
+                                                <td><a href="https://about.ads.microsoft.com/en-us/resources/policies/microsoft-advertising-privacy-policy">Privacy Policy Opt-out</a></td>
                                             </tr>
 
                                             <tr>
@@ -575,7 +575,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> Retargeting users on Bing, only exists on marketing pages. </td>
                                                 <td> 1 year </td>
                                                 <td> Microsoft Bing </td>
-                                                <td>  </td>
+                                                <td><a href="https://about.ads.microsoft.com/en-us/resources/policies/microsoft-advertising-privacy-policy">Privacy Policy Opt-out</a></td>
                                             </tr>
 
                                             <tr>
@@ -583,7 +583,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> Retargeting users on LinkedIn, only </td>
                                                 <td> session </td>
                                                 <td> Microsoft LinkedIn </td>       
-                                                <td>  </td>
+                                                <td><a href="https://www.linkedin.com/legal/privacy-policy">Privacy Policy Opt-out</a></td>
                                             </tr>
 
                                             <tr>
@@ -591,7 +591,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> Retargeting users on LinkedIn, only exists on marketing pages. </td>
                                                 <td> 1 day </td>
                                                 <td> Microsoft LinkedIn </td>       
-                                                <td>  </td>
+                                                <td><a href="https://www.linkedin.com/legal/privacy-policy">Privacy Policy Opt-out</a></td>
                                             </tr>
 
                                             <tr>
@@ -599,7 +599,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> Retargeting users on LinkedIn, only exists on marketing pages. </td>
                                                 <td> 4 weeks </td>
                                                 <td> Microsoft LinkedIn </td>       
-                                                <td>  </td>
+                                                <td><a href="https://www.linkedin.com/legal/privacy-policy">Privacy Policy Opt-out</a></td>
                                             </tr>
 
                                             <tr>
@@ -607,7 +607,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> Retargeting users on LinkedIn, only exists on marketing pages. </td>
                                                 <td> 2 years </td>
                                                 <td> Microsoft LinkedIn </td>       
-                                                <td>  </td>
+                                                <td><a href="https://www.linkedin.com/legal/privacy-policy">Privacy Policy Opt-out</a></td>
                                             </tr>
 
                                             <tr>
@@ -615,7 +615,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> Retargeting users on LinkedIn, only exists on marketing pages. </td>
                                                 <td> 2 years </td>
                                                 <td> Microsoft LinkedIn </td>       
-                                                <td>  </td>
+                                                <td><a href="https://www.linkedin.com/legal/privacy-policy">Privacy Policy Opt-out</a></td>
                                             </tr>
 
                                             <tr>
@@ -623,7 +623,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> Advertising to users through Adobe. </td>
                                                 <td> 1 year </td>
                                                 <td> Adobe </td>       
-                                                <td>  </td>
+                                                <td><a href="https://www.adobe.com/privacy/policy.html">Privacy Policy Opt-out</a></td>
                                             </tr>
 
                                             <tr>
@@ -631,7 +631,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> Advertising to users through Adobe. </td>
                                                 <td> 1 year </td>
                                                 <td> Adobe </td>       
-                                                <td>  </td>
+                                                <td><a href="https://www.adobe.com/privacy/policy.html">Privacy Policy Opt-out</a></td>
                                             </tr>
 
                                         </tbody>
@@ -662,7 +662,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> Operating non-personalized advertising </td>
                                                 <td> 6 months </td>
                                                 <td> Google </td>
-                                                <td>  </td>
+                                                <td><a href="https://policies.google.com/privacy?hl=en">Privacy Policy Opt-out</a></td>
                                             </tr>
 
                                             <tr>
@@ -670,7 +670,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> Operating non-personalized advertising </td>
                                                 <td> session </td>
                                                 <td> Google </td>
-                                                <td>  </td>
+                                                <td><a href="https://policies.google.com/privacy?hl=en">Privacy Policy Opt-out</a></td>
                                             </tr>
 
                                             <tr>
@@ -678,15 +678,15 @@ class CookieFaqTemplate extends Component{
                                                 <td> Operating non-personalized advertising </td>
                                                 <td> 1 year </td>
                                                 <td> Google </td>
-                                                <td>  </td>
+                                                <td><a href="https://policies.google.com/privacy?hl=en">Privacy Policy Opt-out</a></td>
                                             </tr>
 
                                             <tr>
                                                 <td> Google Mobile Ads SDK </td>
                                                 <td> Operating non-personalized advertising </td>
-                                                <td>  </td>
+                                                <td> Not applicable </td>
                                                 <td> Google </td>
-                                                <td>  </td>
+                                                <td><a href="https://policies.google.com/privacy?hl=en">Privacy Policy Opt-out</a></td>
                                             </tr>
 
                                             <tr>
@@ -694,15 +694,15 @@ class CookieFaqTemplate extends Component{
                                                 <td> Advertising audience sizing </td>
                                                 <td> 1 year </td>
                                                 <td> comScore </td>
-                                                <td>  </td>
+                                                <td><a href="https://www.comscore.com/About/Privacy-Policy">Privacy Policy Opt-out</a></td>
                                             </tr>
 
                                             <tr>
                                                 <td> comScore SDK </td>
                                                 <td> Advertising audience sizing in apps </td>
-                                                <td>  </td>
+                                                <td> Not applicable </td>
                                                 <td> comScore </td>
-                                                <td>  </td>
+                                                <td><a href="https://www.comscore.com/About/Privacy-Policy">Privacy Policy Opt-out</a></td>
                                             </tr>
 
                                             <tr>
@@ -710,7 +710,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> Brand surveys </td>
                                                 <td> 4 weeks </td>
                                                 <td> IterateHQ </td>
-                                                <td>  </td>
+                                                <td><a href="https://iteratehq.com/privacy">Privacy Policy Opt-out</a></td>
                                             </tr>
 
                                         </tbody>

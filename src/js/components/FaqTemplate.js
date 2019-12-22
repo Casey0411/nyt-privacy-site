@@ -643,11 +643,11 @@ class FaqTemplate extends Component{
                                     <p className="answer__text">You can update your account information and see <a href="https://myaccount.nytimes.com">your transaction history</a> (for <a href="https://customercare.inyt.com">International Edition print subscribers</a>). If you need assistance, call our toll-free number, 1-800-NYTIMES. <a href="https://subscribe.inyt.com/footer?requestAction=displayContactIht">Other local numbers</a> are available. </p>
                                     <p className="answer__text">It works differently if you subscribed via Apple&rsquo;s App Store or Google Play. Register with us to access the Account area, and contact Apple or Google for your transaction history.</p>
 
-                                    <p className="answer__text ccpa-content">
+                                    <p className="answer__text">
                                         <strong className="answer__text__category italic">D) What Are Your California Shine the Light Privacy Rights?</strong>
                                     </p>
-                                    <p className="answer__text ccpa-content">Under the California &ldquo;Shine the Light&rdquo; law, California residents can opt out of our sharing of their information to third parties (and sometimes affiliates) for their direct marketing purposes. </p>
-                                    <p className="answer__text ccpa-content">To do so, email us at <a href="mailto:privacy@nytimes.com">privacy@nytimes.com</a> with &ldquo;Shine the Light Opt Out&rdquo; in the subject line, and your account number and phone number in the body of the email. You can also write to us at: Customer Care, P.O. Box 8041, Davenport, IA 52808-8041. Include your account number and phone number in the body of the letter. </p>
+                                    <p className="answer__text">Under the California &ldquo;Shine the Light&rdquo; law, California residents can opt out of our sharing of their information to third parties (and sometimes affiliates) for their direct marketing purposes. </p>
+                                    <p className="answer__text">To do so, email us at <a href="mailto:privacy@nytimes.com">privacy@nytimes.com</a> with &ldquo;Shine the Light Opt Out&rdquo; in the subject line, and your account number and phone number in the body of the email. You can also write to us at: Customer Care, P.O. Box 8041, Davenport, IA 52808-8041. Include your account number and phone number in the body of the letter. </p>
 
                                     <p className="answer__text ccpa-content" id="anchor-question4-sectionE">
                                         <strong className="answer__text__category italic">E) What Are My California &ldquo;Do Not Sell My Personal Information&rdquo; Rights?</strong>
