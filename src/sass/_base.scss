@@ -63,6 +63,15 @@ body {
 .cc-link {
 	padding: 0;
 }
+button.normal-button {
+	background-color: rgb(244, 243, 243);
+	outline: initial;
+	border: 1px solid #333;
+	border-radius: 2px;
+	font-size: inherit;
+	font-family: inherit;
+	padding: 3px;
+}
 
 
 path {

@@ -144,6 +144,16 @@ body .cc-banner.cc-top {
   padding: 0;
 }
 
+button.normal-button {
+  background-color: #f4f3f3;
+  outline: initial;
+  border: 1px solid #333;
+  border-radius: 2px;
+  font-size: inherit;
+  font-family: inherit;
+  padding: 3px;
+}
+
 path {
   transition-property: fill;
 }
