@@ -1,17 +1,13 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
-import { Link } from "react-scroll";
 import { NavLink } from "react-router-dom";
-import Cookies from 'js-cookie';
+import { Link } from "react-scroll";
 
 //import PropTypes from 'prop-types';
 import Accordion from './Accordion'
 
 //SVG
 import { ReactComponent as CollapseExpand } from './svg_components/collapse-expand.svg';
-import { ReactComponent as Collapse } from './svg_components/collapse.svg';
-import { ReactComponent as Expand } from './svg_components/expand.svg';
-
 
 class CookieFaqTemplate extends Component{
 
@@ -26,21 +22,121 @@ class CookieFaqTemplate extends Component{
     constructor(props) {
         super(props);
         this.state = {};
-        this.handleScroll = this.handleScroll.bind(this);
+        ['handleScroll', 'handleOptInOutClick', 'handleAboutChoices', 'handleYourChoices',
+          'handleGAChoices'].forEach(meth => this[meth] = this[meth].bind(this));
     }
 
     handleScroll (){
-        this.setState({scroll: window.scrollY});
+        this.setState({ scroll: window.scrollY });
     }
-  
+
     componentDidMount() {
+      let curStatus = (document.cookie || '')
+          .split(/\s*;\s*/)
+          .filter(function (c) { return /^nyt-t\b/i.test(c); })[0] || 'ok'
+        , loggedIn = !!(document.cookie || '')
+          .split(/\s*;\s*/)
+          .filter(function (c) { return /^nyt-s\b/i.test(c); })[0]
+        , isEligible = !!(document.cookie || '')
+          .split(/\s*;\s*/)
+          .filter(function (c) { return /^nyt-gdpr\s*=\s*1/i.test(c); })[0]
+      ;
+      if (/^\?gdpr=[01]$/.test(window.location.search)) {
+        isEligible = !!parseInt(window.location.search.replace('?gdpr=', ''), 10);
+      }
+      curStatus = curStatus.replace(/.*=/, '').replace(/:.*/, '').toLowerCase();
         const el = document.querySelector('.faq .container');
-        this.setState({top: el.offsetTop + 20, height: el.offsetHeight});
+        this.setState({
+          top: el.offsetTop + 20,
+          height: el.offsetHeight,
+          curStatus,
+          loggedIn,
+          isEligible
+        });
         window.addEventListener('scroll', this.handleScroll);
     }
 
+    handleOptInOutClick () {
+      let { curStatus, loggedIn } = this.state
+        , nextStatus = (curStatus === 'ok') ? 'out' : 'ok'
+        , d = new Date()
+      ;
+      d.setFullYear(d.getFullYear() + 10);
+      document.cookie = 'NYT-T=' + nextStatus + '; expires=' + d.toUTCString() + '; path=/; domain=nytimes.com';
+      if (loggedIn) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'https://myaccount.nytimes.com/svc/auth/v1/user/dnt/set', true);
+        xhr.setRequestHeader('client_id', 'web.fwk.vi');
+        xhr.withCredentials = true;
+        xhr.send('');
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState !== 4) return;
+          if (xhr.status === 200) this.gdprSuccess(nextStatus);
+        };
+      }
+      else this.gdprSuccess(nextStatus);
+    }
 
-    render(){                                                         
+    gdprSuccess (newStatus) {
+      this.setState({ curStatus: newStatus });
+      // window.location.hash = '#nyt-t=' + newStatus;
+      if (!window.dataLayer) return;
+      window.dataLayer.push({
+        event: 'moduleInteraction',
+        eventData: {
+          pagetype: 'help',
+          trigger: 'module',
+          type: 'click',
+        },
+        module: {
+          name: 'help',
+          context: 'standard',
+          label: '',
+          region: '',
+          element: {
+            name: (newStatus === 'out') ? 'optout_GDPR' : 'accept_GDPR',
+            label: 'Cookie Policy',
+            url: '',
+          },
+        },
+      });
+    }
+
+    handleAboutChoices () {
+      return this.choiceHandler('aboutads.info/choices/');
+    }
+    handleYourChoices () {
+      return this.choiceHandler('youronlinechoices.eu');
+    }
+    handleGAChoices () {
+      return this.choiceHandler('tools.google.com/dlpage/gaoptout');
+    }
+
+    choiceHandler (label) {
+      if (!window.dataLayer) return true;
+      window.dataLayer.push({
+        event: 'moduleInteraction',
+        eventData: {
+          pagetype: 'help',
+          trigger: 'module',
+          type: 'click',
+        },
+        module: {
+          name: 'help',
+          context: 'standard',
+          label: '',
+          region: '',
+          element: {
+            name: 'click_adchoice',
+            label: label,
+            url: '',
+          },
+        },
+      });
+      return true;
+    }
+
+    render(){
 
         var getCookie = function (c_name) {
             var cookval = '';
@@ -49,7 +145,7 @@ class CookieFaqTemplate extends Component{
                 x = ARRcookies[i].substr(0, ARRcookies[i].indexOf("="));
                 y = ARRcookies[i].substr(ARRcookies[i].indexOf("=") + 1);
                 x = x.replace(/^\s+|\s+$/g, "");
-                if (x == c_name) {
+                if (x === c_name) {
                     cookval = unescape(y);
                 }
             }
@@ -58,65 +154,31 @@ class CookieFaqTemplate extends Component{
 
         if(getCookie('nyt-purr').indexOf('s') > -1) {
             console.log('console log message for cookie: character IS THERE!');
-            
+
             $("body").addClass("show-ccpa-content");
         }
 
-   
-        // function scrollMount(){
-
-        //     $(window).on('scroll', function() {
-        //         var scrollTop = $(this).scrollTop();
-
-  
-        //         var topDistance = $('.faq').offset().top;
-
-        //         if ( (topDistance - 50) < scrollTop ) {
-        //             //alert( ' was scrolled to the top' );
-        //             $('.faq__sidebar').addClass('fixed-nav');
-        //         }else{
-        //             $('.faq__sidebar').removeClass('fixed-nav');
-        //         } 
-        //     });
-
-        // }  
-
-        // scrollMount();
-
-        function FaqOpen(faqNumber) {
-            var faqId = "#faq"+faqNumber;
-
-            if ($(window).width() < 768) {
-                $(faqId + '.notActive .question').trigger('click');
-            }
-            
-        }  
-
         function toggleAllQuestions () {
-    
+
             if($('.faq-question.active').length === $('.faq-question').length){
                 $('.question').trigger('click');
             }else{
                 $('.faq-question.notActive .question').trigger('click');
             }
-    
+
         }
 
-        const faqNumbers = {
-            number1: "1",
-            number1: "2",
-            number1: "3 "
-        }
+        let curStatus = this.state.curStatus;
 
         return (
 
             <div className="FaqTemplate CookieFaq">
 
                 <section className="faq">
-                
+
                     <div className="container">
 
-                        <div className={"faq__sidebar "  + (this.state.scroll > this.state.top ? "fixed-nav" : "")}> 
+                        <div className={"faq__sidebar "  + (this.state.scroll > this.state.top ? "fixed-nav" : "")}>
                             <ul className="faq__idebar__ul">
                                 <li className="faq__sidebar__ul__list">
                                     <div className="faq__sidebar__ul__list__number">1.</div>
@@ -198,7 +260,7 @@ class CookieFaqTemplate extends Component{
                                     </p>
                                     <p className="answer__text">In order to decide what type of ad might interest you, our digital and marketing vendors sometimes link data — inferred from your browsing of other sites or collected from other sources — using a method knowns as “ID synching” or “cookie synching.” To do this, they match the tracker ID they have assigned to you with one or more tracker IDs that are held in another company’s database and that are likely also associated with you. Any of the linked trackers may have certain interests and other demographic information attributed to it. That information is then used to determine which ad to show you.</p>
 
-                                    <Link to="root" spy={true} smooth={true} duration={500} className="back-top" onClick="" >Back to top</Link>
+                                    <Link to="root" spy={true} smooth={true} duration={500} className="back-top">Back to top</Link>
                                 </Accordion>
 
                                 <Accordion title="What Trackers Do We Use?" number="2" name="cookieFaq">
@@ -208,7 +270,7 @@ class CookieFaqTemplate extends Component{
                                     </p>
                                     <p className="answer__text">Essential trackers are required for our site to operate. They allow you to navigate our site and use its services and features (e.g., cookies that help you stay logged in). Without essential trackers, our site will not run smoothly; in fact, our site (or certain services or features) might not even be available to you simply because of technical limitations.</p>
 
-                                    <table className="cookie-table gdpr-more-content" cellspacing="0">
+                                    <table className="cookie-table gdpr-more-content" cellSpacing="0">
                                         <thead>
                                             <tr>
                                                 <th>Tracker name</th>
@@ -322,7 +384,7 @@ class CookieFaqTemplate extends Component{
                                     </p>
                                     <p className="answer__text">Preference trackers allow us to store information about your choices, settings and preferences. They also help us recognize you when you return to our site, remember your language settings (among others) and customize our site accordingly. They are not essential to the functioning of our site.</p>
 
-                                    <table className="cookie-table gdpr-more-content" cellspacing="0">
+                                    <table className="cookie-table gdpr-more-content" cellSpacing="0">
                                         <thead>
                                             <tr>
                                                 <th>Tracker name</th>
@@ -352,7 +414,7 @@ class CookieFaqTemplate extends Component{
                                     <p className="answer__text">Analytics trackers collect or use information about your site use, which helps us improve our site. Among the uses of analytics trackers are to show us which pages are most frequently visited, help us record difficulties you have with our site, track subscription purchases and behaviors leading to subscription purchases, and measure how well ads perform. </p>
                                     <p className="answer__text">These trackers add up our readers’ visits to show us larger patterns in our audience. We look at these larger patterns to analyze site traffic.</p>
 
-                                    <table className="cookie-table gdpr-more-content" cellspacing="0">
+                                    <table className="cookie-table gdpr-more-content" cellSpacing="0">
                                         <thead>
                                             <tr>
                                                 <th>Tracker name</th>
@@ -486,7 +548,7 @@ class CookieFaqTemplate extends Component{
                                     <p className="answer__text">These trackers help us determine which ads to show you for Times properties — both on our site and on other sites. To do this, these trackers use information about your behavior on various sites to target our ads.</p>
                                     <p className="answer__text">These trackers allow us to limit the number of times you see our ad across your devices. They help us personalize the ads we show you. They also enable us to measure the effectiveness of our marketing campaigns (e.g., measure if you subscribe after seeing our ads).</p>
 
-                                    <table className="cookie-table gdpr-more-content" cellspacing="0">
+                                    <table className="cookie-table gdpr-more-content" cellSpacing="0">
                                         <thead>
                                             <tr>
                                                 <th>Tracker name</th>
@@ -582,7 +644,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> lang </td>
                                                 <td> Retargeting users on LinkedIn, only </td>
                                                 <td> session </td>
-                                                <td> Microsoft LinkedIn </td>       
+                                                <td> Microsoft LinkedIn </td>
                                                 <td><a href="https://www.linkedin.com/legal/privacy-policy">Privacy Policy Opt-out</a></td>
                                             </tr>
 
@@ -590,7 +652,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> lidc </td>
                                                 <td> Retargeting users on LinkedIn, only exists on marketing pages. </td>
                                                 <td> 1 day </td>
-                                                <td> Microsoft LinkedIn </td>       
+                                                <td> Microsoft LinkedIn </td>
                                                 <td><a href="https://www.linkedin.com/legal/privacy-policy">Privacy Policy Opt-out</a></td>
                                             </tr>
 
@@ -598,7 +660,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> UserMatchHistory </td>
                                                 <td> Retargeting users on LinkedIn, only exists on marketing pages. </td>
                                                 <td> 4 weeks </td>
-                                                <td> Microsoft LinkedIn </td>       
+                                                <td> Microsoft LinkedIn </td>
                                                 <td><a href="https://www.linkedin.com/legal/privacy-policy">Privacy Policy Opt-out</a></td>
                                             </tr>
 
@@ -606,7 +668,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> bcookie </td>
                                                 <td> Retargeting users on LinkedIn, only exists on marketing pages. </td>
                                                 <td> 2 years </td>
-                                                <td> Microsoft LinkedIn </td>       
+                                                <td> Microsoft LinkedIn </td>
                                                 <td><a href="https://www.linkedin.com/legal/privacy-policy">Privacy Policy Opt-out</a></td>
                                             </tr>
 
@@ -614,7 +676,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> bscookie </td>
                                                 <td> Retargeting users on LinkedIn, only exists on marketing pages. </td>
                                                 <td> 2 years </td>
-                                                <td> Microsoft LinkedIn </td>       
+                                                <td> Microsoft LinkedIn </td>
                                                 <td><a href="https://www.linkedin.com/legal/privacy-policy">Privacy Policy Opt-out</a></td>
                                             </tr>
 
@@ -622,7 +684,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> everest_g_v2 </td>
                                                 <td> Advertising to users through Adobe. </td>
                                                 <td> 1 year </td>
-                                                <td> Adobe </td>       
+                                                <td> Adobe </td>
                                                 <td><a href="https://www.adobe.com/privacy/policy.html">Privacy Policy Opt-out</a></td>
                                             </tr>
 
@@ -630,7 +692,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> ev_sync_enc </td>
                                                 <td> Advertising to users through Adobe. </td>
                                                 <td> 1 year </td>
-                                                <td> Adobe </td>       
+                                                <td> Adobe </td>
                                                 <td><a href="https://www.adobe.com/privacy/policy.html">Privacy Policy Opt-out</a></td>
                                             </tr>
 
@@ -645,7 +707,7 @@ class CookieFaqTemplate extends Component{
                                     <p className="answer__text gdpr-more-content">In the European Economic Area (E.E.A.), advertising is not personalized or targeted by third parties through personal data given to them. Instead, the ads you see are either not personalized, or personalized using only information that we have about you and that is not shared with third parties.</p>
                                     <p className="answer__text">We work with advertisers, ad agencies and other vendors to serve these ads. The ads served can include additional trackers. </p>
 
-                                    <table className="cookie-table gdpr-more-content" cellspacing="0">
+                                    <table className="cookie-table gdpr-more-content" cellSpacing="0">
                                         <thead>
                                             <tr>
                                                 <th>Tracker name</th>
@@ -715,16 +777,26 @@ class CookieFaqTemplate extends Component{
 
                                         </tbody>
 
-                                    </table> 
-                                    
-                                    <Link to="root" spy={true} smooth={true} duration={500} className="back-top" onClick="" >Back to top</Link>   
+                                    </table>
+
+                                    <Link to="root" spy={true} smooth={true} duration={500} className="back-top">Back to top</Link>
 
                                 </Accordion>
 
                                 <Accordion title="How Do I Manage Trackers?" number="3" name="cookieFaq">
                                     <p className="answer__text">When you first come to  our site, you may receive a notification that trackers are present. By clicking or tapping “accept,” you agree to the use of these trackers as described here. </p>
                                     <p className="answer__text">You can manage your tracker settings by opting out of specific (or all) trackers.</p>
-                                    <p className="answer__text gdpr-more-content">To opt out of New York Times nonessential trackers, please click or tap this button: [Opt out] of New York Times nonessential trackers. By clicking or tapping this button you are not opting out of any advertising-related third-party trackers. To opt out of all third-party trackers, please follow the instructions for your browser as well as the Ad Choices and Online Choices paragraphs below.</p>
+                                    <p className="answer__text gdpr-more-content" id="gdpr-opt-out">
+                                      To { curStatus === 'ok' ? 'opt out of' : 'back into' } New York Times nonessential trackers,
+                                      please click or tap this button:{' '}
+                                      <button onClick={this.handleOptInOutClick} className="normal-button">{
+                                        curStatus === 'ok' ? 'Opt out of New York Times nonessential trackers' : 'Opt in to New York Times nonessential trackers'
+                                      }</button>.
+                                      By clicking or tapping this button you are not
+                                      opting out of any advertising-related third-party trackers. To opt out of all third-party trackers,
+                                      please follow the instructions for your browser as well as the Ad Choices and Online Choices
+                                      paragraphs below.
+                                    </p>
                                     <p className="answer__text">In addition to the options above, you can refuse or accept trackers from our site (or any other site) in your browser’s settings. If you refuse trackers, you might not be able to sign in or use other tracker-dependent features of our site.</p>
                                     <p className="answer__text">Most browsers automatically accept cookies, but this is typically something you can adjust. Information for each browser can be found in the links below:</p>
 
@@ -751,23 +823,23 @@ class CookieFaqTemplate extends Component{
 
                                     <p className="answer__text">For more information about other browsers, please refer to this <a href="https://www.allaboutcookies.org/manage-cookies/">“All About Cookies” guide</a>.</p>
 
-                                    <p className="answer__text">To opt out of Google Analytics data collection, follow <a href="https://tools.google.com/dlpage/gaoptout">these Google instructions</a>.</p>
+                                    <p className="answer__text">To opt out of Google Analytics data collection, follow <a href="https://tools.google.com/dlpage/gaoptout" onClick={this.handleGAChoices}>these Google instructions</a>.</p>
 
                                     <p className="answer__text">To reset your device identifier, follow <a href="https://support.google.com/googleplay/android-developer/answer/6048248?hl=en">Google instructions</a> and <a href="https://support.apple.com/en-us/HT205223">Apple instructions</a>.</p>
 
-                                    <p className="answer__text">The third-party advertisers, ad agencies and other vendors with which we work may be members of the Network Advertising Initiative, the Digital Advertising Alliance Self-Regulatory Program for Online Behavioural Advertising and/or the European Digital Advertising Alliance. To opt out of interest-based advertising from the participating companies, please visit <a href="http://optout.aboutads.info/?c=2&lang=EN">AboutAds.info</a> or <a href="http://www.youronlinechoices.eu/">the European Digital Advertising Alliance</a> for laptops and <a href="https://www.networkadvertising.org/mobile-choice/">NAI Mobile Choices</a> or <a href="https://youradchoices.com/appchoices">AppChoices</a> for mobile devices. Note that opting out through these channels does not mean you will no longer see ads. You will still receive other types of ads from these companies, and any type of ad from nonparticipating companies. The sites you visit may still collect your information for other purposes.</p>
+                                    <p className="answer__text">The third-party advertisers, ad agencies and other vendors with which we work may be members of the Network Advertising Initiative, the Digital Advertising Alliance Self-Regulatory Program for Online Behavioural Advertising and/or the European Digital Advertising Alliance. To opt out of interest-based advertising from the participating companies, please visit <a href="http://optout.aboutads.info/?c=2&lang=EN" onClick={this.handleAboutChoices}>AboutAds.info</a> or <a href="http://www.youronlinechoices.eu/" onClick={this.handleYourChoices}>the European Digital Advertising Alliance</a> for laptops and <a href="https://www.networkadvertising.org/mobile-choice/">NAI Mobile Choices</a> or <a href="https://youradchoices.com/appchoices">AppChoices</a> for mobile devices. Note that opting out through these channels does not mean you will no longer see ads. You will still receive other types of ads from these companies, and any type of ad from nonparticipating companies. The sites you visit may still collect your information for other purposes.</p>
 
-                                    <Link to="root" spy={true} smooth={true} duration={500} className="back-top" onClick="" >Back to top</Link>
+                                    <Link to="root" spy={true} smooth={true} duration={500} className="back-top">Back to top</Link>
 
                                 </Accordion>
 
                             </div>
-                            
+
                         </div>
 
                     </div>
 
-                </section>             
+                </section>
 
             </div>
         );

@@ -1,72 +1,12 @@
-import React, { useState, useRef} from 'react';
+import React from 'react';
 import $ from 'jquery';
-import FaqItem from './FaqItem';
-import SlideToggle from 'react-slide-toggle';
-//import PropTypes from 'prop-types';
 
 import Accordion from './Accordion'
 
-
 //SVG
 import { ReactComponent as CollapseExpand } from './svg_components/collapse-expand.svg';
-import { ReactComponent as Collapse } from './svg_components/collapse.svg';
-import { ReactComponent as Expand } from './svg_components/expand.svg';
-
 
 function FaqComponent() {
-
-    
-    // state = {
-    //     faq :[
-    //         {
-    //             id: 1,
-    //             question: 'Why does The Times collect (and use) my data?',
-    //             answer:{
-    //                 paragraph1: 'At The Times, our mission is to help people understand the world. This means creating the best possible reader experience across every medium — which involves knowing certain things about our readership. Data like page views, preferred devices and beyond can help us understand what our readers care about. That information lets us tailor future content to your needs.',
-    //                 paragraph2: 'Beyond that, The Times is primarily funded by subscriptions and advertising. Both functions require the use of readers’ data. For example, we use readers’ data to identify who may be interested in a subscription in order to show you Times ads on other websites. Our advertisers might ask us to use readers’ data so we can show their ads to the right audiences.',
-    //             }
-    
-    //         },
-    //         {
-    //             id: 2,
-    //             question: 'What type of data is collected about me when I’m accessing The Times?',
-    //             answer:{
-    //                 paragraph1: 'There are effectively two types of data collection: direct and indirect.',
-    //                 paragraph2: 'Direct collection means you are submitting data to us. For example, when you create an account with The Times, you submit your email address to set up and personalize it. When you subscribe, you submit the necessary billing info to process your payment.',
-    //                 paragraph3:'Indirect data collection takes place passively as you interact with our site. These tools allow us to gather data on your reading behaviors, including the articles you’ve read and how often you access The Times. Other data is collected via ads by third-party advertisers.'
-    //             }
-    
-    //         }
-    //     ]
-    // }
-
-    const answerEl = "answer";
-
-    const [faqs, setFaq] = useState([
-        {
-            question : 'Why does The Times collect (and use) my data?',
-            //answer: 'At The Times, our mission is to help people understand the world. This means creating the best possible reader experience across every medium — which involves knowing certain things about our readership. Data like page views, preferred devices and beyond can help us understand what our readers care about. That information lets us tailor future content to your needs.',
-            answer: 'At The Times, our mission is to help people understand the world. This means creating the best possible reader experience across every medium — which involves knowing certain things about our readership. Data like page views, preferred devices and beyond can help us understand what our readers care about. That information lets us tailor future content to your needs.',
-            answer: 'Direct collection means you are submitting data to us. For example, when you create an account with The Times, you submit your email address to set up and personalize it. When you subscribe, you submit the necessary billing info to process your payment.',
-            open: false,
-            id: '1'
-        }
-    ]);
-
-
-    const [setActive, setActiveState] = useState("");
-    const [setVisible, SetVisibleState] = useState("close");
-    const [setIcon, SetIconState] = useState(<Expand/>);
-
-    const content = useRef(null);
-
-    function toggleAccordion () {
-
-            setActiveState (setActive === "" ? "active" : "");
-            SetVisibleState(setActive === "active" ? "close" : "open");
-            SetIconState(setActive === "active" ? <Expand/> : <Collapse/> );
-
-    }
 
     function toggleAllQuestions () {
 
@@ -83,14 +23,14 @@ function FaqComponent() {
         <div className="FaqComponent">
             <section className="faq-section" id="faq-section">
                 <div className="container">
- 
+
                     <div className="faq-title">
                         <h4 className="faq-title__text">Frequently asked questions</h4>
                         <button className="all-faq-trigger" onClick={toggleAllQuestions}>
                             <CollapseExpand/>
                         </button>
                     </div>
-                    
+
                     <div className="faq-holder">
 
                         <Accordion title="Why does The Times collect (and use) my data?" number="1">
@@ -118,19 +58,19 @@ function FaqComponent() {
 
                         <Accordion title="How can I learn more about how companies use personal data online?" number="7">
                             <p className="answer__text">The Times regularly publishes pieces on the topic, including in <a href="https://www.nytimes.com/2019/11/04/business/secret-consumer-score-access.html">Business</a>, <a href="https://www.nytimes.com/2019/11/19/technology/artificial-intelligence-dawn-song.html">Technology</a> and <a href="https://www.nytimes.com/2019/11/24/smarter-living/privacy-online-how-to-stop-advertiser-tracking-opt-out.html">Smarter Living</a>.</p>
-                            
+
                             <p className="answer__text">Our Opinion series, <a href="https://www.nytimes.com/series/new-york-times-privacy-project">The Privacy Project</a>, explains how online privacy affects your daily life — and shows you how to take control of your data.</p>
                         </Accordion>
 
                     </div>
 
                 </div>
-                
+
             </section>
 
         </div>
     );
-    
+
 }
 
 export default FaqComponent;

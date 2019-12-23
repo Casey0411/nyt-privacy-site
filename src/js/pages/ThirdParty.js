@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Fade from 'react-reveal/Fade';
 import { Link } from "react-scroll";
 
@@ -70,7 +70,7 @@ function ThirdParty (){
 
                                 <div className="third-party__list__slot">
                                     <h4 className="third-party__list__slot__title">comScore</h4>
-                                
+
                                     <p className="third-party__list__slot__text">To opt out, see <a href="https://www.comscore.com/About/Privacy-Policy">comScore Privacy Policy</a> for instructions. </p>
                                 </div>
 
@@ -223,7 +223,7 @@ function ThirdParty (){
                                     <h4 className="third-party__list__slot__title">Verizon OATH</h4>
                                     <a className="third-party__list__slot__link" href="https://www.verizonmedia.com/policies/in/en/verizonmedia/privacy/controls/index.html">Privacy Policy<br/> Opt out</a>
                                 </div>
- 
+
                             </div>
 
                         </div>
