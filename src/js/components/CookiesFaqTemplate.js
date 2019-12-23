@@ -329,7 +329,7 @@ class CookieFaqTemplate extends Component{
                                                 <th>Description of purpose</th>
                                                 <th>If tracker is a cookie, is it a persistent or session cookie? When do persistent cookies expire?</th>
                                                 <th>If tracker is a cookie, 1st party or 3rd party cookie? If 3rd party, indicate legal name and URL for cookie policy.</th>
-                                                <th>Privacy Policy and Opt-out</th>
+                                                <th> <NavLink className='nav__link' to="/privacy" onClick={()=>{window.scrollTo(0, 0)}}>Privacy Policy</NavLink> and Opt-out</th>
                                             </tr>
                                         </thead>
 
@@ -359,7 +359,7 @@ class CookieFaqTemplate extends Component{
                                                 <th>Description of purpose</th>
                                                 <th>If tracker is a cookie, is it a persistent or session cookie? When do persistent cookies expire?</th>
                                                 <th>If tracker is a cookie, 1st party or 3rd party cookie? If 3rd party, indicate legal name and URL for cookie policy.</th>
-                                                <th>Privacy Policy and Opt-out</th>
+                                                <th><NavLink className='nav__link' to="/privacy" onClick={()=>{window.scrollTo(0, 0)}}>Privacy Policy</NavLink> and Opt-out</th>
                                             </tr>
                                         </thead>
 
@@ -493,7 +493,7 @@ class CookieFaqTemplate extends Component{
                                                 <th>Description of purpose</th>
                                                 <th>If tracker is a cookie, is it a persistent or session cookie? When do persistent cookies expire?</th>
                                                 <th>If tracker is a cookie, 1st party or 3rd party cookie? If 3rd party, indicate legal name and URL for cookie policy.</th>
-                                                <th>Privacy Policy and Opt-out</th>
+                                                <th><NavLink className='nav__link' to="/privacy" onClick={()=>{window.scrollTo(0, 0)}}>Privacy Policy</NavLink> and Opt-out</th>
                                             </tr>
                                         </thead>
 
@@ -652,7 +652,7 @@ class CookieFaqTemplate extends Component{
                                                 <th>Description of purpose</th>
                                                 <th>If tracker is a cookie, is it a persistent or session cookie? When do persistent cookies expire?</th>
                                                 <th>If tracker is a cookie, 1st party or 3rd party cookie? If 3rd party, indicate legal name and URL for cookie policy.</th>
-                                                <th>Privacy Policy and Opt-out</th>
+                                                <th><NavLink className='nav__link' to="/privacy" onClick={()=>{window.scrollTo(0, 0)}}>Privacy Policy</NavLink> and Opt-out</th>
                                             </tr>
                                         </thead>
 
