@@ -1,5 +1,2 @@
-build/asset-manifest.json
-build/precache-manifest.*
-build/service-worker.js
 build/static/css/main.css.map
 build/static/js/main.js.map

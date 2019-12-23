@@ -132,3 +132,8 @@ section{
 .italic{
     font-style: italic;
 }
+
+#banner__container{
+	z-index: 9999;
+    position: absolute;
+}

@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.css",
+    "main.js": "/static/js/main.js",
+    "main.js.map": "/static/js/main.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.b763c0bd09b25a5342d60d6e7b81380a.js": "/precache-manifest.b763c0bd09b25a5342d60d6e7b81380a.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.css.map": "/static/css/main.css.map",
+    "static/media/close-icon.bedc7c40.svg": "/static/media/close-icon.bedc7c40.svg",
+    "static/media/collapse-expand.8c36613d.svg": "/static/media/collapse-expand.8c36613d.svg",
+    "static/media/collapse.dd860679.svg": "/static/media/collapse.dd860679.svg",
+    "static/media/down-arrow.00e89a2c.svg": "/static/media/down-arrow.00e89a2c.svg",
+    "static/media/expand.c10785ef.svg": "/static/media/expand.c10785ef.svg",
+    "static/media/hamburger.70e168e1.svg": "/static/media/hamburger.70e168e1.svg",
+    "static/media/nytlogo.87df73b2.svg": "/static/media/nytlogo.87df73b2.svg",
+    "static/media/right-arrow.2234a170.svg": "/static/media/right-arrow.2234a170.svg"
+  },
+  "entrypoints": [
+    "static/css/main.css",
+    "static/js/main.js"
+  ]
+}
