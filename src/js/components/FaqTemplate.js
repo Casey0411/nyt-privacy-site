@@ -304,7 +304,7 @@ class FaqTemplate extends Component{
                                     </p>
                                     <p className="answer__text">We are always improving our products and services, and we create new features regularly. These updates sometimes require us to collect new information, or use what we already have differently. If there is a significant or material change in the way we handle your personal information, we will notify you as detailed below.</p>
 
-                                    <Link to="root" spy={true} smooth={true} duration={500} className="back-top" onClick="" >Back to top</Link>
+                                    <Link to="root" spy={true} smooth={true} duration={500} className="back-top">Back to top</Link>
                                 </Accordion>
 
 
@@ -406,7 +406,7 @@ class FaqTemplate extends Component{
                                             Essentially, these providers combine any information they gather about you through Times Services with information they receive from their other clients. This helps them target ads to you on behalf of their other clients, not just us.
                                         </li>
                                         <li className="answer__text__category__ul__li">
-                                            These third parties sometimes use other services in order to serve ads; check <NavLink to="/thirdparty" onClick={this.startTop}>their privacy policies for more details</NavLink>. For further information on tracking technologies and your rights and choices regarding them, see the applicable <a href="https://www.nytimes.com/subscription/dg-cookie-policy/cookie-policy.html">Cookie Policy</a>. <span class="ccpa-content">Effective January 1, 2020, California residents have the right to instruct us not to “sell” their personal information. More information is available below.</span>
+                                            These third parties sometimes use other services in order to serve ads; check <NavLink to="/thirdparty" onClick={this.startTop}>their privacy policies for more details</NavLink>. For further information on tracking technologies and your rights and choices regarding them, see the applicable <a href="https://www.nytimes.com/subscription/dg-cookie-policy/cookie-policy.html">Cookie Policy</a>. <span className="ccpa-content">Effective January 1, 2020, California residents have the right to instruct us not to “sell” their personal information. More information is available below.</span>
                                         </li>
                                     </ul>
 
@@ -416,7 +416,7 @@ class FaqTemplate extends Component{
 
                                     <p className="answer__text">We market our properties to you. Sometimes we use marketing vendors to do this.</p>
                                     <p className="answer__text">We serve ads through websites, locations, platforms and services operated and owned by third parties. Often these ads are targeted at people who have visited or registered for a Times Service but have not subscribed or purchased anything. The ads are also targeted at people with similar traits or behaviors to our subscribers or customers.</p>
-                                    <p className="answer__text">We target our advertising to these users by uploading an encrypted customer list to a third party, or by incorporating a tracking technology from a third party onto our Times Service. The third party then matches individuals who appear in both our data and their data. Because of how this matching process works, the third party can’t read our encrypted customer list if they don’t already have it. <span class="ccpa-content">We will also opt you out of such matched ads if you are a California resident and you exercise your right not to have your personal information &ldquo;sold&rdquo; after January 1, 2020, as discussed further <Link to="anchor-question4-sectionE" offset={-110} spy={true} smooth={true} duration={500} onClick={() => {FaqOpen(4)}}>below</Link>.</span></p>
+                                    <p className="answer__text">We target our advertising to these users by uploading an encrypted customer list to a third party, or by incorporating a tracking technology from a third party onto our Times Service. The third party then matches individuals who appear in both our data and their data. Because of how this matching process works, the third party can’t read our encrypted customer list if they don’t already have it. <span className="ccpa-content">We will also opt you out of such matched ads if you are a California resident and you exercise your right not to have your personal information &ldquo;sold&rdquo; after January 1, 2020, as discussed further <Link to="anchor-question4-sectionE" offset={-110} spy={true} smooth={true} duration={500} onClick={() => {FaqOpen(4)}}>below</Link>.</span></p>
                                     <p className="answer__text">To opt out of receiving these matched ads, contact the applicable <NavLink to="/thirdparty" onClick={this.startTop}>third parties</NavLink>. For example, when we use &ldquo;Custom Audience&rdquo; to serve you our ad through Facebook, you should be able to hover over the box in the right corner of that Facebook ad and opt out. We are not responsible for any third party&rsquo;s failure to comply with opt-out requests.</p>
 
                                     <p className="answer__text">We periodically send you targeted email newsletters or promotional emails. For information on opting out of these emails, see <Link to="anchor-question4" offset={-110} spy={true} smooth={true} duration={500} onClick={() => {FaqOpen(4)}}>&ldquo;What Are Your Rights?&rdquo;</Link></p>
@@ -497,7 +497,7 @@ class FaqTemplate extends Component{
                                             <p className="answer__text ccpa-content">This may be a &ldquo;sale&rdquo; of personal information under California law effective January 1, 2020. If you prefer we don&rsquo;t share this information, refer below to “What Are Your Rights?”.</p>
                                         </li>
                                         <li className="answer__text__category__ol__li">
-                                            <p className="answer__text">We share information about our live event and conference attendees <span class="italic">(e.g., your name, your company or your job title)</span> with the event sponsors. In those cases we notify you when you provide us the information.</p>
+                                            <p className="answer__text">We share information about our live event and conference attendees <span className="italic">(e.g., your name, your company or your job title)</span> with the event sponsors. In those cases we notify you when you provide us the information.</p>
                                         </li>
                                         <li className="answer__text__category__ol__li">
                                             <p className="answer__text">We share information about participants in our sweepstakes, contests and similar promotions with the promotions&rsquo; sponsors. In those cases we notify you when you provide us the information.</p>
@@ -537,7 +537,7 @@ class FaqTemplate extends Component{
                                                     Protect against misuse or unauthorized use of the Times Services
                                                 </li>
                                                 <li className="answer__text__category__ul__li">
-                                                    Protect the safety or property of our users or the general public <span class="italic">(e.g., if you provide false information or attempt to pose as someone else, we could share your information to help investigations into your actions)</span>
+                                                    Protect the safety or property of our users or the general public <span className="italic">(e.g., if you provide false information or attempt to pose as someone else, we could share your information to help investigations into your actions)</span>
                                                 </li>
                                                 <li className="answer__text__category__ul__li">
                                                     Cooperate with government authorities, which could be outside your country of residence.
@@ -568,7 +568,7 @@ class FaqTemplate extends Component{
                                         <li className="answer__text__category__ol__li">
                                             <strong>Mail or Telephone Promotions:</strong>
                                             <p className="answer__text">You can ask us to unsubscribe from our mail or telephone solicitations. You can also ask us to not share your information with third parties for marketing purposes. To do so, email us at <a href="mailto:privacy@nytimes.com">privacy@nytimes.com</a> with &ldquo;Opt Out&rdquo; in the subject line, and your account number and phone number in the body of the email.</p>
-                                            <p className="answer__text">You can write to us at: <span class="italic">Customer Care, P.O. Box 8041, Davenport, IA 52808-8041 — or, for International Edition customers, The New York Times International Edition, Immeuble Le Lavoisier, 4, Place des Vosges, CS 10001, 92052 Paris La Défense Cedex, France</span>. Please include your account number and phone number in the body of the letter. </p>
+                                            <p className="answer__text">You can write to us at: <span className="italic">Customer Care, P.O. Box 8041, Davenport, IA 52808-8041 — or, for International Edition customers, The New York Times International Edition, Immeuble Le Lavoisier, 4, Place des Vosges, CS 10001, 92052 Paris La Défense Cedex, France</span>. Please include your account number and phone number in the body of the letter. </p>
 
                                         </li>
                                         <li className="answer__text__category__ol__li">
@@ -609,8 +609,8 @@ class FaqTemplate extends Component{
 
                                     <p className="answer__text">If you&rsquo;d like to exercise any of the above rights, contact us via <a href="https://www.nytimes.com/data-subject-request">this form</a> or by calling us at our toll-free number, 1-800-NYTIMES. In your request, please be specific. State the information you want changed, whether you&rsquo;d like your information suppressed from our database or whether there are limitations you&rsquo;d like us to put on how we use your personal information. Please use the email address linked to that personal information — we only complete requests on the information linked to your email address. To verify your identity, we will email the email address you provide us, and which matches our records, and wait for your response. In some instances we may also ask for additional information. This is how we verify your identity before complying. </p>
                                     <p className="answer__text">You can designate an authorized agent to make a request on your behalf. In order to do that, please provide us a notarized power of attorney. We&rsquo;ll respond to your request in a manner consistent with applicable law.</p>
-                                    <p className="answer__text">We might need to keep certain information for recordkeeping purposes, or to complete a transaction you began prior to requesting a change or deletion <span class="italic">(e.g., if you make a purchase or enter a promotion, you might not be able to change or delete the personal information provided until after the completion of the purchase or promotion)</span>.</p>
-                                    <p className="answer__text">In some cases, your request doesn&rsquo;t ensure complete removal of the content or information <span class="italic">(e.g., if another user has reposted your content)</span>.</p>
+                                    <p className="answer__text">We might need to keep certain information for recordkeeping purposes, or to complete a transaction you began prior to requesting a change or deletion <span className="italic">(e.g., if you make a purchase or enter a promotion, you might not be able to change or delete the personal information provided until after the completion of the purchase or promotion)</span>.</p>
+                                    <p className="answer__text">In some cases, your request doesn&rsquo;t ensure complete removal of the content or information <span className="italic">(e.g., if another user has reposted your content)</span>.</p>
                                     <p className="answer__text">If you&rsquo;d like, you can lodge a complaint with a data protection authority. A <a href="https://ec.europa.eu/newsroom/article29/item-detail.cfm?item_id=612080">list of E.U. data protection authorities</a> is available.</p>
 
                                     <p className="answer__text">
@@ -661,7 +661,7 @@ class FaqTemplate extends Component{
                                         </li>
                                     </ul>
                                     <p className="answer__text">
-                                        There are rare situations when we request this information <span class="italic">(e.g., a reader survey asks about your political leanings)</span>, but you can decline to answer. Outside those situations we would prefer you never share that information with us.
+                                        There are rare situations when we request this information <span className="italic">(e.g., a reader survey asks about your political leanings)</span>, but you can decline to answer. Outside those situations we would prefer you never share that information with us.
                                     </p>
                                     <Link to="root" spy={true} smooth={true} duration={500} className="back-top" >Back to top</Link>
                                 </Accordion>
@@ -677,10 +677,10 @@ class FaqTemplate extends Component{
                                             How long we've had a relationship with you or provided a Times Service to you
                                         </li>
                                         <li className="answer__text__category__ul__li">
-                                            Whether we are subject to any legal obligations <span class="italic">(e.g., any laws that require us to keep transaction records for a certain period of time before we can delete them)</span>
+                                            Whether we are subject to any legal obligations <span className="italic">(e.g., any laws that require us to keep transaction records for a certain period of time before we can delete them)</span>
                                         </li>
                                         <li className="answer__text__category__ul__li">
-                                            Whether we have taken any legal positions <span class="italic">(e.g., in connection with any statutes of limitation)</span>.
+                                            Whether we have taken any legal positions <span className="italic">(e.g., in connection with any statutes of limitation)</span>.
                                         </li>
                                     </ul>
                                     <p className="answer__text">
