@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 
 //SVG
-import { ReactComponent as CollapseExpand } from './svg_components/collapse-expand.svg';
 import { ReactComponent as Collapse } from './svg_components/collapse.svg';
 import { ReactComponent as Expand } from './svg_components/expand.svg';
 
@@ -17,11 +16,6 @@ const Accordion = props => {
 
   const toogleActive = () => {
     setActive(!active)
-  }
-
-  const titleStyle = {
-    fontWeight: 600,
-    fontSize: '14px',
   }
 
   return (

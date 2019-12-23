@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
 import { NavLink } from "react-router-dom";
-import SlideToggle from 'react-slide-toggle';
-
 
 //svg
 import { ReactComponent as NytLogo } from './svg_components/nytlogo.svg';
 import { ReactComponent as MenuIcon } from './svg_components/hamburger.svg';
 import { ReactComponent as CloseIcon } from './svg_components/close-icon.svg';
-
-
 
 export class Nav extends Component {
 
@@ -16,10 +12,8 @@ export class Nav extends Component {
         on : false,
     }
 
-    
-
     toggle = () =>{
-        
+
         this.setState({
             on: !this.state.on
         })
@@ -28,18 +22,17 @@ export class Nav extends Component {
 
     }
 
-
     render() {
 
         return (
 
             <div className='Nav'>
-             
-                <div className='top-bar'>   
+
+                <div className='top-bar'>
                     <div className='container'>
                         <div className='logo'>
                             <a className='nyt_logo' href='https://www.nytimes.com/'>
-                                <NytLogo/>     
+                                <NytLogo/>
                             </a>
                             <p className='logo__text'>The Times and your Data</p>
                             {//this.state.on &&  <h1>Toggle Me</h1>
@@ -68,7 +61,7 @@ export class Nav extends Component {
                             </div>
                         </nav>
 
-                    </div>  
+                    </div>
 
                 </div>
             </div>

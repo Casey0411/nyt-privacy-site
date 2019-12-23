@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from "react-scroll";
 import { NavLink } from "react-router-dom";
 import Fade from 'react-reveal/Fade';
@@ -7,7 +7,6 @@ import Fade from 'react-reveal/Fade';
 import HeroSection from '../components/HeroSection';
 import FaqComponent from '../components/FaqComponent';
 import Explore from '../components/Explore';
-import PrivacyProject from '../components/PrivacyProject';
 import QuestionForm from '../components/QuestionForm';
 
 //svg
@@ -18,7 +17,7 @@ function Home (){
     function startTop() {
         window.scrollTo(0, 0)
     }
-  
+
     return (
       <Fade>
         <div className="Home">

@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import axios from 'axios';
-
 const initialState = {
     email: "",
     text: "",
@@ -16,7 +14,7 @@ export class QuestionForm extends Component{
 
     handleChange = event => {
 
-        let thanksMessage = ""; 
+        let thanksMessage = "";
         this.setState({thanksMessage});
 
        // console.log({[fieldName]: event.target.value});
@@ -50,7 +48,7 @@ export class QuestionForm extends Component{
             this.setState({emailError, textError});
             return false;
         }
-        
+
         return true;
 
     };
@@ -72,21 +70,21 @@ export class QuestionForm extends Component{
 
         event.preventDefault();
         const isValid = this.validate();
-        
+
 
         if (isValid){
 
             console.log('email: ' + this.state.email);
             console.log('question: ' + this.state.text);
-            
+
             this.setState(initialState);
-            
-            
+
+
 
             this.thankyouMessage();
         }
     };
-    
+
     render(){
 
         //console.log(this.state.email);
@@ -94,18 +92,18 @@ export class QuestionForm extends Component{
         return (
             <div className="QuestionForm">
 
-                <section className="question-form">   
-                    <div className="container">    
-                        
+                <section className="question-form">
+                    <div className="container">
+
                         <div className="form-holder">
                             <h3 className="form-holder__title">Any other questions?</h3>
                             <p className="form-holder__text">Our team is here to help with any questions or concerns you may have about our privacy policy. Please send an email to <a href="mailto:privacy@nytimes.com">privacy@nytimes.com</a>.</p>
 
-                            
+
 
                             {/*
                             <form className="form-holder__form" onSubmit={this.handleSubmit} action="mailto:casey.ojeda@nytimes.com" method="post">
-                        
+
                                 <div className="form-holder__form__field">
                                     <label htmlFor="email" className="email">Your Email Address</label>
                                     <input name="email" onChange={this.handleChange} value={this.state.email} />
@@ -117,18 +115,18 @@ export class QuestionForm extends Component{
                                 <div className="form-holder__form__field">
                                     <button type="submit" name="submit" value="submit" className="cta" >
                                         Submit
-                                    </button> 
+                                    </button>
                                     <p className="messages">
                                         {//Please complete both fields.
                                         }
-                                        <span> 
+                                        <span>
                                             {this.state.emailError}
                                         </span>
-                                        <span> 
+                                        <span>
                                             {this.state.textError}
                                         </span>
 
-                                        <span> 
+                                        <span>
                                             {this.state.thanksMessage}
                                         </span>
                                     </p>
@@ -142,7 +140,7 @@ export class QuestionForm extends Component{
                     </div>
 
                 </section>
-                
+
             </div>
         );
     }
