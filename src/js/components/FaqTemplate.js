@@ -63,27 +63,6 @@ class FaqTemplate extends Component{
             $("body").addClass("show-ccpa-content");
         }
 
-
-        // function scrollMount(){
-
-        //     $(window).on('scroll', function() {
-        //         var scrollTop = $(this).scrollTop();
-
-
-        //         var topDistance = $('.faq').offset().top;
-
-        //         if ( (topDistance - 50) < scrollTop ) {
-        //             //alert( ' was scrolled to the top' );
-        //             $('.faq__sidebar').addClass('fixed-nav');
-        //         }else{
-        //             $('.faq__sidebar').removeClass('fixed-nav');
-        //         }
-        //     });
-
-        // }
-
-        // scrollMount();
-
         function FaqOpen(faqNumber) {
             var faqId = "#faq"+faqNumber;
 
