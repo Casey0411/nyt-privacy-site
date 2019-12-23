@@ -336,13 +336,13 @@ class CookieFaqTemplate extends Component{
                                             <tr>
                                                 <td> edu_cig_opt </td>
                                                 <td> Educational institution information </td>
-                                                <td> 1 year </td>
+                                                <td> 1 day </td>
                                                 <td> first party </td>
                                             </tr>
                                             <tr>
                                                 <td> b2b_cig_opt </td>
                                                 <td> Business institution information </td>
-                                                <td> 1 year </td>
+                                                <td> 1 day </td>
                                                 <td> first party </td>
                                             </tr>
                                             <tr>
