@@ -24,6 +24,7 @@
 	},
 	"scripts": {
 		"start": "react-scripts start",
+		"watch-css": "sass --watch src/sass/style.scss build/static/css/main.css",
 		"build": "node ./build-non-split.js"
 	},
 	"devDependencies": {
