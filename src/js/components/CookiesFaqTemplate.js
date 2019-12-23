@@ -69,7 +69,7 @@ class CookieFaqTemplate extends Component{
         xhr.setRequestHeader('client_id', 'web.fwk.vi');
         xhr.withCredentials = true;
         xhr.send('');
-        xhr.onreadystatechange = function () {
+        xhr.onreadystatechange = () => {
           if (xhr.readyState !== 4) return;
           if (xhr.status === 200) this.gdprSuccess(nextStatus);
         };
