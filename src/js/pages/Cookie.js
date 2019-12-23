@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Fade from 'react-reveal/Fade';
-import $ from 'jquery';
 
 //components
 import CookieHeroSection from '../components/CookieHeroSection';
@@ -8,9 +7,9 @@ import CookieHeroSection from '../components/CookieHeroSection';
 import CookieFaqTemplate from '../components/CookiesFaqTemplate';
 
 function Cookie(){
-    
+
     return (
-        
+
         <Fade>
             <div className="Cookie">
                 <CookieHeroSection />
@@ -27,7 +26,7 @@ function Cookie(){
                     </div>
                 </div>
                 </section>
-                
+
                 <CookieFaqTemplate/>
 
             </div>

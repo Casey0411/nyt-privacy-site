@@ -1,35 +1,30 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Route, Switch, HashRouter, Link} from "react-router-dom";
-import { browserHistory } from "history";
-// import Header from './components/layout/Header';
-// import Todos from './components/Todos';
-// import AddTodo from './components/AddTodo';
-// import uuid from 'uuid';
+import {BrowserRouter as Router, Route, Switch, HashRouter } from "react-router-dom";
 
 //Components
 import Nav from './js/components/Nav';
 import Home from './js/pages/Home';
-import Privacy from './js/pages/Privacy';  
+import Privacy from './js/pages/Privacy';
 import Cookie from './js/pages/Cookie';
-import ThirdParty from './js/pages/ThirdParty';     
+import ThirdParty from './js/pages/ThirdParty';
 import Footer from './js/components/Footer';
 
 //Styles
-import './sass/style.scss';  
+import './sass/style.scss';
 
-class App extends Component{  
-  
-  render(){ 
+class App extends Component{
+
+  render(){
 
     return (
 
       <HashRouter history={Router.hashHistory}>
-        
+
           <div className="App">
             <Nav mobileMenuToggle={this.mobileMenuToggle}/>
 
             <main className="main-content">
-            
+
               <Switch>
                 {/*
                 <Route exact="false" strict="false" path="/privacy-policy/">
@@ -79,17 +74,17 @@ class App extends Component{
               </Switch>
 
             </main>
-            
+
             <Footer/>
-          
+
           </div>
-        
+
       </HashRouter
       >
-      
+
     );
   }
-  
+
 }
 
 export default App;

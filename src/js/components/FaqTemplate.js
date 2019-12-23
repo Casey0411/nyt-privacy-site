@@ -2,15 +2,12 @@ import React, { Component } from 'react';
 import $ from 'jquery';
 import { Link } from "react-scroll";
 import { NavLink } from "react-router-dom";
-import Cookies from 'js-cookie';
 
 //import PropTypes from 'prop-types';
 import Accordion from './Accordion'
 
 //SVG
 import { ReactComponent as CollapseExpand } from './svg_components/collapse-expand.svg';
-import { ReactComponent as Collapse } from './svg_components/collapse.svg';
-import { ReactComponent as Expand } from './svg_components/expand.svg';
 
 
 class FaqTemplate extends Component{
@@ -32,7 +29,7 @@ class FaqTemplate extends Component{
     handleScroll (){
         this.setState({scroll: window.scrollY});
     }
-  
+
     componentDidMount() {
         const el = document.querySelector('.faq .container');
         this.setState({top: el.offsetTop - 50, height: el.offsetHeight});
@@ -44,7 +41,7 @@ class FaqTemplate extends Component{
     }
 
 
-    render(){                                                         
+    render(){
 
         var getCookie = function (c_name) {
             var cookval = '';
@@ -53,7 +50,7 @@ class FaqTemplate extends Component{
                 x = ARRcookies[i].substr(0, ARRcookies[i].indexOf("="));
                 y = ARRcookies[i].substr(ARRcookies[i].indexOf("=") + 1);
                 x = x.replace(/^\s+|\s+$/g, "");
-                if (x == c_name) {
+                if (x === c_name) {
                     cookval = unescape(y);
                 }
             }
@@ -62,17 +59,17 @@ class FaqTemplate extends Component{
 
         if(getCookie('nyt-purr').indexOf('s') > -1) {
             console.log('console log message for cookie: character IS THERE!');
-            
+
             $("body").addClass("show-ccpa-content");
         }
 
-   
+
         // function scrollMount(){
 
         //     $(window).on('scroll', function() {
         //         var scrollTop = $(this).scrollTop();
 
-  
+
         //         var topDistance = $('.faq').offset().top;
 
         //         if ( (topDistance - 50) < scrollTop ) {
@@ -80,10 +77,10 @@ class FaqTemplate extends Component{
         //             $('.faq__sidebar').addClass('fixed-nav');
         //         }else{
         //             $('.faq__sidebar').removeClass('fixed-nav');
-        //         } 
+        //         }
         //     });
 
-        // }  
+        // }
 
         // scrollMount();
 
@@ -93,17 +90,17 @@ class FaqTemplate extends Component{
             if ($(window).width() < 768) {
                 $(faqId + '.notActive .question').trigger('click');
             }
-            
-        }  
+
+        }
 
         function toggleAllQuestions () {
-    
+
             if($('.faq-question.active').length === $('.faq-question').length){
                 $('.question').trigger('click');
             }else{
                 $('.faq-question.notActive .question').trigger('click');
             }
-    
+
         }
 
         function clickOptOut () {
@@ -133,10 +130,10 @@ class FaqTemplate extends Component{
             <div className="FaqTemplate">
 
                 <section className="faq">
-                
+
                     <div className="container">
 
-                        <div className={"faq__sidebar "  + (this.state.scroll > this.state.top ? "fixed-nav" : "")}> 
+                        <div className={"faq__sidebar "  + (this.state.scroll > this.state.top ? "fixed-nav" : "")}>
                             <ul className="faq__idebar__ul">
                                 <li className="faq__sidebar__ul__list">
                                     <div className="faq__sidebar__ul__list__number">1.</div>
@@ -227,41 +224,41 @@ class FaqTemplate extends Component{
                                         <strong className="answer__text__category italic">A) Information Collected Through Times Services.</strong>
                                     </p>
                                     <ol className="answer__text__category__ol roman-numerals">
-                                        
+
                                         <li className="answer__text__category__ol__li">
                                             <strong>Information That You Voluntarily Give Us</strong>
 
                                             <ul className="answer__text__category__ul bullet-point">
                                                 <li className="answer__text__category__ul__li">
-                                                    <strong>For Registration:</strong> 
+                                                    <strong>For Registration:</strong>
                                                     <p className="answer__text">When you sign up for a Times Service <span className="italic">(e.g., a subscription)</span>, we collect your contact information and account credentials. Once you’re registered, we assign you a unique ID number. This ID number helps us recognize you when you’re signed in.</p>
                                                     <p className="answer__text">For some Times Services, you can instead sign up by linking your Facebook or Google account. See &ldquo;<Link to="anchor-question1-sectionB"  offset={-80} spy={true} smooth={true} duration={500}>Information Collected From Other Sources</Link>&rdquo; below. </p>
                                                     <p className="answer__text">If you register for an event or conference, we might ask for additional information <span className="italic">(e.g., your company name, your job title or your dietary restrictions)</span>. </p>
                                                 </li>
                                                 <li className="answer__text__category__ul__li">
-                                                    <strong>For Billing:</strong> 
+                                                    <strong>For Billing:</strong>
                                                     <p className="answer__text">To process payments or donations, we collect and use your payment information.</p>
                                                     <p className="answer__text">This can include your name, your address, your telephone number, your email address, your credit or debit card information and any other relevant information.</p>
                                                 </li>
                                                 <li className="answer__text__category__ul__li">
-                                                    <strong>For User-Generated Content: </strong> 
+                                                    <strong>For User-Generated Content: </strong>
                                                     <p className="answer__text">We offer you the ability to post content that other users can read <span className="italic">(e.g., comments or recipe reviews)</span>. Anyone can read, collect and use any personal information that accompanies your posts. See the <a href="https://help.nytimes.com/hc/en-us/articles/115014792387-Comments">Comments F.A.Q.</a>, or read &ldquo;<a href="https://help.nytimes.com/hc/en-us/articles/115014893428-Terms-of-service#3">User-Generated Content</a>&rdquo; in our Terms of Service for more information.</p>
                                                     <p className="answer__text">We do not have to publish any of your content. If the law requires us to take down, remove or edit your personal information, we will comply to the required extent.</p>
                                                 </li>
                                                 <li className="answer__text__category__ul__li">
-                                                    <strong>For Contests, Sweepstakes and Special Offers:</strong> 
+                                                    <strong>For Contests, Sweepstakes and Special Offers:</strong>
                                                     <p className="answer__text">When you sign up for these, you give us your name, email and any other required information.</p>
                                                 </li>
                                                 <li className="answer__text__category__ul__li">
-                                                    <strong>For Reader Surveys, Research, Panels and Experience Programs:</strong> 
+                                                    <strong>For Reader Surveys, Research, Panels and Experience Programs:</strong>
                                                     <p className="answer__text">We gather information through questionnaires, surveys and feedback programs. We also conduct similar research for advertisers. We ask you for your consent to use this information when you participate in these programs and events.</p>
                                                 </li>
                                                 <li className="answer__text__category__ul__li">
-                                                    <strong>During Contact With Our Call Centers:</strong> 
+                                                    <strong>During Contact With Our Call Centers:</strong>
                                                     <p className="answer__text">We collect information from you when you place an order over the phone or contact customer service through one of our toll-free numbers.</p>
                                                 </li>
                                                 <li className="answer__text__category__ul__li">
-                                                    <strong>Personal Contacts Data:</strong> 
+                                                    <strong>Personal Contacts Data:</strong>
                                                     <p className="answer__text">We never scan your device for your contacts or upload this data.</p>
                                                     <p className="answer__text">With your consent, we do comply with your requests to collect data about your friends, family or acquaintances <span className="italic">(e.g., Refer a Friend campaigns)</span>. This functionality is only meant for U.S. residents. By using it, you acknowledge and agree that both you and your contacts are based in the United States — and that you have everyone’s consent for us to use their contact information.</p>
                                                 </li>
@@ -291,13 +288,13 @@ class FaqTemplate extends Component{
                                                     <p className="answer__text">If your browser doesn’t accept our cookies, you can&rsquo;t access certain parts of our websites <span className="italic">(e.g., your account on nytimes.com)</span>. Because the “Do Not Track” browser-based standard signal has yet to gain widespread acceptance, we don’t currently respond to those signals.</p>
                                                 </li>
                                                 <li className="answer__text__category__ul__li">
-                                                    <strong>With GPS Technologies:</strong> 
+                                                    <strong>With GPS Technologies:</strong>
                                                     <p className="answer__text">Some of our apps can provide content based on your GPS location, if you enable this feature <span className="italic">(e.g., the New York Times Real Estate app)</span>. Your GPS location is your exact location.</p>
                                                     <p className="answer__text">You choose whether to enable GPS features when you first install the app. You can edit that setting on your device at any time. If you enable these features, your GPS location can be found by satellite, cell phone tower or Wi-Fi and used by the app. If you save a location-based search in your history, that data moves to our service provider’s servers &mdash; see <Link to="anchor-question2-sectionE" offset={-80} spy={true} smooth={true} duration={500} onClick={() => {FaqOpen(2)}}>below</Link> for the definition of service provider.</p>
                                                     <p className="answer__text">If you do not enable GPS location-based services, or if a specific app does not have location-based features <span className="italic">(e.g., the New York Times app)</span>, we don’t collect your precise GPS location. We do collect your IP address, which can establish your approximate location. Ads on our sites and apps may be targeted based on this approximate location, but are never targeted based on your GPS location.</p>
                                                 </li>
                                             </ul>
-                                        
+
                                         </li>
                                     </ol>
 
@@ -307,18 +304,18 @@ class FaqTemplate extends Component{
 
                                     <ol className="answer__text__category__ol roman-numerals">
                                         <li className="answer__text__category__ol__li">
-                                            <strong>Privately Owned Databases:</strong> 
+                                            <strong>Privately Owned Databases:</strong>
                                             <p className="answer__text">Marketing, data analytic and social media-owned databases give us access to a range of information — like public data, survey data and beyond. This data sometimes includes your mailing address, your gender, your age, your household income and other demographic data.</p>
                                         </li>
                                         <li className="answer__text__category__ol__li">
-                                            <strong>Social Media Platforms and Other Third-Party Services:</strong> 
+                                            <strong>Social Media Platforms and Other Third-Party Services:</strong>
                                             <p className="answer__text italic">(Social media platforms include Facebook. Third-party services include Google, Kindle and Nook.)</p>
                                             <p className="answer__text">You can link your social media or other third-party account to a Times Service. By linking the services, you authorize us to collect, store and use any information they may give us <span className="italic">(e.g., your email address)</span>. You can disconnect your nytimes.com registration from third-party accounts at any time.</p>
                                             <p className="answer__text">We also receive information from you when you interact with our pages, groups, accounts or posts on social media platforms. This includes aggregate data on our followers <span className="italic">(e.g., age, gender and location)</span>, engagement data <span className="italic">(e.g., &ldquo;likes,&rdquo; comments, shares, reposts and clicks)</span>, awareness data <span className="italic">(e.g., number of impressions and reach)</span> and individual users’ public profiles.</p>
                                             <p className="answer__text">For more information, refer to our <a href="https://help.nytimes.com/hc/en-us/articles/115014887628-Social-login">social login</a>, <a href="https://help.nytimes.com/hc/en-us/articles/115014889068-Kindle-subscribers">Kindle</a> and <a href="https://help.nytimes.com/hc/en-us/articles/115014917867-NOOK-subscribers">Nook</a> F.A.Q.</p>
                                         </li>
                                         <li className="answer__text__category__ol__li">
-                                            <strong>Workplace and Schools:</strong> 
+                                            <strong>Workplace and Schools:</strong>
                                             <p className="answer__text">When your employer or school buys an organizationwide subscription to nytimes.com, they sometimes provide us with your name and organization email address to grant you access as a user.</p>
                                         </li>
                                     </ol>
@@ -358,13 +355,13 @@ class FaqTemplate extends Component{
                                             Sending service-related messages <span className="italic">(e.g., a change in our terms and conditions)</span>
                                         </li>
                                         <li className="answer__text__category__ul__li">
-                                            Saving your reading list, recipes or property searches 
+                                            Saving your reading list, recipes or property searches
                                         </li>
                                         <li className="answer__text__category__ul__li">
                                             Displaying your Crossword stats
                                         </li>
                                         <li className="answer__text__category__ul__li">
-                                            Letting you take part in paid services, polls, promotions, surveys, panels, research and comments. 
+                                            Letting you take part in paid services, polls, promotions, surveys, panels, research and comments.
                                         </li>
                                     </ul>
 
@@ -460,7 +457,7 @@ class FaqTemplate extends Component{
                                     </p>
 
                                     <p className="answer__text">We share your information with our affiliates for the purposes listed here. See <a href="https://help.nytimes.com/hc/en-us/articles/360004990014">a list of our affiliates</a>.</p>
-                                    
+
                                     <p className="answer__text">
                                         <strong className="answer__text__category italic">B) With Service Providers:</strong>
                                     </p>
@@ -469,7 +466,7 @@ class FaqTemplate extends Component{
 
                                     <ul className="answer__text__category__ul bullet-point root-list">
                                         <li className="answer__text__category__ul__li">
-                                            Processing your payments 
+                                            Processing your payments
                                         </li>
                                         <li className="answer__text__category__ul__li">
                                             Fulfilling your orders
@@ -484,16 +481,16 @@ class FaqTemplate extends Component{
                                             Serving and targeting ads
                                         </li>
                                         <li className="answer__text__category__ul__li">
-                                            Measuring ad performance 
+                                            Measuring ad performance
                                         </li>
                                         <li className="answer__text__category__ul__li">
                                             Presenting surveys
                                         </li>
                                         <li className="answer__text__category__ul__li">
-                                            Shipping you products and mailings 
+                                            Shipping you products and mailings
                                         </li>
                                         <li className="answer__text__category__ul__li">
-                                            Distributing emails 
+                                            Distributing emails
                                         </li>
                                         <li className="answer__text__category__ul__li">
                                             List processing and analytics
@@ -538,7 +535,7 @@ class FaqTemplate extends Component{
                                                     We collect your information and share it with the third-party service for processing.
                                                 </li>
                                                 <li className="answer__text__category__ul__li">
-                                                The third-party service collects your information for processing. 
+                                                The third-party service collects your information for processing.
                                                 </li>
 
                                             </ul>
@@ -583,17 +580,17 @@ class FaqTemplate extends Component{
                                     </p>
                                     <p className="answer__text">The opt-out methods described below are limited to the email address, phone or device used. They won&rsquo;t affect subsequent subscriptions.</p>
                                     <ol className="answer__text__category__ol roman-numerals">
-                                        
+
                                         <li className="answer__text__category__ol__li">
                                             <strong>Email:</strong>
                                             <p className="answer__text">We offer a variety of commercial emails and email newsletters. You can unsubscribe from them by following the &ldquo;unsubscribe&rdquo; instructions near the bottom of the email. You can also email us at <a href="mailto:privacy@nytimes.com">privacy@nytimes.com</a>.</p>
-                                            <p className="answer__text">You can <a href="https://myaccount.nytimes.com/seg/settings">manage your nytimes.com newsletter preferences</a>.</p> 
+                                            <p className="answer__text">You can <a href="https://myaccount.nytimes.com/seg/settings">manage your nytimes.com newsletter preferences</a>.</p>
                                         </li>
                                         <li className="answer__text__category__ol__li">
                                             <strong>Mail or Telephone Promotions:</strong>
                                             <p className="answer__text">You can ask us to unsubscribe from our mail or telephone solicitations. You can also ask us to not share your information with third parties for marketing purposes. To do so, email us at <a href="mailto:privacy@nytimes.com">privacy@nytimes.com</a> with &ldquo;Opt Out&rdquo; in the subject line, and your account number and phone number in the body of the email.</p>
                                             <p className="answer__text">You can write to us at: <span class="italic">Customer Care, P.O. Box 8041, Davenport, IA 52808-8041 — or, for International Edition customers, The New York Times International Edition, Immeuble Le Lavoisier, 4, Place des Vosges, CS 10001, 92052 Paris La Défense Cedex, France</span>. Please include your account number and phone number in the body of the letter. </p>
-                                        
+
                                         </li>
                                         <li className="answer__text__category__ol__li">
                                         <strong>Push Notifications:</strong>
@@ -611,7 +608,7 @@ class FaqTemplate extends Component{
 
                                     <p className="answer__text">
                                         <strong className="answer__text__category italic">B) How Do You Access, Change, Delete or Update Your Personal Information?</strong> <br/>
-                                        In some parts of the world, you have the right to: 
+                                        In some parts of the world, you have the right to:
                                     </p>
 
                                     <ul className="answer__text__category__ul bullet-point root-list">
@@ -663,7 +660,7 @@ class FaqTemplate extends Component{
                                     </p>
                                     <ul className="answer__text__category__ul bullet-point root-list">
                                         <li className="answer__text__category__ul__li">
-                                            Your social security number    
+                                            Your social security number
                                         </li>
                                         <li className="answer__text__category__ul__li">
                                             Your racial or ethnic origin
@@ -672,16 +669,16 @@ class FaqTemplate extends Component{
                                             Your political opinions
                                         </li>
                                         <li className="answer__text__category__ul__li">
-                                            Your religion or other beliefs   
+                                            Your religion or other beliefs
                                         </li>
                                         <li className="answer__text__category__ul__li">
-                                            Your health, biometric or genetic characteristics   
+                                            Your health, biometric or genetic characteristics
                                         </li>
                                         <li className="answer__text__category__ul__li">
-                                            Any trade union membership 
+                                            Any trade union membership
                                         </li>
                                         <li className="answer__text__category__ul__li">
-                                            Any criminal background    
+                                            Any criminal background
                                         </li>
                                     </ul>
                                     <p className="answer__text">
@@ -691,7 +688,7 @@ class FaqTemplate extends Component{
                                 </Accordion>
                                 <Accordion title="How Long Do You Retain Data?" number="6" name="faq">
                                     <p className="answer__text">
-                                        It depends. We store your personal information for as long as needed, or permitted, based on the reason why we obtained it (consistent with applicable law). This means we might retain your personal information even after you close your account with us. 
+                                        It depends. We store your personal information for as long as needed, or permitted, based on the reason why we obtained it (consistent with applicable law). This means we might retain your personal information even after you close your account with us.
                                     </p>
                                     <p className="answer__text">
                                         When deciding how long to keep your information, we consider:
@@ -714,7 +711,7 @@ class FaqTemplate extends Component{
                                 </Accordion>
                                 <Accordion title="How Do You Protect My Information?" number="7" name="faq">
                                     <p className="answer__text">
-                                        We protect your personal information with a series of organizational, technological and physical safeguards — but we cannot guarantee its absolute security. We recommend that you use complex and unique passwords for your Times accounts and for third-party accounts linked to them. Do not share your password with anyone. 
+                                        We protect your personal information with a series of organizational, technological and physical safeguards — but we cannot guarantee its absolute security. We recommend that you use complex and unique passwords for your Times accounts and for third-party accounts linked to them. Do not share your password with anyone.
                                     </p>
                                     <p className="answer__text">
                                         If you have reason to believe your interaction with us is no longer secure, notify us immediately.
@@ -723,8 +720,8 @@ class FaqTemplate extends Component{
                                 </Accordion>
                                 <Accordion title="Are There Guidelines for Children?" number="8" name="faq">
                                     <p className="answer__text">
-                                        Times Services are intended for a general audience, and are not directed at children under (13) years of age. 
-                                    </p>   
+                                        Times Services are intended for a general audience, and are not directed at children under (13) years of age.
+                                    </p>
                                     <p className="answer__text">
                                         We do not knowingly gather personal information (as defined by the U.S. Children&rsquo;s Privacy Protection Act, or COPPA) in a manner not permitted by COPPA. If you are a parent or guardian and you believe we have collected information from your child in a manner not permitted by law, contact us at <a href="mailto:privacy@nytimes.com">privacy@nytimes.com</a>. We will remove the data to the extent required by applicable laws.
                                     </p>
@@ -741,7 +738,7 @@ class FaqTemplate extends Component{
                                         The New York Times Company is headquartered in the United States. If you are located outside the United States, your information is collected in your country and then transferred to the United States — or to another country in which we (or our affiliates or service providers) operate.
                                     </p>
                                     <p className="answer__text">
-                                        If we transfer your data out of the European Economic Area (E.E.A.), we implement at least one of the three following safeguards: 
+                                        If we transfer your data out of the European Economic Area (E.E.A.), we implement at least one of the three following safeguards:
                                     </p>
                                     <ul className="answer__text__category__ul bullet-point root-list">
                                         <li className="answer__text__category__ul__li">
@@ -768,15 +765,15 @@ class FaqTemplate extends Component{
                                             <p className="answer__text">The consent you provide to us at the point of collection of your information</p>
                                         </li>
                                         <li className="answer__text__category__ul__li">
-                                            <p className="answer__text">The performance of the contract we have with you</p> 
+                                            <p className="answer__text">The performance of the contract we have with you</p>
                                         </li>
                                         <li className="answer__text__category__ul__li">
                                             <p className="answer__text">The compliance of a legal obligation to which we are subject or</p>
-                                        </li>   
+                                        </li>
                                         <li className="answer__text__category__ul__li">
                                             <p className="answer__text">The legitimate interests of The Times, a third party or yourself. &ldquo;Legitimate interest&rdquo; is a technical term under international laws, including the European Union General Data Protection Regulation. It means that there are good reasons for the processing of your personal information, and that we take measures to minimize the impact on your privacy rights and interests. &ldquo;Legitimate interest&rdquo; also refers to our use of your data in ways you would reasonably expect and that have a minimal privacy impact.</p>
-                                            
-                                            We have a legitimate interest in gathering and processing personal information, for example: (1) to ensure that our networks and information are secure; (2) to administer and generally conduct business within The New York Times Company; (3) to prevent fraud; and (4) to conduct our marketing activities. 
+
+                                            We have a legitimate interest in gathering and processing personal information, for example: (1) to ensure that our networks and information are secure; (2) to administer and generally conduct business within The New York Times Company; (3) to prevent fraud; and (4) to conduct our marketing activities.
                                         </li>
                                     </ul>
                                     <Link to="root" spy={true} smooth={true} duration={500} className="back-top" >Back to top</Link>
@@ -819,12 +816,12 @@ class FaqTemplate extends Component{
                                 </Accordion>
 
                             </div>
-                            
+
                         </div>
 
                     </div>
 
-                </section>             
+                </section>
 
             </div>
         );

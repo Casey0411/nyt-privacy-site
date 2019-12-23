@@ -1,17 +1,12 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
 import { Link } from "react-scroll";
-import { NavLink } from "react-router-dom";
-import Cookies from 'js-cookie';
 
 //import PropTypes from 'prop-types';
 import Accordion from './Accordion'
 
 //SVG
 import { ReactComponent as CollapseExpand } from './svg_components/collapse-expand.svg';
-import { ReactComponent as Collapse } from './svg_components/collapse.svg';
-import { ReactComponent as Expand } from './svg_components/expand.svg';
-
 
 class CookieFaqTemplate extends Component{
 
@@ -32,7 +27,7 @@ class CookieFaqTemplate extends Component{
     handleScroll (){
         this.setState({scroll: window.scrollY});
     }
-  
+
     componentDidMount() {
         const el = document.querySelector('.faq .container');
         this.setState({top: el.offsetTop + 20, height: el.offsetHeight});
@@ -40,7 +35,7 @@ class CookieFaqTemplate extends Component{
     }
 
 
-    render(){                                                         
+    render(){
 
         var getCookie = function (c_name) {
             var cookval = '';
@@ -49,7 +44,7 @@ class CookieFaqTemplate extends Component{
                 x = ARRcookies[i].substr(0, ARRcookies[i].indexOf("="));
                 y = ARRcookies[i].substr(ARRcookies[i].indexOf("=") + 1);
                 x = x.replace(/^\s+|\s+$/g, "");
-                if (x == c_name) {
+                if (x === c_name) {
                     cookval = unescape(y);
                 }
             }
@@ -58,54 +53,18 @@ class CookieFaqTemplate extends Component{
 
         if(getCookie('nyt-purr').indexOf('s') > -1) {
             console.log('console log message for cookie: character IS THERE!');
-            
+
             $("body").addClass("show-ccpa-content");
         }
 
-   
-        // function scrollMount(){
-
-        //     $(window).on('scroll', function() {
-        //         var scrollTop = $(this).scrollTop();
-
-  
-        //         var topDistance = $('.faq').offset().top;
-
-        //         if ( (topDistance - 50) < scrollTop ) {
-        //             //alert( ' was scrolled to the top' );
-        //             $('.faq__sidebar').addClass('fixed-nav');
-        //         }else{
-        //             $('.faq__sidebar').removeClass('fixed-nav');
-        //         } 
-        //     });
-
-        // }  
-
-        // scrollMount();
-
-        function FaqOpen(faqNumber) {
-            var faqId = "#faq"+faqNumber;
-
-            if ($(window).width() < 768) {
-                $(faqId + '.notActive .question').trigger('click');
-            }
-            
-        }  
-
         function toggleAllQuestions () {
-    
+
             if($('.faq-question.active').length === $('.faq-question').length){
                 $('.question').trigger('click');
             }else{
                 $('.faq-question.notActive .question').trigger('click');
             }
-    
-        }
 
-        const faqNumbers = {
-            number1: "1",
-            number1: "2",
-            number1: "3 "
         }
 
         return (
@@ -113,10 +72,10 @@ class CookieFaqTemplate extends Component{
             <div className="FaqTemplate CookieFaq">
 
                 <section className="faq">
-                
+
                     <div className="container">
 
-                        <div className={"faq__sidebar "  + (this.state.scroll > this.state.top ? "fixed-nav" : "")}> 
+                        <div className={"faq__sidebar "  + (this.state.scroll > this.state.top ? "fixed-nav" : "")}>
                             <ul className="faq__idebar__ul">
                                 <li className="faq__sidebar__ul__list">
                                     <div className="faq__sidebar__ul__list__number">1.</div>
@@ -582,7 +541,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> lang </td>
                                                 <td> Retargeting users on LinkedIn, only </td>
                                                 <td> session </td>
-                                                <td> Microsoft LinkedIn </td>       
+                                                <td> Microsoft LinkedIn </td>
                                                 <td><a href="https://www.linkedin.com/legal/privacy-policy">Privacy Policy Opt-out</a></td>
                                             </tr>
 
@@ -590,7 +549,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> lidc </td>
                                                 <td> Retargeting users on LinkedIn, only exists on marketing pages. </td>
                                                 <td> 1 day </td>
-                                                <td> Microsoft LinkedIn </td>       
+                                                <td> Microsoft LinkedIn </td>
                                                 <td><a href="https://www.linkedin.com/legal/privacy-policy">Privacy Policy Opt-out</a></td>
                                             </tr>
 
@@ -598,7 +557,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> UserMatchHistory </td>
                                                 <td> Retargeting users on LinkedIn, only exists on marketing pages. </td>
                                                 <td> 4 weeks </td>
-                                                <td> Microsoft LinkedIn </td>       
+                                                <td> Microsoft LinkedIn </td>
                                                 <td><a href="https://www.linkedin.com/legal/privacy-policy">Privacy Policy Opt-out</a></td>
                                             </tr>
 
@@ -606,7 +565,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> bcookie </td>
                                                 <td> Retargeting users on LinkedIn, only exists on marketing pages. </td>
                                                 <td> 2 years </td>
-                                                <td> Microsoft LinkedIn </td>       
+                                                <td> Microsoft LinkedIn </td>
                                                 <td><a href="https://www.linkedin.com/legal/privacy-policy">Privacy Policy Opt-out</a></td>
                                             </tr>
 
@@ -614,7 +573,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> bscookie </td>
                                                 <td> Retargeting users on LinkedIn, only exists on marketing pages. </td>
                                                 <td> 2 years </td>
-                                                <td> Microsoft LinkedIn </td>       
+                                                <td> Microsoft LinkedIn </td>
                                                 <td><a href="https://www.linkedin.com/legal/privacy-policy">Privacy Policy Opt-out</a></td>
                                             </tr>
 
@@ -622,7 +581,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> everest_g_v2 </td>
                                                 <td> Advertising to users through Adobe. </td>
                                                 <td> 1 year </td>
-                                                <td> Adobe </td>       
+                                                <td> Adobe </td>
                                                 <td><a href="https://www.adobe.com/privacy/policy.html">Privacy Policy Opt-out</a></td>
                                             </tr>
 
@@ -630,7 +589,7 @@ class CookieFaqTemplate extends Component{
                                                 <td> ev_sync_enc </td>
                                                 <td> Advertising to users through Adobe. </td>
                                                 <td> 1 year </td>
-                                                <td> Adobe </td>       
+                                                <td> Adobe </td>
                                                 <td><a href="https://www.adobe.com/privacy/policy.html">Privacy Policy Opt-out</a></td>
                                             </tr>
 
@@ -715,9 +674,9 @@ class CookieFaqTemplate extends Component{
 
                                         </tbody>
 
-                                    </table> 
-                                    
-                                    <Link to="root" spy={true} smooth={true} duration={500} className="back-top" onClick="" >Back to top</Link>   
+                                    </table>
+
+                                    <Link to="root" spy={true} smooth={true} duration={500} className="back-top" onClick="" >Back to top</Link>
 
                                 </Accordion>
 
@@ -762,12 +721,12 @@ class CookieFaqTemplate extends Component{
                                 </Accordion>
 
                             </div>
-                            
+
                         </div>
 
                     </div>
 
-                </section>             
+                </section>
 
             </div>
         );
