@@ -34,8 +34,14 @@
             color: #333333;
             margin: 14px 0 0;
 
+            &.franklin{
+                font-family: $font-franklin;
+                font-size: 16px;
+            }
+
             a{
                 color: #23855B;
+                text-decoration: underline;
             }
         }
 
