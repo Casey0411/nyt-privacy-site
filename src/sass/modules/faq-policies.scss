@@ -198,7 +198,12 @@
                 
                 @include breakpoint("sm"){
                     margin: 0;
-                    border: none;
+                    //border: none; 
+
+                    &:first-child{
+                        border: none;   
+                    }
+
                 }
             }
 
@@ -210,10 +215,10 @@
                 .CookieFaq &{
                 
                     @include breakpoint("sm"){
-                        border: none;
-
 
                         &:first-child{
+
+                            border: none;
 
                             .question{
                                 padding-top: 0;
