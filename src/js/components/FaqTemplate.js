@@ -251,7 +251,6 @@ class FaqTemplate extends Component{
                                                     <strong>With Tracking Technologies in Your Browser and Mobile Apps:</strong>
                                                     <p className="answer__text">These technologies include cookies, web beacons, tags and scripts, software development kits (or SDKs) and beyond.</p>
                                                     <p className="answer__text">We track and store data about how you visit and use Times Services, particularly through our websites and apps. The items we log include:</p>
-                                                    <br/>
                                                     <ul className="answer__text__category__ul bullet-point root-list">
                                                         <li className="answer__text__category__ul__li"> Your IP address</li>
                                                         <li className="answer__text__category__ul__li"> Your location</li>
@@ -263,7 +262,7 @@ class FaqTemplate extends Component{
                                                         <li className="answer__text__category__ul__li"> Advertising identifiers</li>
                                                         <li className="answer__text__category__ul__li"> Other usage information.</li>
                                                     </ul>
-                                                    <p className="answer__text">We combine this data with other information we collect about you. For more information about tracking methods on Times Services, and how to manage them, read our <a href="https://www.nytimes.com/subscription/dg-cookie-policy/cookie-policy.html">Cookie Policy.</a></p>
+                                                    <p className="answer__text">We combine this data with other information we collect about you. For more information about tracking methods on Times Services, and how to manage them, read our <a href="https://www.nytimes.com/subscription/dg-cookie-policy/cookie-policy.html">Cookie Policy</a>.</p>
                                                     <p className="answer__text">If your browser doesn’t accept our cookies, you can&rsquo;t access certain parts of our websites <span className="italic">(e.g., your account on nytimes.com)</span>. Because the “Do Not Track” browser-based standard signal has yet to gain widespread acceptance, we don’t currently respond to those signals.</p>
                                                 </li>
                                                 <li className="answer__text__category__ul__li">
@@ -391,7 +390,7 @@ class FaqTemplate extends Component{
                                     </p>
 
                                     <p className="answer__text">We gather data and work with <NavLink to="/thirdparty" onClick={this.startTop}>third parties</NavLink> to show you personalized ads. This data comes from ad tracking technologies <span className="italic">(e.g., cookies)</span>, the information you provide <span className="italic">(e.g., your email address)</span>, data collected as you use Times Services <span className="italic">(e.g., your reading history)</span>, data from advertisers or advertising vendors <span className="italic">(e.g., demographic data)</span> and anything inferred from any of this information. We only use or share this information in a manner that does not reveal your identity.</p>
-                                    <p className="answer__text">For example, we use Google to serve ads on Times Services. Google uses cookies or unique device identifiers, in combination with their own data, to show you ads based on you visiting nytimes.com and other sites. You can opt out of the use of the Google cookie by visiting the <a href="https://policies.google.com/technologies/ads?hl=en">related Google privacy policy.</a></p>
+                                    <p className="answer__text">For example, we use Google to serve ads on Times Services. Google uses cookies or unique device identifiers, in combination with their own data, to show you ads based on you visiting nytimes.com and other sites. You can opt out of the use of the Google cookie by visiting the <a href="https://policies.google.com/technologies/ads?hl=en">related Google privacy policy</a>.</p>
 
                                     <p className="answer__text">
                                         <strong className="answer__text__category italic">Additional notes:</strong>
@@ -727,7 +726,7 @@ class FaqTemplate extends Component{
                                             We use a service provider in the United States that is <a href="https://www.privacyshield.gov/welcome">Privacy Shield</a> certified.
                                         </li>
                                         <li className="answer__text__category__ul__li">
-                                            We take steps to ensure that the recipient is bound by E.U. Standard Contractual Clauses to protect your personal data. You can see a <a href="https://ec.europa.eu/info/law/law-topic/data-protection/international-dimension-data-protection/standard-contractual-clauses-scc_en">copy of these clauses.</a>
+                                            We take steps to ensure that the recipient is bound by E.U. Standard Contractual Clauses to protect your personal data. You can see a <a href="https://ec.europa.eu/info/law/law-topic/data-protection/international-dimension-data-protection/standard-contractual-clauses-scc_en">copy of these clauses</a>.
                                         </li>
                                     </ul>
                                     <p className="answer__text">
