@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Route, Switch, HashRouter } from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch, HashRouter, Redirect } from "react-router-dom";
 
 //Components
 import Nav from './js/components/Nav';
@@ -65,7 +65,7 @@ class App extends Component{
                 */}
 
 
-
+                <Redirect from='/:page(\w+):rest(&.*)' to='/:page' />
                 <Route exact path="/privacy" component={Privacy} />
                 <Route exact path="/cookie" component={Cookie} />
                 <Route exact path="/thirdparty" component={ThirdParty} />
