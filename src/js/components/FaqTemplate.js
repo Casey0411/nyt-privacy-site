@@ -136,7 +136,7 @@ class FaqTemplate extends Component{
                                 </li>
                                 <li className="faq__sidebar__ul__list">
                                     <div className="faq__sidebar__ul__list__number">6.</div>
-                                    <Link className="faq__sidebar__ul__list__link" name={`faq${faqNumbers.number6}`} to={`faq${faqNumbers.number6}`}  offset={-50} spy={true} smooth={true} duration={500} >How Long Do You Retain Data</Link>
+                                    <Link className="faq__sidebar__ul__list__link" name={`faq${faqNumbers.number6}`} to={`faq${faqNumbers.number6}`}  offset={-50} spy={true} smooth={true} duration={500} >How Long Do You Retain Data?</Link>
                                 </li>
                                 <li className="faq__sidebar__ul__list">
                                     <div className="faq__sidebar__ul__list__number">7.</div>
@@ -405,7 +405,7 @@ class FaqTemplate extends Component{
                                             Essentially, these providers combine any information they gather about you through Times Services with information they receive from their other clients. This helps them target ads to you on behalf of their other clients, not just us.
                                         </li>
                                         <li className="answer__text__category__ul__li">
-                                            These third parties sometimes use other services in order to serve ads; check <NavLink to="/thirdparty" onClick={this.startTop}>their privacy policies for more details</NavLink>. For further information on tracking technologies and your rights and choices regarding them, see the applicable <a href="https://www.nytimes.com/subscription/dg-cookie-policy/cookie-policy.html">Cookie Policy</a>. <span className="ccpa-content">Effective January 1, 2020, California residents have the right to instruct us not to “sell” their personal information. More information is available below.</span>
+                                            These third parties sometimes use other services in order to serve ads; check <NavLink to="/thirdparty" onClick={this.startTop}>their privacy policies for more details</NavLink>. For further information on tracking technologies and your rights and choices regarding them, see the applicable <a href="https://www.nytimes.com/subscription/dg-cookie-policy/cookie-policy.html">Cookie Policy</a>. <span className="ccpa-content">Effective January 1, 2020, California residents have the right to instruct us not to “sell” their personal information. More information is available <Link to="anchor-question4-sectionE" offset={-110} spy={true} smooth={true} duration={500} onClick={() => {FaqOpen(4)}}>below</Link>.</span>
                                         </li>
                                     </ul>
 
@@ -493,7 +493,7 @@ class FaqTemplate extends Component{
                                     <ol className="answer__text__category__ol roman-numerals">
                                         <li className="answer__text__category__ol__li">
                                             <p className="answer__text">If you&rsquo;re a U.S. print subscriber, we may share your name and mailing address (among other information) with other reputable companies that want to market to you by mail.</p>
-                                            <p className="answer__text ccpa-content">This may be a &ldquo;sale&rdquo; of personal information under California law effective January 1, 2020. If you prefer we don&rsquo;t share this information, refer below to “What Are Your Rights?”.</p>
+                                            <p className="answer__text ccpa-content">This may be a &ldquo;sale&rdquo; of personal information under California law effective January 1, 2020. If you prefer we don&rsquo;t share this information, refer <Link to="anchor-question4" offset={-110} spy={true} smooth={true} duration={500} onClick={() => {FaqOpen(4)}}>below</Link> to “What Are Your Rights?”.</p>    
                                         </li>
                                         <li className="answer__text__category__ol__li">
                                             <p className="answer__text">We share information about our live event and conference attendees <span className="italic">(e.g., your name, your company or your job title)</span> with the event sponsors. In those cases we notify you when you provide us the information.</p>

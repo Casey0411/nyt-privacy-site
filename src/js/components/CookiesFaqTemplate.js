@@ -594,7 +594,7 @@ class CookieFaqTemplate extends Component{
 
                                             <tr>
                                                 <td> bkdc </td>
-                                                <td> Building audiences to target users off site and target on-site. </td>
+                                                <td> Building audiences to target users off-site and target on-site. </td>
                                                 <td> 6 months </td>
                                                 <td> Oracle BlueKai </td>
                                                 <td><a href="https://www.oracle.com/legal/privacy/marketing-cloud-data-cloud-privacy-policy.html">Privacy Policy Opt-out</a></td>
@@ -602,7 +602,7 @@ class CookieFaqTemplate extends Component{
 
                                             <tr>
                                                 <td> bku </td>
-                                                <td> Building audiences to target users off site and target on-site. </td>
+                                                <td> Building audiences to target users off-site and target on-site. </td>
                                                 <td> 6 months </td>
                                                 <td> Oracle BlueKai </td>
                                                 <td><a href="https://www.oracle.com/legal/privacy/marketing-cloud-data-cloud-privacy-policy.html">Privacy Policy Opt-out</a></td>
