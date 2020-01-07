@@ -53,7 +53,7 @@ function FaqComponent() {
                         </Accordion>
                         <Accordion title="Why am I given the option to use Facebook and Google for log-in?" number="6">
                             <p className="answer__text">Our readers have voiced a desire for our log-in process to be even simpler.</p>
-                            <p className="answer__text">If you sign up via Facebook or Google, they share limited data with us so we can create an account for you. We do not share any data about your reading behavior with Facebook or Google when you sign up. To learn more, see our <a href="https://help.nytimes.com/hc/en-us/articles/115014887628-Social-login">social login page.</a></p>
+                            <p className="answer__text">If you sign up via Facebook or Google, they share limited data with us so we can create an account for you. We do not share any data about your reading behavior with Facebook or Google when you sign up. To learn more, see our <a href="https://help.nytimes.com/hc/en-us/articles/115014887628-Social-login">social login page</a>.</p>
                         </Accordion>
 
                         <Accordion title="How can I learn more about how companies use personal data online?" number="7">

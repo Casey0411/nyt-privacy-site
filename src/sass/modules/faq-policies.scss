@@ -504,9 +504,20 @@ span.ccpa-content{
 .cookie-table{
     width: 100%;
     height: auto;
-
+    display: table;
     //border: 1px solid #ccc;
     margin-top: 20px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+
+    @include breakpoint("sm"){
+        overflow: hidden;
+    }
+
+    tbody, thead{
+        width: 100%;
+        height: auto;
+    }
 
     th, td{
         //border-left: 1px solid #ccc;
@@ -524,6 +535,8 @@ span.ccpa-content{
             border-left: none;
         }
 
+        width: 20%;
+
     }
 
     tr{
@@ -534,6 +547,9 @@ span.ccpa-content{
                 font-weight: 700;
             }
         }
+
+        width: 100%;
+
     }
 
 
