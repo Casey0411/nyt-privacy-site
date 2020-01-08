@@ -414,7 +414,7 @@ class CookieFaqTemplate extends Component{
                                                   <NavLink className='nav__link' to="/privacy" onClick={()=>{window.scrollTo(0, 0)}}>Privacy Policy</NavLink>
                                                   {this.state.hasEdition
                                                     ? <span> and <button onClick={this.handleNYTEditionOptOut} className="normal-button">Opt-out</button></span>
-                                                    : ''}
+                                                    : <span>, you don't have this cookie.</span>}
                                                 </td>
                                             </tr>
 
