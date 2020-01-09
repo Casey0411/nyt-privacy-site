@@ -493,7 +493,7 @@ class FaqTemplate extends Component{
                                     <ol className="answer__text__category__ol roman-numerals">
                                         <li className="answer__text__category__ol__li">
                                             <p className="answer__text">If you&rsquo;re a U.S. print subscriber, we may share your name and mailing address (among other information) with other reputable companies that want to market to you by mail.</p>
-                                            <p className="answer__text ccpa-content">This may be a &ldquo;sale&rdquo; of personal information under California law effective January 1, 2020. If you prefer we don&rsquo;t share this information, refer <Link to="anchor-question4" offset={-110} spy={true} smooth={true} duration={500} onClick={() => {FaqOpen(4)}}>below</Link> to “What Are Your Rights?”.</p>    
+                                            <p className="answer__text ccpa-content">This may be a &ldquo;sale&rdquo; of personal information under California law effective January 1, 2020. If you prefer we don&rsquo;t share this information, refer <Link to="anchor-question4" offset={-110} spy={true} smooth={true} duration={500} onClick={() => {FaqOpen(4)}}>below</Link> to “What Are Your Rights?”</p>    
                                         </li>
                                         <li className="answer__text__category__ol__li">
                                             <p className="answer__text">We share information about our live event and conference attendees <span className="italic">(e.g., your name, your company or your job title)</span> with the event sponsors. In those cases we notify you when you provide us the information.</p>

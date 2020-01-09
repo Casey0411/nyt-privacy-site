@@ -117,7 +117,7 @@
             .all-faq-trigger{
                 background-color: transparent;
                 cursor: pointer;
-                
+                width: 14px;
 
                 @include breakpoint("sm"){
                     display: none;
@@ -504,7 +504,6 @@ span.ccpa-content{
 .cookie-table{
     width: 100%;
     height: auto;
-    display: table;
     //border: 1px solid #ccc;
     margin-top: 20px;
     overflow-x: scroll;
