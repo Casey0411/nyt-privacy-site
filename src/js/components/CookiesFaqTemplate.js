@@ -23,7 +23,7 @@ class CookieFaqTemplate extends Component{
         super(props);
         this.state = {};
         ['handleScroll', 'handleOptInOutClick', 'handleAboutChoices', 'handleYourChoices',
-          'handleGAChoices'].forEach(meth => this[meth] = this[meth].bind(this));
+          'handleGAChoices', 'handleNYTEditionOptOut'].forEach(meth => this[meth] = this[meth].bind(this));
     }
 
     handleScroll (){
@@ -40,6 +40,9 @@ class CookieFaqTemplate extends Component{
         , isEligible = !!(document.cookie || '')
           .split(/\s*;\s*/)
           .filter(function (c) { return /^nyt-gdpr\s*=\s*1/i.test(c); })[0]
+        , hasEdition = !!(document.cookie || '')
+          .split(/\s*;\s*/)
+          .filter(function (c) { return /^nyt-edition\s*=\s*([^;]|$)/i.test(c); })[0]
       ;
       if (/^\?gdpr=[01]$/.test(window.location.search)) {
         isEligible = !!parseInt(window.location.search.replace('?gdpr=', ''), 10);
@@ -51,7 +54,8 @@ class CookieFaqTemplate extends Component{
           height: el.offsetHeight,
           curStatus,
           loggedIn,
-          isEligible
+          isEligible,
+          hasEdition,
         });
         window.addEventListener('scroll', this.handleScroll);
     }
@@ -75,6 +79,11 @@ class CookieFaqTemplate extends Component{
         };
       }
       else this.gdprSuccess(nextStatus);
+    }
+
+    handleNYTEditionOptOut () {
+      document.cookie = 'NYT-Edition=; expires=Thu, 01 Jan 1970 00:00:00 GMT';
+      this.setState({ hasEdition: false });
     }
 
     gdprSuccess (newStatus) {
@@ -397,11 +406,17 @@ class CookieFaqTemplate extends Component{
 
                                         <tbody>
                                             <tr>
-                                                <td> nyt-Edition </td>
+                                                <td> NYT-Edition </td>
                                                 <td> Remember which edition user prefers </td>
                                                 <td> 1 year </td>
                                                 <td> first party </td>
-                                                <td><NavLink className='nav__link' to="/privacy" onClick={()=>{window.scrollTo(0, 0)}}>Privacy Policy</NavLink> Opt-out</td>
+                                                <td>
+                                                  <NavLink className='nav__link' to="/privacy" onClick={()=>{window.scrollTo(0, 0)}}>Privacy Policy</NavLink>
+                                                  {this.state.hasEdition
+                                                    ? <span> and <button onClick={this.handleNYTEditionOptOut} className="normal-button">Opt-out</button></span>
+                                                    : <span>, you don&rsquo;t have this cookie.</span>}
+                                                </td>
+
                                             </tr>
 
                                         </tbody>
