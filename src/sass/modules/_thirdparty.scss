@@ -16,9 +16,18 @@
             font-family: $font-cheltenham;
             font-style: normal;
             font-weight: 300;
-            font-size: 58px;
+            font-size: 42px;
             line-height: .86;
             color: #333333;
+
+            @include breakpoint("sm"){
+                font-size: 60px;
+            }
+    
+            @include breakpoint("md"){
+                font-size: 70px;
+            }
+
         }
 
     }
