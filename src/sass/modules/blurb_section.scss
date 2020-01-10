@@ -19,8 +19,13 @@
             line-height: 1.25;
             color: #FFFFFF;
             margin: 20px 0 0;
+            font-weight: 200;
 
             @include breakpoint("sm"){
+                font-size: 22px;
+            }
+
+            @include breakpoint("md"){
                 font-size: 26px;
             }
 

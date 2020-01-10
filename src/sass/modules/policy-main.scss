@@ -34,6 +34,14 @@
             color: #333333;
             margin: 14px 0 0;
 
+            @include breakpoint("sm"){
+                font-size: 22px;
+            }
+    
+            @include breakpoint("md"){
+                font-size: 26px;
+            }
+
             &.franklin{
                 font-family: $font-franklin;
                 font-size: 16px;
