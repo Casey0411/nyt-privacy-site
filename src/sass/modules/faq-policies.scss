@@ -516,6 +516,13 @@ span.ccpa-content{
     tbody, thead{
         width: 100%;
         height: auto;
+        min-width: 640px;
+        display: table;
+
+        @include breakpoint("sm"){
+            min-width: 0;
+        }
+
     }
 
     th, td{
