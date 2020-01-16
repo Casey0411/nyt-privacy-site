@@ -43,7 +43,7 @@ function FaqComponent() {
                             <p className="answer__text"><strong>Indirect data collection</strong> takes place passively as you interact with our site or apps. Our tracking technologies collect data about your reading behavior, like which articles you read or how often you visit The Times. Third-party advertisers collect behavioral data associated with their ads shown on our site or apps. Additionally, we collect data about readers from sources like privately owned databases and social media platforms.</p>
                         </Accordion>
                         <Accordion title="What does The Times do with data it collects on me?" number="3">
-                            <p className="answer__text">We use it to cater our journalism and other offerings to you. The specific data we use depends on the offering, and how you are accessing it. We also use your data to tailor your experience, which includes marketing and advertising.</p>
+                            <p className="answer__text">We use it to cater our journalism and other offerings to you, like by recommending stories that may be of interest. The specific data we use depends on the offering, and how you are accessing it. We also use your data to tailor your experience, which includes marketing and advertising.</p>
                         </Accordion>
                         <Accordion title="How are you keeping my data safe?" number="4">
                             <p className="answer__text">We have implemented organizational, technological and physical safeguards designed to keep our readers’ data secure internally. The Times is dedicated to building, maintaining and upgrading the measures we take to protect your data.</p>
