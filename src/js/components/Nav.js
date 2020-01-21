@@ -31,13 +31,13 @@ export class Nav extends Component {
                 <div className='top-bar'>
                     <div className='container'>
                         <div className='logo'>
-                            <a className='nyt_logo' href='https://www.nytimes.com/'>
+                            <a className='nyt_logo' href='https://www.nytimes.com/' aria-label='The New York Times'>
                                 <NytLogo/>
                             </a>
                             <p className='logo__text'>The Times and your Data</p>
                             {//this.state.on &&  <h1>Toggle Me</h1>
                             }
-                            <button className={'mobile-menu-btn' + (this.state.on ? ' active' : '')} onClick={this.toggle}>
+                            <button className={'mobile-menu-btn' + (this.state.on ? ' active' : '')} onClick={this.toggle} ariel>
                                 {this.state.on ? (
                                     <CloseIcon/>
                                 ) : (
