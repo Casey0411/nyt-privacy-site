@@ -30,12 +30,15 @@ function Home (){
                           <p className="blurb-content__paragraph">We created this page to answer our readers’ questions about how we use their personal data. This topic is important to many readers, and we value their right to understand how it works.</p>
                           <p className="blurb-content__paragraph">This F.A.Q. applies to nytimes.com readers. If you want to dive deeper into the details, please see our <NavLink to="/privacy" onClick={()=>{startTop()}}>Privacy Policy</NavLink>.</p> 
                       </div>
-                      <Link className="arrow"
+                      <Link className="arrow" 
+                        aria-label='down arrow'
                         to="faq-section"
                         spy={true}
                         smooth={true}
                         offset={-50}
                         duration={500}
+                        role="button"
+                        href="#faqComponent"
                       >
                         <DownArrow/>
                       </Link>

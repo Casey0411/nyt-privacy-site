@@ -188,20 +188,20 @@ class CookieFaqTemplate extends Component{
                     <div className="container">
 
                         <div className={"faq__sidebar "  + (this.state.scroll > this.state.top ? "fixed-nav" : "")}>
-                            <ul className="faq__idebar__ul">
+                            <ol className="faq__sidebar__ul">
                                 <li className="faq__sidebar__ul__list">
                                     <div className="faq__sidebar__ul__list__number">1.</div>
-                                    <Link className="faq__sidebar__ul__list__link" name={`cookieFaq1`} to={`cookieFaq1`} offset={-90} spy={true} smooth={true} duration={500} >What Is a Tracker?</Link>
+                                    <Link className="faq__sidebar__ul__list__link" name={`cookieFaq1`} to={`cookieFaq1`} offset={-90} spy={true} smooth={true} duration={500} href={`cookieFaq1`} aria-label='sidebar link'>What Is a Tracker?</Link>
                                 </li>
                                 <li className="faq__sidebar__ul__list">
                                     <div className="faq__sidebar__ul__list__number">2.</div>
-                                    <Link className="faq__sidebar__ul__list__link" name={`cookieFaq2`} to={`cookieFaq2`} offset={-50} spy={true} smooth={true} duration={500} >What Trackers Do We Use?</Link>
+                                    <Link className="faq__sidebar__ul__list__link" name={`cookieFaq2`} to={`cookieFaq2`} offset={-50} spy={true} smooth={true} duration={500} href={`cookieFaq2`} aria-label='sidebar link'>What Trackers Do We Use?</Link>
                                 </li>
                                 <li className="faq__sidebar__ul__list">
                                     <div className="faq__sidebar__ul__list__number">3.</div>
-                                    <Link className="faq__sidebar__ul__list__link" name={`cookieFaq3`} to={`cookieFaq3`} offset={-50} spy={true} smooth={true} duration={500} >How Do I Manage Trackers?</Link>
+                                    <Link className="faq__sidebar__ul__list__link" name={`cookieFaq3`} to={`cookieFaq3`} offset={-50} spy={true} smooth={true} duration={500} href={`cookieFaq3`} aria-label='sidebar link'>How Do I Manage Trackers?</Link>
                                 </li>
-                            </ul>
+                            </ol>
 
                         </div>
 
@@ -226,7 +226,7 @@ class CookieFaqTemplate extends Component{
                             */}
 
                             <div className="mobile-collapse">
-                                <button className="all-faq-trigger" onClick={toggleAllQuestions}>
+                                <button className='all-faq-trigger' onClick={toggleAllQuestions} aria-label='colapse and expand all accordion'>
                                     <CollapseExpand/>
                                 </button>
                             </div>

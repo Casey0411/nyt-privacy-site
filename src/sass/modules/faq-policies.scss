@@ -18,8 +18,8 @@
         width: 100%;
         padding: 40px 0;
         border-top: 1px solid #C4C4C4;
-        overflow: hidden;
         position: relative;
+        overflow-y: hidden;
     }
 
     &__sidebar{
@@ -28,11 +28,11 @@
         top:0;
         max-width: 225px;
         width: 26%;
-        display: none;
+        display: none;      
 
         @include breakpoint("sm"){
             display: block;
-            width: 26%;
+            width: 26%; 
         }
 
         @include breakpoint("md"){
@@ -44,6 +44,21 @@
             left: auto;
             position: fixed;
             width: 23%;
+            
+            &.absolute-nav{
+                position: fixed;
+
+                @media screen and (max-height: 940px) {
+                    // position:-webkit-sticky; 
+                    // position:sticky; 
+                    // bottom: 0;
+                    position: absolute;
+                    top: auto;
+                    bottom: 100px;
+                }
+            }
+
+            
 
             @include breakpoint("md"){
                 width: 31%;
@@ -51,15 +66,29 @@
 
         }
 
+        &.relative_bottom{
+            position: relative;
+            top: 100%;
+        }
+
         &__ul{
-            list-style: none;
+            //list-style: none;
             width: 100%;
+            padding-left: 22px;
+            list-style-type: decimal;
 
             &__list{
-                list-style: none;
-                padding-left: 25px;
-                position: relative;
+                //list-style: none;
+                //padding-left: 25px;
+    
+                padding-left: 10px;
                 padding-bottom: 11px;
+                font-family: $font-franklin;
+                font-size: 14px;
+                line-height: 1.4;
+                color: #333333;
+                font-weight: 700;
+                text-align: left;
 
                 &__number{
                     position: absolute;
@@ -70,6 +99,7 @@
                     line-height: 1.4;
                     color: #333333;
                     font-weight: 700;
+                    display: none
                 }
 
                 &__link{

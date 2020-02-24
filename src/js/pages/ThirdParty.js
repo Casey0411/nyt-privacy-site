@@ -29,7 +29,7 @@ function ThirdParty (){
                     </div>
 
                     <div className="third-party__listsection">
-                        <h3 class="third-party__listsection__title">List of third parties engaged by The Times:</h3>
+                        <h3 className="third-party__listsection__title">List of third parties engaged by The Times:</h3>
 
                         <div className="third-party__list">
 

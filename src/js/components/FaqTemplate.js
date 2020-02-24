@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import $ from 'jquery';
 import { Link } from "react-scroll";
 import { NavLink } from "react-router-dom";
+import ScrollIntoView from 'react-scroll-into-view'
 
 //import PropTypes from 'prop-types';
 import Accordion from './Accordion'
@@ -12,36 +13,74 @@ import { ReactComponent as CollapseExpand } from './svg_components/collapse-expa
 
 class FaqTemplate extends Component{
 
+    
+
     state ={
         reachedTop :false,
+        footerShow: false
     }
 
     handleWaypointEnter = () =>{
-        console.log('reach top');
+        //console.log('reach top');
     }
 
     constructor(props) {
         super(props);
         this.state = {};
         this.handleScroll = this.handleScroll.bind(this);
+        this._isMounted = false;
     }
 
     handleScroll (){
         this.setState({scroll: window.scrollY});
+
+
+        var footer = document.querySelector('.footer-section');
+        var position = footer.getBoundingClientRect();
+    
+        // checking for partial visibility
+        if(position.top < window.innerHeight && position.bottom >= 0) {
+            //console.log('Element is partially visible in screen');
+            this.setState({footerShow: true});
+        }else{
+            //console.log('Element is NOT visible in screen');
+            this.setState({footerShow: false});
+        }
+
     }
 
     componentDidMount() {
+        this._isMounted = true;
         const el = document.querySelector('.faq .container');
-        this.setState({top: el.offsetTop - 50, height: el.offsetHeight});
-        window.addEventListener('scroll', this.handleScroll);
+
+        if(this._isMounted){
+            this.setState({top: el.offsetTop - 50, height: el.offsetHeight});
+            window.addEventListener('scroll', this.handleScroll);
+        }
+
+        // window.addEventListener('scroll', function() {
+            
+            
+        // }).bind(this);
+    }
+
+    componentWillUnmount() {
+        this._isMounted = false;
+        window.removeEventListener('scroll', this.handleScroll);    
     }
 
     startTop = () =>{
-        window.scrollTo(0, 0)
+        window.scrollTo(0, 0);
+        //const {message} = this.props;
+        //message = "this is the third party page";
+
+        //return message; 
     }
 
 
     render(){
+
+        
 
         var getCookie = function (c_name) {
             var cookval = '';
@@ -100,7 +139,7 @@ class FaqTemplate extends Component{
             number9: "9",
             number10: "10",
             number11: "11",
-            number12: "12",
+            number12: "12", 
             number13: "13"
         }
 
@@ -112,63 +151,64 @@ class FaqTemplate extends Component{
 
                     <div className="container">
 
-                        <div className={"faq__sidebar "  + (this.state.scroll > this.state.top ? "fixed-nav" : "")}>
-                            <ul className="faq__idebar__ul">
+                        <div className={"faq__sidebar "  + (this.state.scroll > this.state.top ? "fixed-nav " : "") +  (this.state.footerShow? "absolute-nav" : "")}>
+                            <ol className="faq__sidebar__ul">
                                 <li className="faq__sidebar__ul__list">
                                     <div className="faq__sidebar__ul__list__number">1.</div>
-                                    <Link className="faq__sidebar__ul__list__link" name={`faq${faqNumbers.number1}`} to={`faq${faqNumbers.number1}`} offset={-50} spy={true} smooth={true} duration={500} >What Information Do We Gather About You?</Link>
+                                    <Link className="faq__sidebar__ul__list__link" name={`faq${faqNumbers.number1}`} to={`faq${faqNumbers.number1}`} offset={-50} spy={true} smooth={true} duration={500} href={`faq${faqNumbers.number1}`} aria-label='sidebar link'> What Information Do We Gather About You? </Link>
+                                    {/*<a className="faq__sidebar__ul__list__link" name={`faq${faqNumbers.number1}`} href={`#faq${faqNumbers.number1}`} > What Information Do We Gather About You? </a>*/}
                                 </li>
                                 <li className="faq__sidebar__ul__list">
                                     <div className="faq__sidebar__ul__list__number">2.</div>
-                                    <Link className="faq__sidebar__ul__list__link" name={`faq${faqNumbers.number2}`} to={`faq${faqNumbers.number2}`}  offset={-50} spy={true} smooth={true} duration={500} >What Do We Do With The Information We Collect About You?</Link>
+                                    <Link className="faq__sidebar__ul__list__link" name={`faq${faqNumbers.number2}`} to={`faq${faqNumbers.number2}`}  offset={-50} spy={true} smooth={true} duration={500} href={`faq${faqNumbers.number2}`} aria-label='sidebar link'>What Do We Do With The Information We Collect About You?</Link>
                                 </li>
                                 <li className="faq__sidebar__ul__list">
                                     <div className="faq__sidebar__ul__list__number">3.</div>
-                                    <Link className="faq__sidebar__ul__list__link" name={`faq${faqNumbers.number3}`} to={`faq${faqNumbers.number3}`}  offset={-50} spy={true} smooth={true} duration={500} >With Whom Do We Share The Information We Gather?</Link>
+                                    <Link className="faq__sidebar__ul__list__link" name={`faq${faqNumbers.number3}`} to={`faq${faqNumbers.number3}`}  offset={-50} spy={true} smooth={true} duration={500} href={`faq${faqNumbers.number3}`} aria-label='sidebar link'>With Whom Do We Share The Information We Gather?</Link>
                                 </li>
                                 <li className="faq__sidebar__ul__list">
                                     <div className="faq__sidebar__ul__list__number">4.</div>
-                                    <Link className="faq__sidebar__ul__list__link" name={`faq${faqNumbers.number4}`} to={`faq${faqNumbers.number4}`}  offset={-50} spy={true} smooth={true} duration={500} >What Are Your Rights?</Link>
+                                    <Link className="faq__sidebar__ul__list__link" name={`faq${faqNumbers.number4}`} to={`faq${faqNumbers.number4}`}  offset={-50} spy={true} smooth={true} duration={500} href={`faq${faqNumbers.number4}`} aria-label='sidebar link'>What Are Your Rights?</Link>
                                 </li>
                                 <li className="faq__sidebar__ul__list">
                                     <div className="faq__sidebar__ul__list__number">5.</div>
-                                    <Link className="faq__sidebar__ul__list__link" name={`faq${faqNumbers.number5}`} to={`faq${faqNumbers.number5}`}  offset={-50} spy={true} smooth={true} duration={500} >What About Sensitive Personal Information?</Link>
+                                    <Link className="faq__sidebar__ul__list__link" name={`faq${faqNumbers.number5}`} to={`faq${faqNumbers.number5}`}  offset={-50} spy={true} smooth={true} duration={500} href={`faq${faqNumbers.number5}`} aria-label='sidebar link'>What About Sensitive Personal Information?</Link>
                                 </li>
                                 <li className="faq__sidebar__ul__list">
                                     <div className="faq__sidebar__ul__list__number">6.</div>
-                                    <Link className="faq__sidebar__ul__list__link" name={`faq${faqNumbers.number6}`} to={`faq${faqNumbers.number6}`}  offset={-50} spy={true} smooth={true} duration={500} >How Long Do You Retain Data?</Link>
+                                    <Link className="faq__sidebar__ul__list__link" name={`faq${faqNumbers.number6}`} to={`faq${faqNumbers.number6}`}  offset={-50} spy={true} smooth={true} duration={500} href={`faq${faqNumbers.number6}`} aria-label='sidebar link'>How Long Do You Retain Data?</Link>
                                 </li>
                                 <li className="faq__sidebar__ul__list">
                                     <div className="faq__sidebar__ul__list__number">7.</div>
-                                    <Link className="faq__sidebar__ul__list__link" name={`faq${faqNumbers.number7}`} to={`faq${faqNumbers.number7}`}  offset={-50} spy={true} smooth={true} duration={500} >How Do You Protect My Information?</Link>
+                                    <Link className="faq__sidebar__ul__list__link" name={`faq${faqNumbers.number7}`} to={`faq${faqNumbers.number7}`}  offset={-50} spy={true} smooth={true} duration={500} href={`faq${faqNumbers.number7}`} aria-label='sidebar link'>How Do You Protect My Information?</Link>
                                 </li>
                                 <li className="faq__sidebar__ul__list">
                                     <div className="faq__sidebar__ul__list__number">8.</div>
-                                    <Link className="faq__sidebar__ul__list__link" name={`faq${faqNumbers.number8}`} to={`faq${faqNumbers.number8}`}  offset={-50} spy={true} smooth={true} duration={500} >Are There Guidelines for Children?</Link>
+                                    <Link className="faq__sidebar__ul__list__link" name={`faq${faqNumbers.number8}`} to={`faq${faqNumbers.number8}`}  offset={-50} spy={true} smooth={true} duration={500} href={`faq${faqNumbers.number8}`} aria-label='sidebar link'>Are There Guidelines for Children?</Link>
                                 </li>
                                 <li className="faq__sidebar__ul__list">
                                     <div className="faq__sidebar__ul__list__number">9.</div>
-                                    <Link className="faq__sidebar__ul__list__link" name={`faq${faqNumbers.number9}`} to={`faq${faqNumbers.number9}`}  offset={-50} spy={true} smooth={true} duration={500} >How Is Information Transfered Internationally?</Link>
+                                    <Link className="faq__sidebar__ul__list__link" name={`faq${faqNumbers.number9}`} to={`faq${faqNumbers.number9}`}  offset={-50} spy={true} smooth={true} duration={500} href={`faq${faqNumbers.number9}`} aria-label='sidebar link'>How Is Information Transfered Internationally?</Link>
                                 </li>
                                 <li className="faq__sidebar__ul__list">
                                     <div className="faq__sidebar__ul__list__number">10.</div>
-                                    <Link className="faq__sidebar__ul__list__link" name={`faq${faqNumbers.number10}`} to={`faq${faqNumbers.number10}`}  offset={-50} spy={true} smooth={true} duration={500} >What Is Our Legal Basis?</Link>
+                                    <Link className="faq__sidebar__ul__list__link" name={`faq${faqNumbers.number10}`} to={`faq${faqNumbers.number10}`}  offset={-50} spy={true} smooth={true} duration={500} href={`faq${faqNumbers.number10}`} aria-label='sidebar link'>What Is Our Legal Basis?</Link>
                                 </li>
                                 <li className="faq__sidebar__ul__list">
                                     <div className="faq__sidebar__ul__list__number">11.</div>
-                                    <Link className="faq__sidebar__ul__list__link" name={`faq${faqNumbers.number11}`} to={`faq${faqNumbers.number11}`}  offset={-50} spy={true} smooth={true} duration={500} >What About Links to Third-Party Services?</Link>
+                                    <Link className="faq__sidebar__ul__list__link" name={`faq${faqNumbers.number11}`} to={`faq${faqNumbers.number11}`}  offset={-50} spy={true} smooth={true} duration={500} href={`faq${faqNumbers.number11}`} aria-label='sidebar link'>What About Links to Third-Party Services?</Link>
                                 </li>
                                 <li className="faq__sidebar__ul__list">
                                     <div className="faq__sidebar__ul__list__number">12.</div>
-                                    <Link className="faq__sidebar__ul__list__link" name={`faq${faqNumbers.number12}`} to={`faq${faqNumbers.number12}`}  offset={-50} spy={true} smooth={true} duration={500} >How Are Changes to This Privacy Policy Communicated?</Link>
+                                    <Link className="faq__sidebar__ul__list__link" name={`faq${faqNumbers.number12}`} to={`faq${faqNumbers.number12}`}  offset={-50} spy={true} smooth={true} duration={500} href={`faq${faqNumbers.number12}`} aria-label='sidebar     link'>How Are Changes to This Privacy Policy Communicated?</Link>
                                 </li>
 
                                 <li className="faq__sidebar__ul__list">
                                     <div className="faq__sidebar__ul__list__number">13.</div>
-                                    <Link className="faq__sidebar__ul__list__link" name={`faq${faqNumbers.number13}`} to={`faq${faqNumbers.number13}`}  offset={-50} spy={true} smooth={true} duration={500} >How Can You Contact Us? Who Is the Controller of Your Personal Information?</Link>
+                                    <Link className="faq__sidebar__ul__list__link" name={`faq${faqNumbers.number13}`} to={`faq${faqNumbers.number13}`}  offset={-50} spy={true} smooth={true} duration={500} href={`faq${faqNumbers.number13}`} aria-label='sidebar link'>How Can You Contact Us? Who Is the Controller of Your Personal Information?</Link>
                                 </li>
 
-                            </ul>
+                            </ol>
 
                         </div>
 
@@ -189,7 +229,7 @@ class FaqTemplate extends Component{
                             <p className="faq__main-content__parapgraph">Be aware that certain Times Services work differently. Some have additional terms that supplement this policy <span className="italic">(e.g., <a href="https://help.nytimes.com/hc/en-us/articles/360004901454-Reader-submission-terms">Reader Submissions</a>)</span>. Others refer to a different privacy policy altogether, so this one does not apply.</p>
 
                             <div className="mobile-collapse">
-                                <button className="all-faq-trigger" onClick={toggleAllQuestions}>
+                                <button className='all-faq-trigger' onClick={toggleAllQuestions} aria-label='colapse and expand all accordion'>
                                     <CollapseExpand/>
                                 </button>
                             </div>

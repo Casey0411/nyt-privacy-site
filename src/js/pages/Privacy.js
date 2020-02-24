@@ -5,8 +5,14 @@ import Fade from 'react-reveal/Fade';
 import HeroSection from '../components/HeroSection';
 import FaqTemplate from '../components/FaqTemplate';
 
+
+
 function Privacy() {
+
+    //alert(this.props);
+
     return (
+
       <Fade>
         <div className="Privacy">
           <HeroSection />

@@ -26,7 +26,7 @@ class Explore extends Component{
                             <h3 className="explore-box__title">EXPLORE MORE</h3>
 
                             <div className="explore-box__buttons">
-                                <Link className="explore-box__button privacy-policy" to="/privacy" onClick={this.startTop}>
+                                <Link className="explore-box__button privacy-policy" to="/privacy" onClick={this.startTop}> 
                                     <div className="explore-box__button__img-holder "></div>
                                     <div className="explore-box__button__content">
                                         <p className="explore-box__button__content__text">Our Privacy Policy</p>
