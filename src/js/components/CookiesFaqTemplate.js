@@ -30,25 +30,77 @@ class CookieFaqTemplate extends Component{
         this.setState({ scroll: window.scrollY });
     }
 
+    scrollToHashElement = (elId) =>{
+        let element = document.getElementById(elId);
+        //let button = document.querySelector('[name="'+elementId+'"]');
+        let mobileButton = document.querySelector('.'+elId+'-accordion-button');
+
+        console.log(elId);
+        //console.log(element);
+
+        setTimeout(
+            () => {
+
+                var headerOffset = 60;
+                var elementPosition = element.getBoundingClientRect().top;
+                var offsetPosition = elementPosition - headerOffset;
+
+                if (element) {
+
+                    //console.log(elementPosition);
+                    //console.log(offsetPosition);
+
+                    if(window.innerWidth < 768){
+                        mobileButton.click();
+
+                        setTimeout(
+                            () => {
+                                window.scrollTo({
+                                    top: offsetPosition
+                                });
+                            },
+                            1000
+                        );
+
+                    }else{
+
+                        window.scrollTo({
+                            top: offsetPosition
+                        });
+                    }
+
+                   
+
+                }
+
+            },
+            1000
+        );
+
+    }
+
     getHashValue = () =>{
         let hashVal = window.location.hash;
         let hashVals = hashVal.split("#");
         let elementId = hashVals[2];
-        let button = document.querySelector('[name="'+elementId+'"]');
-        let mobileButton = document.querySelector('.'+elementId+'-accordion-button');
+        const elIdExist = window.location.href.indexOf(elementId) > -1;
         
         //console.log(hashVals[2]);
 
-        if(elementId.length > -1){
-            setTimeout(() => {
-                //this.scrollToHashElement(elementId);
-                if(window.innerWidth < 768){
-                    mobileButton.click();
-                }
+        if(elIdExist){
 
-                button.click();
+            var existingElement = document.getElementById(elementId);
+            var elementExists = document.body.contains(existingElement);
+
+            if(elementExists){
+                //alert("this does exist");
+
                 
-            }, 800);
+
+                this.scrollToHashElement(elementId); 
+                
+            }
+
         }
         
     }
