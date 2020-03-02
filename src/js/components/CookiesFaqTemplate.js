@@ -30,6 +30,29 @@ class CookieFaqTemplate extends Component{
         this.setState({ scroll: window.scrollY });
     }
 
+    getHashValue = () =>{
+        let hashVal = window.location.hash;
+        let hashVals = hashVal.split("#");
+        let elementId = hashVals[2];
+        let button = document.querySelector('[name="'+elementId+'"]');
+        let mobileButton = document.querySelector('.'+elementId+'-accordion-button');
+        
+        //console.log(hashVals[2]);
+
+        if(elementId.length > -1){
+            setTimeout(() => {
+                //this.scrollToHashElement(elementId);
+                if(window.innerWidth < 768){
+                    mobileButton.click();
+                }
+
+                button.click();
+                
+            }, 800);
+        }
+        
+    }
+
     componentDidMount() {
       let curStatus = (document.cookie || '')
           .split(/\s*;\s*/)
@@ -58,6 +81,8 @@ class CookieFaqTemplate extends Component{
           hasEdition,
         });
         window.addEventListener('scroll', this.handleScroll);
+
+        this.getHashValue();
     }
 
     handleOptInOutClick () {

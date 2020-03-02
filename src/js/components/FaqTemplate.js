@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import $ from 'jquery';
 import { Link } from "react-scroll";
 import { NavLink } from "react-router-dom";
+import scrollToComponent from 'react-scroll-to-component';
 import ScrollIntoView from 'react-scroll-into-view'
 
 //import PropTypes from 'prop-types';
@@ -12,8 +13,6 @@ import { ReactComponent as CollapseExpand } from './svg_components/collapse-expa
 
 
 class FaqTemplate extends Component{
-
-    
 
     state ={
         reachedTop :false,
@@ -32,6 +31,7 @@ class FaqTemplate extends Component{
     }
 
     handleScroll (){
+
         this.setState({scroll: window.scrollY});
 
 
@@ -49,6 +49,81 @@ class FaqTemplate extends Component{
 
     }
 
+    scrollToHashElement = (elId) =>{
+        let element = document.getElementById(elId);
+        //let button = document.querySelector('[name="'+elementId+'"]');
+        let mobileButton = document.querySelector('.'+elId+'-accordion-button');
+
+        console.log(elId);
+        //console.log(element);
+
+        setTimeout(
+            () => {
+
+                var headerOffset = 60;
+                var elementPosition = element.getBoundingClientRect().top;
+                var offsetPosition = elementPosition - headerOffset;
+
+                if (element) {
+
+                    //console.log(elementPosition);
+                    //console.log(offsetPosition);
+
+                    if(window.innerWidth < 768){
+                        mobileButton.click();
+
+                        setTimeout(
+                            () => {
+                                window.scrollTo({
+                                    top: offsetPosition
+                                });
+                            },
+                            1000
+                        );
+
+                    }else{
+
+                        window.scrollTo({
+                            top: offsetPosition
+                        });
+                    }
+
+                   
+
+                }
+
+            },
+            1000
+        );
+
+    }
+
+    getHashValue = () =>{
+        let hashVal = window.location.hash;
+        let hashVals = hashVal.split("#");
+        let elementId = hashVals[2];
+        const elIdExist = window.location.href.indexOf(elementId) > -1;
+        
+        //console.log(hashVals[2]);
+
+        if(elIdExist){
+
+            var existingElement = document.getElementById(elementId);
+            var elementExists = document.body.contains(existingElement);
+
+            if(elementExists){
+                //alert("this does exist");
+
+                
+
+                this.scrollToHashElement(elementId); 
+                
+            }
+
+        }
+        
+    }
+
     componentDidMount() {
         this._isMounted = true;
         const el = document.querySelector('.faq .container');
@@ -59,9 +134,10 @@ class FaqTemplate extends Component{
         }
 
         // window.addEventListener('scroll', function() {
-            
-            
         // }).bind(this);
+
+        this.getHashValue();
+
     }
 
     componentWillUnmount() {
@@ -77,10 +153,7 @@ class FaqTemplate extends Component{
         //return message; 
     }
 
-
     render(){
-
-        
 
         var getCookie = function (c_name) {
             var cookval = '';
