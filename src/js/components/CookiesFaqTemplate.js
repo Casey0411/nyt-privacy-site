@@ -143,6 +143,7 @@ class CookieFaqTemplate extends Component{
       let { curStatus, loggedIn } = this.state
         , nextStatus = (curStatus === 'ok') ? 'out' : 'ok'
         , d = new Date()
+        , self = this
       ;
       d.setFullYear(d.getFullYear() + 10);
       document.cookie = 'NYT-T=' + nextStatus + '; expires=' + d.toUTCString() + '; path=/; domain=nytimes.com';
@@ -167,10 +168,10 @@ class CookieFaqTemplate extends Component{
           xhrLira.send('');
           xhrLira.onreadystatechange = () => {
             if (xhrLira.readyState !== 4) return;
-            if (xhrLira.status === 200) this.gdprSuccess(nextStatus);
+            if (xhrLira.status === 200) self.gdprSuccess(nextStatus);
           };
         }
-        else this.gdprSuccess(nextStatus);
+        else self.gdprSuccess(nextStatus);
       };
     }
 
