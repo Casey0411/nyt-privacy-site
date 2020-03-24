@@ -1,3 +1,5 @@
+/* globals nyt_et */
+
 import React, { Component } from 'react';
 import $ from 'jquery';
 import { NavLink } from "react-router-dom";
@@ -69,7 +71,7 @@ class CookieFaqTemplate extends Component{
                         });
                     }
 
-                   
+
 
                 }
 
@@ -84,7 +86,7 @@ class CookieFaqTemplate extends Component{
         let hashVals = hashVal.split("#");
         let elementId = hashVals[2];
         const elIdExist = window.location.href.indexOf(elementId) > -1;
-        
+
         //console.log(hashVals[2]);
 
         if(elIdExist){
@@ -95,14 +97,14 @@ class CookieFaqTemplate extends Component{
             if(elementExists){
                 //alert("this does exist");
 
-                
 
-                this.scrollToHashElement(elementId); 
-                
+
+                this.scrollToHashElement(elementId);
+
             }
 
         }
-        
+
     }
 
     componentDidMount() {
@@ -144,18 +146,32 @@ class CookieFaqTemplate extends Component{
       ;
       d.setFullYear(d.getFullYear() + 10);
       document.cookie = 'NYT-T=' + nextStatus + '; expires=' + d.toUTCString() + '; path=/; domain=nytimes.com';
-      if (loggedIn) {
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'https://myaccount.nytimes.com/svc/auth/v1/user/dnt/set', true);
-        xhr.setRequestHeader('client_id', 'web.fwk.vi');
-        xhr.withCredentials = true;
-        xhr.send('');
-        xhr.onreadystatechange = () => {
-          if (xhr.readyState !== 4) return;
-          if (xhr.status === 200) this.gdprSuccess(nextStatus);
-        };
-      }
-      else this.gdprSuccess(nextStatus);
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', 'https://purr.nytimes.com/v1/preferences', true);
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.withCredentials = true;
+      xhr.send(JSON.stringify({
+        gdpr_pref: (nextStatus === 'out') ? 'opt-out' : 'opt-in',
+        metadata: {
+          original_source_app: 'cookie-policy',
+          et_pageview_id: (typeof nyt_et !== 'undefined') ? nyt_et.get_pageview_id() : '',
+        },
+      }));
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState !== 4) return;
+        if (loggedIn) {
+          var xhrLira = new XMLHttpRequest();
+          xhrLira.open('POST', 'https://myaccount.nytimes.com/svc/auth/v1/user/dnt/set', true);
+          xhrLira.setRequestHeader('client_id', 'web.fwk.vi');
+          xhrLira.withCredentials = true;
+          xhrLira.send('');
+          xhrLira.onreadystatechange = () => {
+            if (xhrLira.readyState !== 4) return;
+            if (xhrLira.status === 200) this.gdprSuccess(nextStatus);
+          };
+        }
+        else this.gdprSuccess(nextStatus);
+      };
     }
 
     handleNYTEditionOptOut () {
@@ -806,7 +822,7 @@ class CookieFaqTemplate extends Component{
                                                 <th>Description of purpose</th>
                                                 <th>If tracker is a cookie, is the cookie persistent or a session cookie?  When do persistent cookies expire?</th>
                                                 <th>If tracker is a cookie, 1st party (set by the site being visited) or 3rd party across different sites?  Indicate 3rd party (full legal name and URL to cookie policy)</th>
-                                                <th> Privacy Policy and Opt-out</th>        
+                                                <th> Privacy Policy and Opt-out</th>
                                             </tr>
                                         </thead>
 
@@ -888,7 +904,7 @@ class CookieFaqTemplate extends Component{
                                       opting out of any advertising-related third-party trackers. To opt out of all third-party trackers,
                                       please follow the instructions for your browser as well as the Ad Choices and Online Choices
                                       paragraphs <Link to="anchor-cookie-last-paragraph" offset={-110} spy={true} smooth={true} duration={500}>below</Link>.
-                                    </p>    
+                                    </p>
                                     <p className="answer__text">In addition to the options above, you can refuse or accept trackers from our site (or any other site) in your browser’s settings. If you refuse trackers, you might not be able to sign in or use other tracker-dependent features of our site.</p>
                                     <p className="answer__text">Most browsers automatically accept cookies, but this is typically something you can adjust. Information for each browser can be found in the links below:</p>
 
