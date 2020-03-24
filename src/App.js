@@ -33,14 +33,13 @@ class App extends Component{
   toggleMenu = (event) =>{
 
     let windowWidth = window.innerWidth;//getting the window width
-    const buttonText = event.target.innerText;
 
     if (windowWidth < 768){//checking if window width is in mobile
       this.setState({
         menuOn: !this.state.menuOn,
         isMenuHidden: !this.state.isMenuHidden,
-        isContentHidden: !this.state.isContentHidden  
-      })    
+        isContentHidden: !this.state.isContentHidden
+      })
     }else{
       this.setState({
         menuOn: false
@@ -48,13 +47,13 @@ class App extends Component{
     }
 
     window.scrollTo(0, 0)
-    
+
     //alert(buttonText);
 
     // if(buttonText === "Privacy F.A.Q."){
     //   this.setState({
     //     message: 'this is the Privacy F.A.Q. page'
-    //   })  
+    //   })
     // }else if (buttonText === "Privacy Policy"){
     //   this.setState({
     //     message: 'this is the Privacy Policy page'
@@ -65,7 +64,7 @@ class App extends Component{
     //   })
     // }
 
-    
+
 
   }
 
@@ -81,7 +80,7 @@ class App extends Component{
       isContentHidden = false;
 
     }else{// mobile view
-        
+
         if(menuButton.classList.contains("active")){
             isMenuHidden = false;
             isContentHidden = true;
@@ -96,7 +95,7 @@ class App extends Component{
     }
 
     this.setState(prevState => {
-        return {    
+        return {
           windowSize,
           isMenuHidden,
           isContentHidden
@@ -107,9 +106,6 @@ class App extends Component{
 
   init = e => {
 
-    const windowSize = window.innerWidth;
-    let isMenuHidden = this.state.isMenuHidden;
-    let isContentHidden = this.state.isMenuHidden;
     const menuButton = document.querySelector(".mobile-menu-btn");
 
     const closeModal = (e) =>{
@@ -120,20 +116,20 @@ class App extends Component{
           this.setState({
             menuOn: !this.state.menuOn,
             isMenuHidden: !this.state.isMenuHidden,
-            isContentHidden: !this.state.isContentHidden    
+            isContentHidden: !this.state.isContentHidden
           })
         }
       }
-    } 
+    }
 
-    window.onkeyup = function (event) {   
-      if (event.keyCode == 27) {
+    window.onkeyup = function (event) {
+      if (event.keyCode === 27) {
         closeModal();
         //console.dir(this);
       }
     }
 
-    
+
 
   }
 
@@ -175,7 +171,7 @@ class App extends Component{
     //window.removeEventListener("load", this.init);
     window.removeEventListener("resize", this.handleResize);
   }
-  
+
   render(){
 
     // console.log('window size is ' +this.state.windowSize);
@@ -187,8 +183,8 @@ class App extends Component{
       <HashRouter history={Router.hashHistory}>
 
           <div className="App">
-            
-            
+
+
             <Announcements message={this.state.message}/>
 
             <Fragment>
@@ -235,17 +231,17 @@ class App extends Component{
                   */}
 
                   <Redirect from='/:page(\w+):rest(&.*)' to='/:page' />
-                  <Route exact path="/privacy" component={Privacy}/>  
-                  <Route exact path="/cookie" component={Cookie} /> 
+                  <Route exact path="/privacy" component={Privacy}/>
+                  <Route exact path="/cookie" component={Cookie} />
                   <Route exact path="/thirdparty" component={ThirdParty} />
                   <Route component={Home} />
 
                 </Switch>
 
               </main>
-            
+
             </Fragment>
-            
+
             <Footer isMenuOn={this.state.menuOn} isContentHidden={this.state.isContentHidden} />
 
             <Nav mobileMenuToggle={this.mobileMenuToggle} toggleMenu={this.toggleMenu} isMenuOn={this.state.menuOn} isMenuHidden={this.state.isMenuHidden}/>

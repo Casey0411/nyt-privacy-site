@@ -12,17 +12,17 @@ const Accordion = props => {
     //${contentRef.current.scrollHeight}px
     contentRef.current.style.maxHeight = active ? `10000px` : '0px'
   }, [contentRef, active])
-  
+
   const toogleActive = () => {
     setActive(!active)
   }
 
-  
 
-  return (  
+
+  return (
 
     <div className={`accordion-section faq-question ${active? "active": "notActive"}`} id={`${props.name}${props.number}`} aria-label='accordion_item' >
-      <button className={`accordion-title question ${props.name}${props.number}-accordion-button`} onClick={toogleActive} aria-expanded={active? "true": "false"} role="button" aria-controls={`region-${props.name}${props.number}`}>  
+      <button className={`accordion-title question ${props.name}${props.number}-accordion-button`} onClick={toogleActive} aria-expanded={active? "true": "false"} aria-controls={`region-${props.name}${props.number}`}>  
         <div className="question__number">{props.number}.</div>
         <p>{props.title}</p>
         <div className="question__icon">
