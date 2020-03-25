@@ -21,7 +21,7 @@ const Accordion = props => {
 
   return (  
 
-    <div className={`accordion-section faq-question ${active? "active": "notActive"}`} id={`${props.name}${props.number}`} aria-label='accordion_item' >
+    <div className={`accordion-section faq-question ${active? "active": "notActive"}`} id={`${props.name}${props.number}`} >
       <button className={`accordion-title question ${props.name}${props.number}-accordion-button`} onClick={toogleActive} aria-expanded={active? "true": "false"} role="button" aria-controls={`region-${props.name}${props.number}`}>  
         <div className="question__number">{props.number}.</div>
         <p>{props.title}</p>

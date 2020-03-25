@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 class HeroSection extends Component{
   render(){
     return (
-      <div className="HeroSection">
+      <div className="HeroSection" aria-live="polite">
           
         <section className="hero-top-text">
             <div className="container">
