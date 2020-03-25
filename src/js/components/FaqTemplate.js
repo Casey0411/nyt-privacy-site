@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import $ from 'jquery';
 import { Link } from "react-scroll";
 import { NavLink } from "react-router-dom";
-import scrollToComponent from 'react-scroll-to-component';
-import ScrollIntoView from 'react-scroll-into-view'
 
 //import PropTypes from 'prop-types';
 import Accordion from './Accordion'
@@ -37,7 +35,7 @@ class FaqTemplate extends Component{
 
         var footer = document.querySelector('.footer-section');
         var position = footer.getBoundingClientRect();
-    
+
         // checking for partial visibility
         if(position.top < window.innerHeight && position.bottom >= 0) {
             //console.log('Element is partially visible in screen');
@@ -88,7 +86,7 @@ class FaqTemplate extends Component{
                         });
                     }
 
-                   
+
 
                 }
 
@@ -103,7 +101,7 @@ class FaqTemplate extends Component{
         let hashVals = hashVal.split("#");
         let elementId = hashVals[2];
         const elIdExist = window.location.href.indexOf(elementId) > -1;
-        
+
         //console.log(hashVals[2]);
 
         if(elIdExist){
@@ -114,14 +112,14 @@ class FaqTemplate extends Component{
             if(elementExists){
                 //alert("this does exist");
 
-                
 
-                this.scrollToHashElement(elementId); 
-                
+
+                this.scrollToHashElement(elementId);
+
             }
 
         }
-        
+
     }
 
     componentDidMount() {
@@ -142,7 +140,7 @@ class FaqTemplate extends Component{
 
     componentWillUnmount() {
         this._isMounted = false;
-        window.removeEventListener('scroll', this.handleScroll);    
+        window.removeEventListener('scroll', this.handleScroll);
     }
 
     startTop = () =>{
@@ -150,7 +148,7 @@ class FaqTemplate extends Component{
         //const {message} = this.props;
         //message = "this is the third party page";
 
-        //return message; 
+        //return message;
     }
 
     render(){
@@ -212,7 +210,7 @@ class FaqTemplate extends Component{
             number9: "9",
             number10: "10",
             number11: "11",
-            number12: "12", 
+            number12: "12",
             number13: "13"
         }
 
@@ -606,7 +604,7 @@ class FaqTemplate extends Component{
                                     <ol className="answer__text__category__ol roman-numerals">
                                         <li className="answer__text__category__ol__li">
                                             <p className="answer__text">If you&rsquo;re a U.S. print subscriber, we may share your name and mailing address (among other information) with other reputable companies that want to market to you by mail.</p>
-                                            <p className="answer__text ccpa-content">This may be a &ldquo;sale&rdquo; of personal information under California law effective January 1, 2020. If you prefer we don&rsquo;t share this information, refer <Link to="anchor-question4" offset={-110} spy={true} smooth={true} duration={500} onClick={() => {FaqOpen(4)}}>below</Link> to “What Are Your Rights?”</p>    
+                                            <p className="answer__text ccpa-content">This may be a &ldquo;sale&rdquo; of personal information under California law effective January 1, 2020. If you prefer we don&rsquo;t share this information, refer <Link to="anchor-question4" offset={-110} spy={true} smooth={true} duration={500} onClick={() => {FaqOpen(4)}}>below</Link> to “What Are Your Rights?”</p>
                                         </li>
                                         <li className="answer__text__category__ol__li">
                                             <p className="answer__text">We share information about our live event and conference attendees <span className="italic">(e.g., your name, your company or your job title)</span> with the event sponsors. In those cases we notify you when you provide us the information.</p>

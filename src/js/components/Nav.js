@@ -8,7 +8,7 @@ import { ReactComponent as CloseIcon } from './svg_components/close-icon.svg';
 
 export class Nav extends Component {
 
-    
+
 
     render() {
 
@@ -16,62 +16,13 @@ export class Nav extends Component {
         const {isMenuOn} = this.props;
         const {isMenuHidden} = this.props;
 
-        let windowWidth = window.innerWidth;//getting the window width
-        let windowHeight = window.innerHeight;//getting the window height 
-        let navMenu = document.querySelector(".nav"); 
-
-        if (windowWidth >= 768){//checking if window width is in desktop
-            //console.log(isMenuOn);
-        }
-
-        // const addressHiddenAttr = () =>{
-        //     if(windowWidth >= 768){
-        //         document.querySelector(".nav").removeAttribute("hidden");
-        //     }else{
-        //         document.querySelector(".nav").setAttribute("hidden");
-        //     }
-        // }
-
-        // const updateWindowSize = () => { 
-
-        //     windowWidth = window.innerWidth;
-        //     windowHeight = window.innerHeight;
-
-        //     addressHiddenAttr();//add/remove hidden attr for accesibility
-        // }
-
-        // addressHiddenAttr();//add/remove hidden attr for accesibility
-        
-        // window.addEventListener('resize', updateWindowSize);
-
-
-        // function useWindowSize() {
-        //     const [size, setSize] = useState([0, 0]);
-        //     useLayoutEffect(() => {
-        //       function updateSize() {
-        //         setSize([window.innerWidth, window.innerHeight]);
-        //       }
-        //       window.addEventListener('resize', updateSize);
-        //       updateSize();
-        //       return () => window.removeEventListener('resize', updateSize);
-        //     }, []);
-        //     return size;
-        //   }
-          
-        // function ShowWindowDimensions(props) {   
-        //     const [width, height] = useWindowSize();
-        //     return {width};
-        // }
-
-       
-
         return (
 
             <Fragment>
 
                 <div className='Nav'>
-                
-                    <div className='top-bar' role="dialog" aria-modal={(isMenuOn ? true : false )} >    
+
+                    <div className='top-bar' role="dialog" aria-modal={(isMenuOn ? true : false )} >
 
                         <div className='container'>
                             <div className='logo'>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { visible, hidden } from 'ansi-colors';
+import { hidden } from 'ansi-colors';
 
 
 class Announcements extends React.Component{

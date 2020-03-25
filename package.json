@@ -30,7 +30,7 @@
 		"save": "^2.4.0"
 	},
 	"scripts": {
-		"start": "react-scripts start",
+		"start": "DANGEROUSLY_DISABLE_HOST_CHECK=true react-scripts start",
 		"watch-css": "sass --watch src/sass/style.scss build/static/css/main.css",
 		"build": "node ./build-non-split.js"
 	},
