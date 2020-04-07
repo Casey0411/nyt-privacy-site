@@ -96,7 +96,7 @@
 		"jquery": "^3.4.1",
 		"lodash-webpack-plugin": "^0.11.5",
 		"mini-css-extract-plugin": "^0.7.0",
-		"minimist": "^1.2.0",
+		"minimist": "^1.2.3",
 		"node-sass": "^4.12.0",
 		"nodemon": "^1.19.4",
 		"npm-run-script": "0.0.4",
