@@ -100,7 +100,7 @@
 		"node-sass": "^4.12.0",
 		"nodemon": "^1.19.4",
 		"npm-run-script": "0.0.4",
-		"postcss": "^7.0.17",
+		"postcss": "^8.2.10",
 		"postcss-discard-duplicates": "^4.0.2",
 		"postcss-loader": "^3.0.0",
 		"prettier-stylelint": "^0.4.2",
