@@ -13,7 +13,7 @@
 		"express": "^4.17.1",
 		"in-view": "^0.6.1",
 		"js-cookie": "^2.2.1",
-		"nodemailer": "^6.4.2",
+		"nodemailer": "^6.4.16",
 		"react": "16.8.6",
 		"react-aria-live": "^2.0.5",
 		"react-dom": "16.8.6",
